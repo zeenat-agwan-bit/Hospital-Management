@@ -1,0 +1,43 @@
+
+package com.pushkal.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.pushkal.dao.ReceptionistDAO;
+import com.pushkal.domain.Patient;
+import com.pushkal.domain.Receptionist;
+
+@Service
+public class ReceptionServiceImpl implements ReceptionistService {
+
+	@Autowired
+	public ReceptionistDAO dao;
+
+	public Receptionist verifyReceptiont(Receptionist receptionist) {
+
+		return dao.verifyReception(receptionist);
+
+	}
+
+	public void addReceptionist(Receptionist receptionist) {
+		dao.saveReception(receptionist);
+
+	}
+
+	public List<Receptionist> FindAllReceptionist() {
+		return dao.showAllReceptionist();
+	}
+
+	public void addRecPatient(Patient patient) {
+		dao.saveRecPatient(patient);
+
+	}
+
+	public List<Patient> findAllPatientsByReception(String email) {
+		return dao.getAllPatientByReception(email);
+	}
+
+}

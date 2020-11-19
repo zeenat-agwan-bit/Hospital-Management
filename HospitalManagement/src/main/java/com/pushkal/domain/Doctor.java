@@ -16,7 +16,7 @@ public class Doctor {
 	private String email;
 	private String password;
 	private String dname;
-	private int phone;
+	private String phone;
 	private String city;
 	private String address;
 	private String state;
@@ -33,7 +33,7 @@ public class Doctor {
 	
 	
 	
-	public Doctor(String email, String password, String dname, int phone, String city, String address, String state,
+	public Doctor(String email, String password, String dname, String phone, String city, String address, String state,
 			String qualification, String gender, String specialization, List<Patient> patients,
 			List<AppointmentBooking> bookings) {
 		super();
@@ -74,7 +74,7 @@ public class Doctor {
 	
 	
 
-	public Doctor(String email, String password, String dname, int phone, String city, String address, String state,
+	public Doctor(String email, String password, String dname, String phone, String city, String address, String state,
 			String qualification, String gender, String specialization, List<Patient> patients) {
 		super();
 		this.email = email;
@@ -99,7 +99,7 @@ public class Doctor {
 	}
 	
 
-	public Doctor(String email, String password, String dname, int phone, String city, String address, String state,
+	public Doctor(String email, String password, String dname, String phone, String city, String address, String state,
 			String qualification, String gender, String specialization) {
 		super();
 		this.email = email;
@@ -145,11 +145,11 @@ public class Doctor {
 		this.dname = dname;
 	}
 
-	public int getPhone() {
+	public String getPhone() {
 		return phone;
 	}
 
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 

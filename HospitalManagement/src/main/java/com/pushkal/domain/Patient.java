@@ -17,7 +17,7 @@ public class Patient {
 	private String email;
 	private String password;
 	private String pName;
-	private int phone;
+	private String phone;
 	private int age;
 	private String gender;
 	private String blood;
@@ -42,7 +42,7 @@ public class Patient {
 		this.bookings = bookings;
 	}
 
-	public Patient(String email, String password, String pName, int phone, int age, String gender, String blood,
+	public Patient(String email, String password, String pName, String phone, int age, String gender, String blood,
 			String address, String city, String state, Doctor doctor, Receptionist receptionist,
 			List<AppointmentBooking> bookings) {
 		super();
@@ -98,7 +98,7 @@ public class Patient {
 		this.city = city;
 	}
 
-	public Patient(String email, String password, String pName, int phone, int age, String gender, String blood,
+	public Patient(String email, String password, String pName, String phone, int age, String gender, String blood,
 			String address, String city, String state) {
 		super();
 		this.email = email;
@@ -114,7 +114,7 @@ public class Patient {
 
 	}
 
-	public Patient(String email, String password, String pName, int phone, int age, String gender, String blood,
+	public Patient(String email, String password, String pName, String phone, int age, String gender, String blood,
 			String address, String city, String state, Doctor doctor) {
 		super();
 		this.email = email;
@@ -130,7 +130,7 @@ public class Patient {
 		this.doctor = doctor;
 	}
 
-	public Patient(String email, String password, String pName, int phone, int age, String gender, String blood,
+	public Patient(String email, String password, String pName, String phone, int age, String gender, String blood,
 			String address, String city, String state, Receptionist receptionist) {
 		super();
 		this.email = email;
@@ -170,11 +170,11 @@ public class Patient {
 		this.pName = pName;
 	}
 
-	public int getPhone() {
+	public String getPhone() {
 		return phone;
 	}
 
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 

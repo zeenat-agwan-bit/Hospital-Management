@@ -21,19 +21,12 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
 	integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
 	crossorigin="anonymous">
-	
+
 <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>" />
 
 <style type="text/css">
-.form-container {
-	position: absolute; 
-	top:5vh;
-	background : #fff;
-	padding: 50px;
-	border-radius: 10px;
-	box-shadow: 0px 0px 10px 0px #000;
-	background: #fff;
-	margin-left: 40px;
+.custom-margin {
+	margin-top: 8vh;
 }
 </style>
 
@@ -47,49 +40,49 @@
 
 	</div>
 
-	<div class="col-md-6 text right">
-		<br />
-		<section class="container-fluid">
-			<section class="row-justify-content-center">
 
-				<form class="form-container" action="verifyuser" method="post">
+	<div class="container-fluid">
+		<div class="row justify-content-center custom-margin">
+			<div class="col-md-4 col-sm-6">
+
+				<form class="shadow-lg p-4 text-white" action="verifyuser"
+					method="post">
 					<div class="form-group">
-						<label for="exampleInputEmail1">Email Address :</label> <input
-							type="email" placeholder="Enter Email" name="email" class="form-control"
-							id="exampleInputEmail1" aria-describedby="emailHelp"> <small
-							id="emailHelp" class="form-text text-muted">We'll never
-							share your email with anyone else.</small>
+						<label for="exampleInputEmail1" class="font-weight-bold">Email
+							Address :</label> <input type="email" placeholder="Enter Email"
+							name="email" class="form-control" id="exampleInputEmail1"
+							aria-describedby="emailHelp"> <small id="emailHelp"
+							class="form-text ">We'll never share your email
+							with anyone else.</small>
 					</div>
 					<div class="form-group">
-						<label for="exampleInputPassword1">Password :</label> <input
-							type="password" name="password" placeholder="Enter Password" class="form-control"
+						<label for="exampleInputPassword1" class="font-weight-bold">Password
+							:</label> <input type="password" name="password"
+							placeholder="Enter Password" class="form-control"
 							id="exampleInputPassword1">
 					</div>
 
-					<label for="exampleFormControlSelect1">User Type :</label>
-					<div class="row">
-						<div class="col-md-6 text right" style="margin-left: 200px">
-							<select name="utype" class="form-control "
-								id="exampleFormControlSelect1">
+					<div class="form-group">
+
+						<label for="exampleFormControlSelect1" class="font-weight-bold">User
+							Type :</label> <select name="utype" class="form-control "
+							id="exampleFormControlSelect1">
 
 
-								<option>Admin</option>
-								<option>Doctor</option>
-								<option>Receptionist</option>
+							<option>Admin</option>
+							<option>Doctor</option>
+							<option>Receptionist</option>
 
-							</select>
-						</div>
+						</select>
 					</div>
-					<br />
-					<br />
 					<div>
-						<button type="submit" class="btn btn-primary">SignIn</button>
+						<button type="submit"
+							class="btn btn-outline-success btn-block shadow-lg">SignIn</button>
 					</div>
 
 				</form>
-
-			</section>
-		</section>
+			</div>
+		</div>
 	</div>
 
 

@@ -16,11 +16,6 @@ public class PatientServiceImpl implements PatientService {
 	@Autowired
 	private PatientDAO dao;
 
-	public Patient verifyUserPatient(Patient patient) {
-
-		return dao.verifyPatient(patient);
-	}
-
 	public void addPatient(Patient patient) {
 		dao.savePatient(patient);
 	}

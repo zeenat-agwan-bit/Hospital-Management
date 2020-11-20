@@ -46,7 +46,7 @@
 		<table class="table">
 			<thead class="thead-dark">
 				<tr>
-					<th scope="col">Email</th>
+					<th scope="col">Patient Id</th>
 					<th scope="col">Name</th>
 					<th scope="col">Phone</th>
 					<th scope="col">City</th>
@@ -62,7 +62,7 @@
 				<jstl:forEach items="${plist}" var="patients">
 
 					<tr>
-						<td class="table-dark">${patients.email}</td>
+						<td class="table-dark">${patients.patient_id}</td>
 						<td class="table-dark">${patients.pName}</td>
 						<td class="table-dark">${patients.phone}</td>
 						<td class="table-dark">${patients.city}</td>

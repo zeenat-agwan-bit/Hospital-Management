@@ -16,7 +16,7 @@ public class Receptionist {
 	private String email;
 	private String password;
 	private String rname;
-	private int phone;
+	private String phone;
 	private String city;
 	private String address;
 	private String state;
@@ -59,11 +59,11 @@ public class Receptionist {
 		this.rname = rname;
 	}
 
-	public int getPhone() {
+	public String getPhone() {
 		return phone;
 	}
 
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 
@@ -104,7 +104,7 @@ public class Receptionist {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Receptionist(String email, String password, String rname, int phone, String city, String address,
+	public Receptionist(String email, String password, String rname, String phone, String city, String address,
 			String state, String gender) {
 		super();
 		this.email = email;
@@ -120,7 +120,7 @@ public class Receptionist {
 
 	
 	
-	public Receptionist(String email, String password, String rname, int phone, String city, String address,
+	public Receptionist(String email, String password, String rname, String phone, String city, String address,
 			String state, String gender, List<Patient> patient) {
 		super();
 		this.email = email;

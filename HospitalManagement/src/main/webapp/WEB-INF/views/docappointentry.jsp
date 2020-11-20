@@ -16,9 +16,11 @@
 		<spring:bind path="patient.pName">
 			<input type="text" name="pName">
 		</spring:bind>
-		</br> Mail :
-		<spring:bind path="patient.email">
-			<input type="email" name="email">
+		
+		</br>
+		 Patient Id :
+		<spring:bind path="patient.patient_id">
+			<input type="text" name="patient_id">
 		</spring:bind>
 
 
@@ -39,19 +41,13 @@
 
 		</br> Time :
 		<spring:bind path="appointbooking.time">
-			<input type="time" name="time">
+			<input type="text" name="time">
 		</spring:bind>
 
 		</br> Date :
 		<spring:bind path="appointbooking.date">
-			<input type="date" name="date">
+			<input type="text" name="date">
 		</spring:bind>
-
-		</br> CNP :
-		<spring:bind path="appointbooking.cnp">
-			<input type="text" name="cnp">
-		</spring:bind>
-
 
 		</br> Fees :
 		<spring:bind path="appointbooking.fees">
@@ -59,9 +55,15 @@
 		</spring:bind>
 
 
-		</br> Description :
-		<spring:bind path="appointbooking.description">
-			<input type="text" name="description">
+		</br> Diagnosis :
+		<spring:bind path="appointbooking.diagnosis">
+			<input type="text" name="diagnosis">
+		</spring:bind>
+
+
+		</br> Treatment :
+		<spring:bind path="appointbooking.treatment">
+			<input type="text" name="treatment">
 		</spring:bind>
 		</br>
 		<input type="submit" value="Register" />

@@ -48,14 +48,14 @@
 			<thead class="thead-dark">
 				<tr>
 					<th scope="col">Appointment Id</th>
-					<th scope="col">Patient Mail</th>
+					<th scope="col">Patient Id</th>
 					<th scope="col">Patient Name</th>
 					<th scope="col">Patient Phone</th>
 					<th scope="col">Date</th>
 					<th scope="col">Time</th>
 					<th scope="col">Fees</th>
-					<th scope="col">CNP</th>
-					<th scope="col">Description</th>
+					<th scope="col">Diagnosis</th>
+					<th scope="col">Treatment</th>
 				</tr>
 
 			</thead>
@@ -64,14 +64,14 @@
 
 					<tr>
 						<td class="table-dark">${bookings.ap_id}</td>
-						<td class="table-dark">${bookings.patient.email}</td>
+						<td class="table-dark">${bookings.patient.patient_id}</td>
 						<td class="table-dark">${bookings.patient.name}</td>
 						<td class="table-dark">${bookings.patient.phone}</td>
 						<td class="table-dark">${bookings.date}</td>
 						<td class="table-dark">${bookings.time}</td>
 						<td class="table-dark">${bookings.fees}</td>
-						<td class="table-dark">${bookings.cnp}</td>
-						<td class="table-dark">${bookings.description}</td>
+						<td class="table-dark">${bookings.diagnosis}</td>
+						<td class="table-dark">${bookings.treatment}</td>
 
 					</tr>
 				</jstl:forEach>

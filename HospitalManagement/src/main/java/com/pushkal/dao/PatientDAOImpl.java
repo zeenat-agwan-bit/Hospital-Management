@@ -16,20 +16,6 @@ public class PatientDAOImpl implements PatientDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	public Patient verifyPatient(Patient patient) {
-		Session session = sessionFactory.openSession();
-
-		Patient pat = session.get(Patient.class, patient.getEmail());
-		if (pat == null) {
-			return null;
-		} else {
-			if (patient.getPassword().equals(pat.getPassword())) {
-				return pat;
-			} else {
-				return null;
-			}
-		}
-	}
 
 	public void savePatient(Patient patient) {
 		Session session = sessionFactory.openSession();

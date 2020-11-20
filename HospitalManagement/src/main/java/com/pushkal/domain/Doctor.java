@@ -2,6 +2,7 @@ package com.pushkal.domain;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
@@ -24,11 +25,11 @@ public class Doctor {
 	private String gender;
 	private String specialization;
 	
-	@OneToMany(mappedBy = "doctor" ,fetch = FetchType.EAGER)   // no extra field created due to mapped by
+	@OneToMany(mappedBy = "doctor" ,fetch = FetchType.EAGER )   // no extra field created due to mapped by
 	private List<Patient>patients;
 	
 	
-	@OneToMany
+	@OneToMany(cascade = {CascadeType.ALL})
 	private List<AppointmentBooking> bookings;
 	
 	

@@ -2,8 +2,8 @@ package com.pushkal.domain;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -13,9 +13,7 @@ import org.hibernate.validator.constraints.Email;
 @Entity
 public class Patient {
 	@Id
-	@Email(message = "Invalid Email Address")
-	private String email;
-	private String password;
+	private String patient_id;
 	private String pName;
 	private String phone;
 	private int age;
@@ -30,10 +28,9 @@ public class Patient {
 	@ManyToOne
 	private Receptionist receptionist;
 
-	@OneToMany
+	@OneToMany(cascade = { CascadeType.ALL })
 	private List<AppointmentBooking> bookings;
-	
-	
+
 	public List<AppointmentBooking> getBookings() {
 		return bookings;
 	}
@@ -42,12 +39,11 @@ public class Patient {
 		this.bookings = bookings;
 	}
 
-	public Patient(String email, String password, String pName, String phone, int age, String gender, String blood,
+	public Patient(String patient_id, String pName, String phone, int age, String gender, String blood,
 			String address, String city, String state, Doctor doctor, Receptionist receptionist,
 			List<AppointmentBooking> bookings) {
 		super();
-		this.email = email;
-		this.password = password;
+		this.patient_id = patient_id;
 		this.pName = pName;
 		this.phone = phone;
 		this.age = age;
@@ -98,11 +94,10 @@ public class Patient {
 		this.city = city;
 	}
 
-	public Patient(String email, String password, String pName, String phone, int age, String gender, String blood,
+	public Patient(String patient_id,  String pName, String phone, int age, String gender, String blood,
 			String address, String city, String state) {
 		super();
-		this.email = email;
-		this.password = password;
+		this.patient_id = patient_id;
 		this.pName = pName;
 		this.phone = phone;
 		this.age = age;
@@ -114,11 +109,11 @@ public class Patient {
 
 	}
 
-	public Patient(String email, String password, String pName, String phone, int age, String gender, String blood,
+	public Patient(String patient_id, String pName, String phone, int age, String gender, String blood,
 			String address, String city, String state, Doctor doctor) {
 		super();
-		this.email = email;
-		this.password = password;
+		this.patient_id = patient_id;
+
 		this.pName = pName;
 		this.phone = phone;
 		this.age = age;
@@ -130,11 +125,10 @@ public class Patient {
 		this.doctor = doctor;
 	}
 
-	public Patient(String email, String password, String pName, String phone, int age, String gender, String blood,
+	public Patient(String patient_id, String pName, String phone, int age, String gender, String blood,
 			String address, String city, String state, Receptionist receptionist) {
 		super();
-		this.email = email;
-		this.password = password;
+		this.patient_id = patient_id;
 		this.pName = pName;
 		this.phone = phone;
 		this.age = age;
@@ -146,21 +140,15 @@ public class Patient {
 		this.receptionist = receptionist;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getPatient_id() {
+		return patient_id;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setPatient_id(String patient_id) {
+		this.patient_id = patient_id;
 	}
 
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
+	
 
 	public String getpName() {
 		return pName;
@@ -212,8 +200,8 @@ public class Patient {
 
 	@Override
 	public String toString() {
-		return "Patient [email=" + email + ", password=" + password + ", pName=" + pName + ", phone=" + phone + ", age="
-				+ age + ", gender=" + gender + ", blood=" + blood + ", address=" + address + ", city=" + city
+		return "Patient [patient_id=" + patient_id + ", pName=" + pName + ", phone=" + phone
+				+ ", age=" + age + ", gender=" + gender + ", blood=" + blood + ", address=" + address + ", city=" + city
 				+ ", state=" + state + ", doctor=" + doctor + ", receptionist=" + receptionist + ", bookings="
 				+ bookings + "]";
 	}

@@ -68,19 +68,17 @@
 
 
 							<div class="form-group col-sm-6">
-								<label>Patient Email :</label>
-								<%-- <form:select path="patient.email" items="${emails}" />
-								 --%>
-								<input type="text" name="email"
-									placeholder="Enter Patient Email" class="form-control">
+								<label>Patient Id :</label>
+								
+								<input type="text" name="patient_id"
+									placeholder="Enter Patient Id" class="form-control">
 							</div>
 
 
 							<div class="form-group col-sm-6">
 								<label>Patient Name :</label>
-								<%-- <form:select path="patient.name" items="${emails}" />
-								 --%>
-								<input type="text" name="email"
+								<
+								<input type="text" name="name"
 									placeholder="Enter Patient Name" class="form-control">
 							</div>
 
@@ -89,19 +87,19 @@
 								<label>Patient Phone :</label>
 								<%-- <form:select path="patient.name" items="${emails}" />
 								 --%>
-								<input type="text" name="email"
+								<input type="text" name="phone"
 									placeholder="Enter Patient Phone" class="form-control">
 							</div>
 
 
 							<div class="form-group col-sm-6">
 								<label for="exampleInputPassword1">Date :</label> <input
-									type="date" name="date" placeholder="Enter Appointment Date"
+									type="text" name="date" placeholder="Enter Appointment Date"
 									class="form-control">
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label>Time :</label> <input type="time" name="time"
+								<label>Time :</label> <input type="text" name="time"
 									placeholder="Enter Appointment Time" class="form-control">
 							</div>
 
@@ -111,20 +109,18 @@
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label>CNP :</label> <input type="text" name="cnp"
-									placeholder="Enter CNP" class="form-control">
+								<label>Diagnosis :</label> <input type="text" name="diagnosis"
+									placeholder="Enter Diagnosis" class="form-control">
 							</div>
 
 
 
 							<div class="form-group col-sm-6">
 
-								<label for="exampleFormControlTextarea1">Description</label>
+								<label for="exampleFormControlTextarea1">Treatment :</label>
 								<textarea class="form-control" id="exampleFormControlTextarea1"
-									name="description" placeholder="Enter Description" rows="3"></textarea>
+									name="treatment" placeholder="Enter Treatement" rows="3"></textarea>
 							</div>
-
-
 
 
 

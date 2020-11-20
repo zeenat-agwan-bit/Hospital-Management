@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import com.pushkal.domain.AppointmentBooking;
 import com.pushkal.domain.Patient;
 
+
 @Repository
 public class PatientDAOImpl implements PatientDAO {
 	@Autowired
@@ -39,6 +40,12 @@ public class PatientDAOImpl implements PatientDAO {
 		session.save(appointmentBooking);
 		tr.commit();
 		session.close();	
+	}
+
+	public Patient getPatientById(String patient_id) {
+		Session session = sessionFactory.openSession();
+	Patient	patient = session.get(Patient.class, patient_id);
+		return patient;
 	}
 
 	// for appointment

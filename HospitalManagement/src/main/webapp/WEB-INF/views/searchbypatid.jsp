@@ -1,7 +1,7 @@
 <%@page language="java" contentType="text/html; charset=ISO-8859-1"%>
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="sf"%>
-<%@page import="java.util.List , com.pushkal.domain.Receptionist"%>
+<%@page import="java.util.List , com.pushkal.domain.Patient"%>
 <%@page isELIgnored="false"%>
 <!doctype html>
 <html lang="en">
@@ -28,17 +28,17 @@
 	href="<jstl:url value="/resources/css/style.css"/>" />
 <style type="text/css">
 .table-container {
-	
 	margin-left: 20px;
 	margin-right: 20px;
 }
 </style>
 
 
-<title>Receptionist List</title>
+<title>Search Patient</title>
 </head>
 <body>
-<div class="container-fluid p-0 m-0">
+
+	<div class="container-fluid p-0 m-0">
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
 
 			<a class="navbar-brand" href="#">HealthCare</a>
@@ -56,50 +56,47 @@
 
 				</ul>
 
-				<form class="form-inline my-2 my-lg-0" action="searchbyrecid"
-					method="post">
-					<input class="form-control mr-sm-2" type="search" name="srchbox"
-						placeholder="Reception's Email Id" aria-label="Search">
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-				</form>
 
 			</div>
 		</nav>
-</div>
+	</div>
 
-	<h2
-		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">View
-		All Receptionists</h2>
-	
+
+<h2
+		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">Details Of Patient</h2>
+	</br>
+
 	<div class="table-responsive">
 		<table class="table">
 			<thead class="thead-dark">
 				<tr>
-					<th scope="col">Email</th>
-					<th scope="col">rname</th>
+					<th scope="col">Patient Id</th>
+					<th scope="col">Name</th>
 					<th scope="col">Phone</th>
 					<th scope="col">City</th>
 					<th scope="col">Address</th>
 					<th scope="col">State</th>
 					<th scope="col">Gender</th>
-					</tr>
+					<th scope="col">Age</th>
+					<th scope="col">Blood Group</th>
+				</tr>
 
 			</thead>
 			<tbody>
-				<jstl:forEach items="${rlist}" var="receptionists">
-
+				
 					<tr>
-						<td class="table-dark">${receptionists.email}</td>
-						<td class="table-dark">${receptionists.rname}</td>
-						<td class="table-dark">${receptionists.phone}</td>
-						<td class="table-dark">${receptionists.city}</td>
-						<td class="table-dark">${receptionists.address}</td>
-						<td class="table-dark">${receptionists.state}</td>
-						<td class="table-dark">${receptionists.gender}</td>
-					
-					</tr>
-				</jstl:forEach>
+						<td class="table-dark">${patient.patient_id}</td>
+						<td class="table-dark">${patient.pName}</td>
+						<td class="table-dark">${patient.phone}</td>
+						<td class="table-dark">${patient.city}</td>
+						<td class="table-dark">${patient.address}</td>
+						<td class="table-dark">${patient.state}</td>
+						<td class="table-dark">${patient.gender}</td>
+						<td class="table-dark">${patient.age}</td>
+						<td class="table-dark">${patient.blood}</td>
 
+					</tr>
+				
 			</tbody>
 		</table>
 
@@ -107,7 +104,7 @@
 
 	<div class="col-md-12 " style="text-align: center; margin-top: 40px;">
 
-		<a class="btn btn-primary" href="adminhomer" role="button"> Back </a>
+		<a class="btn btn-primary" href="adminhomep" role="button"> Back </a>
 
 	</div>
 
@@ -129,5 +126,4 @@
     -->
 </body>
 </html>
-
 

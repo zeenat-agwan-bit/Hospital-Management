@@ -48,4 +48,9 @@ public class DoctorServiceImpl implements DoctorService {
 		return dao.getAllAppointmentByDoctor(email);
 	}
 
+	public Doctor searchDoctorById(String email) {
+		
+		return dao.getDoctorById(email);
+	}
+
 }

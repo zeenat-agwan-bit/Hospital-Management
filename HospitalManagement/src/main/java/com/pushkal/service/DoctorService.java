@@ -16,6 +16,8 @@ public interface DoctorService {
 
 	public List<Doctor> showAllDoctors();
 
+	public Doctor searchDoctorById(String email);
+
 	// For Doctor Page(Patient)
 
 	public void addDocPatient(Patient patient);

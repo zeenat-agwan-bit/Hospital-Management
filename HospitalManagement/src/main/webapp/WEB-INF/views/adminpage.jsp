@@ -101,9 +101,9 @@ hello
 						aria-expanded="false">Patient</a>
 						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-							<a class="dropdown-item" href="doctorentry">Add Patient</a>
+							<a class="dropdown-item" href="">Add Patient</a>
 							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="doctorlist">Patient List</a>
+							<a class="dropdown-item" href="">Patient List</a>
 						</div></li>
 
 

@@ -12,28 +12,28 @@
 		modelAttribute="patient">
 
 
-		Name :
+		<%-- Name :
 		<spring:bind path="patient.pName">
 			<input type="text" name="pName">
 		</spring:bind>
 		
-		</br>
+		</br> --%>
 		 Patient Id :
 		<spring:bind path="patient.patient_id">
 			<input type="text" name="patient_id">
 		</spring:bind>
 
 
-		</br> Phone :
+	<%-- 	</br> Phone :
 		<spring:bind path="patient.phone">
 			<input type="text" name="phone">
-		</spring:bind>
+		</spring:bind> --%>
 	</form:form>
 
 	<form:form action="savedocappoint" method="post"
 		modelAttribute="appointbooking">
  
- 		 ID :
+ 		 Appointment ID :
 		<spring:bind path="appointbooking.ap_id">
 			<input type="text" name="ap_id">
 		</spring:bind>

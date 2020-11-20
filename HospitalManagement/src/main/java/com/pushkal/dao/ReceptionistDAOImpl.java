@@ -69,4 +69,10 @@ public class ReceptionistDAOImpl implements ReceptionistDAO {
 		return patients;
 	}
 
+	public Receptionist getReceptionistById(String email) {
+		Session session = sessionFactory.openSession();
+		Receptionist receptionist = session.get(Receptionist.class, email);
+		return receptionist;
+	}
+
 }

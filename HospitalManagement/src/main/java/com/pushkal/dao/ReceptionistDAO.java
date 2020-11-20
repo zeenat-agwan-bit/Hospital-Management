@@ -13,6 +13,8 @@ public interface ReceptionistDAO {
 	public List<Receptionist> showAllReceptionist();
 
 	public void saveRecPatient(Patient patient);
+	
+	public Receptionist getReceptionistById(String email);
 
 	public List<Patient> getAllPatientByReception(String email);
 

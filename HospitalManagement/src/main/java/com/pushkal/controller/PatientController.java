@@ -9,9 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.pushkal.domain.Doctor;
 import com.pushkal.domain.Patient;
 import com.pushkal.service.PatientService;
 
@@ -48,11 +48,19 @@ public class PatientController {
 
 	}
 
+	@RequestMapping("/searchbypatid")
+	public ModelAndView showSearchButtonPatient(@RequestParam("querybox") String query) {
+		ModelAndView mv = new ModelAndView("searchbypatid");
+		Patient patient = patientService.searchPatientById(query);
+		mv.addObject("patient", patient); // request-scope
+		return mv;
+	}
+
 	@RequestMapping("/adminhomep")
 	public String adminHomeP() {
 		return "adminpage";
 	}
 
-	//----------------------------------------------
-	
+	// ----------------------------------------------
+
 }

@@ -15,6 +15,8 @@ public interface ReceptionistService {
 	public List<Receptionist> FindAllReceptionist();
 
 	public void addRecPatient(Patient patient);
+	
+	public Receptionist searchReceptionById(String email);
 
 	public List<Patient> findAllPatientsByReception(String email);
 

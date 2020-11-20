@@ -30,4 +30,8 @@ public class PatientServiceImpl implements PatientService {
 
 	}
 
+	public Patient searchPatientById(String patient_id) {
+		return dao.getPatientById(patient_id);
+	}
+
 }

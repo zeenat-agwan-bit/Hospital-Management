@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -49,6 +50,14 @@ public class ReceptionistController {
 		receptionService.addReceptionist(receptionist);
 		return "receptionsave";
 
+	}
+
+	@RequestMapping("/searchbyrecid")
+	public ModelAndView showSearchButtonReception(@RequestParam("srchbox") String srch) {
+		ModelAndView mv = new ModelAndView("searchbyrecid");
+		Receptionist receptionist = receptionService.searchReceptionById(srch);
+		mv.addObject("receptionist", receptionist); // request-scope
+		return mv;
 	}
 
 	@RequestMapping("/adminhomer")

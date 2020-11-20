@@ -35,7 +35,7 @@
 </style>
 
 
-<title>Receptionist List</title>
+<title>Search Receptionist</title>
 </head>
 <body>
 <div class="container-fluid p-0 m-0">
@@ -56,20 +56,13 @@
 
 				</ul>
 
-				<form class="form-inline my-2 my-lg-0" action="searchbyrecid"
-					method="post">
-					<input class="form-control mr-sm-2" type="search" name="srchbox"
-						placeholder="Reception's Email Id" aria-label="Search">
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-				</form>
-
+				
 			</div>
 		</nav>
 </div>
 
 	<h2
-		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">View
-		All Receptionists</h2>
+		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">Details Of Receptionist</h2>
 	
 	<div class="table-responsive">
 		<table class="table">
@@ -86,20 +79,17 @@
 
 			</thead>
 			<tbody>
-				<jstl:forEach items="${rlist}" var="receptionists">
-
 					<tr>
-						<td class="table-dark">${receptionists.email}</td>
-						<td class="table-dark">${receptionists.rname}</td>
-						<td class="table-dark">${receptionists.phone}</td>
-						<td class="table-dark">${receptionists.city}</td>
-						<td class="table-dark">${receptionists.address}</td>
-						<td class="table-dark">${receptionists.state}</td>
-						<td class="table-dark">${receptionists.gender}</td>
+						<td class="table-dark">${receptionist.email}</td>
+						<td class="table-dark">${receptionist.rname}</td>
+						<td class="table-dark">${receptionist.phone}</td>
+						<td class="table-dark">${receptionist.city}</td>
+						<td class="table-dark">${receptionist.address}</td>
+						<td class="table-dark">${receptionist.state}</td>
+						<td class="table-dark">${receptionist.gender}</td>
 					
 					</tr>
-				</jstl:forEach>
-
+				
 			</tbody>
 		</table>
 

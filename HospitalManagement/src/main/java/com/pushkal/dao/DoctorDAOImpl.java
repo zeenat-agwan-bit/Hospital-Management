@@ -98,4 +98,10 @@ public class DoctorDAOImpl implements DoctorDAO {
 		return bookings;
 	}
 
+	public Doctor getDoctorById(String email) {
+		Session session = sessionFactory.openSession();
+		Doctor doctor=session.get(Doctor.class, email);
+		return doctor;
+	}
+
 }

@@ -1,7 +1,7 @@
 <%@page language="java" contentType="text/html; charset=ISO-8859-1"%>
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="sf"%>
-<%@page import="java.util.List , com.pushkal.domain.Receptionist"%>
+<%@page import="java.util.List , com.pushkal.domain.Doctor"%>
 <%@page isELIgnored="false"%>
 <!doctype html>
 <html lang="en">
@@ -35,7 +35,7 @@
 </style>
 
 
-<title>Receptionist List</title>
+<title>Search Doctor </title>
 </head>
 <body>
 <div class="container-fluid p-0 m-0">
@@ -56,50 +56,46 @@
 
 				</ul>
 
-				<form class="form-inline my-2 my-lg-0" action="searchbyrecid"
-					method="post">
-					<input class="form-control mr-sm-2" type="search" name="srchbox"
-						placeholder="Reception's Email Id" aria-label="Search">
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-				</form>
-
+				
 			</div>
 		</nav>
 </div>
 
+
 	<h2
-		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">View
-		All Receptionists</h2>
+		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">Details Of Doctor</h2>
 	
 	<div class="table-responsive">
 		<table class="table">
 			<thead class="thead-dark">
 				<tr>
 					<th scope="col">Email</th>
-					<th scope="col">rname</th>
+					<th scope="col">Name</th>
 					<th scope="col">Phone</th>
 					<th scope="col">City</th>
 					<th scope="col">Address</th>
 					<th scope="col">State</th>
 					<th scope="col">Gender</th>
-					</tr>
+					<th scope="col">Qualification</th>
+					<th scope="col">Specialization</th>
+				</tr>
 
 			</thead>
 			<tbody>
-				<jstl:forEach items="${rlist}" var="receptionists">
-
+				
 					<tr>
-						<td class="table-dark">${receptionists.email}</td>
-						<td class="table-dark">${receptionists.rname}</td>
-						<td class="table-dark">${receptionists.phone}</td>
-						<td class="table-dark">${receptionists.city}</td>
-						<td class="table-dark">${receptionists.address}</td>
-						<td class="table-dark">${receptionists.state}</td>
-						<td class="table-dark">${receptionists.gender}</td>
-					
-					</tr>
-				</jstl:forEach>
+						<td class="table-dark">${doctor.email}</td>
+						<td class="table-dark">${doctor.dname}</td>
+						<td class="table-dark">${doctor.phone}</td>
+						<td class="table-dark">${doctor.city}</td>
+						<td class="table-dark">${doctor.address}</td>
+						<td class="table-dark">${doctor.state}</td>
+						<td class="table-dark">${doctor.gender}</td>
+						<td class="table-dark">${doctor.qualification}</td>
+						<td class="table-dark">${doctor.specialization}</td>
 
+					</tr>
+			
 			</tbody>
 		</table>
 
@@ -107,7 +103,7 @@
 
 	<div class="col-md-12 " style="text-align: center; margin-top: 40px;">
 
-		<a class="btn btn-primary" href="adminhomer" role="button"> Back </a>
+		<a class="btn btn-primary" href="adminhomed" role="button"> Back </a>
 
 	</div>
 
@@ -129,5 +125,3 @@
     -->
 </body>
 </html>
-
-

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -54,6 +55,15 @@ public class DoctorsController {
 		doctorService.addDoctor(doctor);
 		return "doctorsave";
 
+	}
+	
+	
+	@RequestMapping("/searchbydocid")
+	public ModelAndView showSearchButtonDoctor(@RequestParam("findbox") String find) {
+		ModelAndView mv = new ModelAndView("searchbydocid");
+		Doctor doctor = doctorService.searchDoctorById(find);
+		mv.addObject("doctor", doctor); // request-scope
+		return mv;
 	}
 
 	@RequestMapping("/adminhomed")

@@ -40,4 +40,8 @@ public class ReceptionServiceImpl implements ReceptionistService {
 		return dao.getAllPatientByReception(email);
 	}
 
+	public Receptionist searchReceptionById(String email) {
+		return dao.getReceptionistById(email);
+	}
+
 }

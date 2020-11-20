@@ -2,7 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="sf"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@page import="java.util.List , com.pushkal.domain.Patient"%>
+<%@page import="java.util.List , com.pushkal.domain.*"%>
 
 <%@page isELIgnored="false"%>
 <!doctype html>
@@ -68,28 +68,17 @@
 
 
 							<div class="form-group col-sm-6">
-								<label>Patient Id :</label>
-								
-								<input type="text" name="patient_id"
+								<label>Patient Id :</label> <input type="text" name="patient_id"
 									placeholder="Enter Patient Id" class="form-control">
 							</div>
 
 
 							<div class="form-group col-sm-6">
-								<label>Patient Name :</label>
-								<
-								<input type="text" name="name"
+								<label>Doctor Email :</label> <input type="text" name="email"
 									placeholder="Enter Patient Name" class="form-control">
 							</div>
 
 
-							<div class="form-group col-sm-6">
-								<label>Patient Phone :</label>
-								<%-- <form:select path="patient.name" items="${emails}" />
-								 --%>
-								<input type="text" name="phone"
-									placeholder="Enter Patient Phone" class="form-control">
-							</div>
 
 
 							<div class="form-group col-sm-6">
@@ -108,18 +97,19 @@
 									placeholder="Enter Fees." class="form-control">
 							</div>
 
+
+
 							<div class="form-group col-sm-6">
-								<label>Diagnosis :</label> <input type="text" name="diagnosis"
-									placeholder="Enter Diagnosis" class="form-control">
+								<label for="exampleFormControlTextarea1">Diagnosis :</label>
+								<textarea class="form-control" id="exampleFormControlTextarea1"
+									rows="3" name="diagnosis" placeholder="Enter Diagnosis"></textarea>
 							</div>
-
-
 
 							<div class="form-group col-sm-6">
 
 								<label for="exampleFormControlTextarea1">Treatment :</label>
 								<textarea class="form-control" id="exampleFormControlTextarea1"
-									name="treatment" placeholder="Enter Treatement" rows="3"></textarea>
+									name="treatment" placeholder="Treatement" rows="3"></textarea>
 							</div>
 
 

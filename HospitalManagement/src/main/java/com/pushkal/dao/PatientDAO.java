@@ -12,6 +12,8 @@ public interface PatientDAO {
 
 	public List<Patient> showAllPatients();
 	
+	public Patient getPatientById(String patient_id);
+	
 	
 //---------------------------------------------------
 

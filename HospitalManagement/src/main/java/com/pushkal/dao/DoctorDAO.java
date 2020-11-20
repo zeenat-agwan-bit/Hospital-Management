@@ -13,6 +13,8 @@ public interface DoctorDAO {
 	public void saveDoctor(Doctor doctor);
 
 	public List<Doctor> findAllDoctor();
+	
+	public Doctor getDoctorById(String email);
 
 	// for doctor's (Patient)
 	public void saveDocPatient(Patient patient);

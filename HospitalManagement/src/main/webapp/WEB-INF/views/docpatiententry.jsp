@@ -51,14 +51,14 @@
 				<form:form action="savedocpatient" modelAttribute="patient"
 					method="post">
 
-					<form class="form-container">
+					<form class="form-container shadow-lg text-white">
 						<h2
 							style="text-align: center; font-weight: bold; font-size: 30px; color: white;">Patient's
 							Registration Form :</h2>
 
 						<div class="row">
 							<div class="form-group col-sm-6">
-								<label>Patient Id :</label> <input type="text"
+								<label class="font-weight-bold">Patient Id :</label> <input type="text"
 									placeholder="Enter Patient Id" name="patient_id"
 									class="form-control">
 							</div>
@@ -66,40 +66,40 @@
 
 
 							<div class="form-group col-sm-6">
-								<label>Name :</label> <input type="text" name="pName"
+								<label class="font-weight-bold">Name :</label> <input type="text" name="pName"
 									placeholder="Enter Name" class="form-control">
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label>Phone :</label> <input type="text" name="phone"
+								<label class="font-weight-bold">Phone :</label> <input type="text" name="phone"
 									placeholder="Enter Mobile No." class="form-control">
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label>City :</label> <input type="text" name="city"
+								<label class="font-weight-bold">City :</label> <input type="text" name="city"
 									placeholder="Enter City" class="form-control">
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label>Address :</label> <input type="text" name="address"
+								<label class="font-weight-bold">Address :</label> <input type="text" name="address"
 									placeholder="Enter Address" class="form-control">
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label>State :</label> <input type="text" name="state"
+								<label class="font-weight-bold">State :</label> <input type="text" name="state"
 									placeholder="Enter State" class="form-control">
 							</div>
 
 
 
 							<div class="form-group col-sm-6">
-								<label>Age :</label> <input type="text" name="age"
+								<label class="font-weight-bold">Age :</label> <input type="text" name="age"
 									placeholder="Enter Age" class="form-control">
 							</div>
 
 							<div class="form-group col-sm-6">
 
-								<label for="exampleFormControlSelect1">Blood Group :</label> <select
+								<label for="exampleFormControlSelect1" class="font-weight-bold">Blood Group :</label> <select
 									name="blood" class="form-control"
 									id="exampleFormControlSelect1">
 									<option>A+</option>
@@ -134,7 +134,7 @@
 
 							<div class="form-group col-md-12 "
 								style="text-align: center; margin-top: 20px;">
-								<button type="submit" class="btn btn-primary">Register</button>
+								<button type="submit" class="btn btn-primary shadow-sm">Register</button>
 
 								<a class="btn btn-primary" href="doctorhomep" role="button">
 									Back </a>

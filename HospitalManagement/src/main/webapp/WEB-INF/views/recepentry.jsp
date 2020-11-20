@@ -51,14 +51,14 @@
 				<form:form action="savereception" modelAttribute="receptionist"
 					method="post">
 
-					<form class="form-container">
+					<form class="form-container shadow-lg text-white">
 						<h2
 							style="text-align: center; font-weight: bold; font-size: 30px; color: white;">Receptionist's
 							Registration Form :</h2>
 
 						<div class="row">
 							<div class="form-group col-sm-6">
-								<label for="exampleInputEmail1">Email :</label> <input
+								<label for="exampleInputEmail1" class="font-weight-bold">Email :</label> <input
 									type="email" placeholder="Enter Email" name="email"
 									class="form-control" id="exampleInputEmail1"
 									aria-describedby="emailHelp"> <small id="emailHelp"
@@ -68,38 +68,38 @@
 
 
 							<div class="form-group col-sm-6">
-								<label for="exampleInputPassword1">Password :</label> <input
+								<label for="exampleInputPassword1" class="font-weight-bold">Password :</label> <input
 									type="password" name="password" placeholder="Enter Password"
 									class="form-control" id="exampleInputPassword1">
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label>Name :</label> <input type="text" name="rname"
+								<label class="font-weight-bold">Name :</label> <input type="text" name="rname"
 									placeholder="Enter Your Name" class="form-control">
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label>Phone :</label> <input type="text" name="phone"
+								<label class="font-weight-bold">Phone :</label> <input type="text" name="phone"
 									placeholder="Enter Mobile No." class="form-control">
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label>City :</label> <input type="text" name="city"
+								<label class="font-weight-bold">City :</label> <input type="text" name="city"
 									placeholder="Enter City" class="form-control">
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label>Address :</label> <input type="text" name="address"
+								<label class="font-weight-bold">Address :</label> <input type="text" name="address"
 									placeholder="Enter Address" class="form-control">
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label>State :</label> <input type="text" name="state"
+								<label class="font-weight-bold">State :</label> <input type="text" name="state"
 									placeholder="Enter State" class="form-control">
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label>Gender :</label>
+								<label class="font-weight-bold">Gender :</label>
 								<div class="custom-control custom-radio custom-control-inline">
 									<input type="radio" id="customRadioInline1" name="gender"
 										value="male" name="customRadioInline1"
@@ -119,7 +119,7 @@
 
 							<div class="form-group col-md-12 "
 								style="text-align: center; margin-top: 20px;">
-								<button type="submit" class="btn btn-primary">Register</button>
+								<button type="submit" class="btn btn-primary shadow-sm">Register</button>
 
 								<a class="btn btn-primary" href="adminhomer" role="button">
 									Back </a>

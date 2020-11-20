@@ -26,39 +26,29 @@
 <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>" />
 
 <style type="text/css">
-.form-container {
-	position: absolute;
-	top: 2vh;
-	background: #fff;
-	padding: 10px;
-	border-radius: 10px;
-	box-shadow: 0px 0px 10px 0px #000;
-	background: #fff;
-}
-
-.margin-right {
-	margin-right: 80px !important;
+.custom-margin {
+	margin-top: 5vh;
 }
 </style>
 
 <title>Patient Registration</title>
 </head>
 <body>
-	<div class="col-md-6 text right">
-		<br />
-		<section class="container-fluid">
-			<section class="row-justify-content-center">
+	<h2
+		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 4vh;">Patient's
+		Registration Form :</h2>
+
+	<div class="container-fluid">
+		<div class="row justify-content-center custom-margin">
+			<div class="col-md-4 col-sm-6">
 				<form:form action="savepatient" modelAttribute="patient"
 					method="post">
 
-					<form class="form-container">
-						<h2
-							style="text-align: center; font-weight: bold; font-size: 30px; color: white;">Patient's
-							Registration Form :</h2>
+					<form class="shadow-lg p-4">
 
 						<div class="row">
 							<div class="form-group col-sm-6">
-								<label>Patient Id :</label> <input
+								<label class="font-weight-bold">Patient Id :</label> <input
 									placeholder="Enter Patient Id" name="patient_id"
 									class="form-control">
 							</div>
@@ -66,39 +56,44 @@
 
 
 							<div class="form-group col-sm-6">
-								<label>Name :</label> <input type="text" name="pName"
-									placeholder="Enter Name" class="form-control">
+								<label class="font-weight-bold">Name :</label> <input
+									type="text" name="pName" placeholder="Enter Name"
+									class="form-control">
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label>Phone :</label> <input type="text" name="phone"
-									placeholder="Enter Mobile No." class="form-control">
+								<label class="font-weight-bold">Phone :</label> <input
+									type="text" name="phone" placeholder="Enter Mobile No."
+									class="form-control">
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label>City :</label> <input type="text" name="city"
-									placeholder="Enter City" class="form-control">
+								<label class="font-weight-bold">City :</label> <input
+									type="text" name="city" placeholder="Enter City"
+									class="form-control">
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label>Address :</label> <input type="text" name="address"
-									placeholder="Enter Address" class="form-control">
+								<label class="font-weight-bold">Address :</label> <input
+									type="text" name="address" placeholder="Enter Address"
+									class="form-control">
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label>State :</label> <input type="text" name="state"
-									placeholder="Enter State" class="form-control">
+								<label class="font-weight-bold">State :</label> <input
+									type="text" name="state" placeholder="Enter State"
+									class="form-control">
 							</div>
 
 
 							<div class="form-group col-sm-6">
-								<label>Age :</label> <input type="text" name="age"
-									placeholder="Enter Age" class="form-control">
+								<label class="font-weight-bold">Age :</label> <input type="text"
+									name="age" placeholder="Enter Age" class="form-control">
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label for="exampleFormControlSelect1">Blood Group :</label> <select
-									name="blood" class="form-control"
+								<label for="exampleFormControlSelect1" class="font-weight-bold">Blood
+									Group :</label> <select name="blood" class="form-control"
 									id="exampleFormControlSelect1">
 									<option>A+</option>
 									<option>A-</option>
@@ -113,7 +108,7 @@
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label>Gender :</label>
+								<label class="font-weight-bold">Gender :</label>
 								<div class="custom-control custom-radio custom-control-inline">
 									<input type="radio" id="customRadioInline1" name="gender"
 										value="male" name="customRadioInline1"
@@ -133,7 +128,7 @@
 
 							<div class="form-group col-md-12 "
 								style="text-align: center; margin-top: 20px;">
-								<button type="submit" class="btn btn-primary">Register</button>
+								<button type="submit" class="btn btn-primary shadow-sm">Register</button>
 
 								<a class="btn btn-primary" href="adminhomep" role="button">
 									Back </a>
@@ -141,8 +136,8 @@
 						</div>
 					</form>
 				</form:form>
-			</section>
-		</section>
+			</div>
+		</div>
 	</div>
 
 

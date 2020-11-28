@@ -1,7 +1,7 @@
 <%@page language="java" contentType="text/html; charset=ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="sf"%>
-<!doctype html>
+<!Doctype html>
 <html lang="en">
 <head>
 <!-- Required meta tags -->
@@ -15,8 +15,6 @@
 	integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
 	crossorigin="anonymous">
 
-<link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>" />
-
 
 
 <link rel="stylesheet"
@@ -24,39 +22,24 @@
 	integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
 	crossorigin="anonymous">
 
+<link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>" />
 
-<title>Welcome!</title>
 
-<style type="text/css">
-.jumbotron {
-	background: rgba(0, 0, 0, 0.0001);
-}
-</style>
+
+<title>Patient Add</title>
 </head>
 <body>
 
-	<div class="container-fluid p-0 m-0">
+	<h2
+		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 40px;">Patient
+		Updated Successfully.</h2>
 
-		<%@include file="header.jsp"%>
+	<div class="col-md-12 " style="text-align: center; margin-top: 40px;">
 
+		<a class="btn btn-primary" href="plisthome" role="button"> Back </a>
+		
 	</div>
-
-	<div class="jumbotron">
-		<h1 class="display-4 text-white font-italic ">Talk to a Doctor Within
-			Minutes!</h1>
-			</br>
-		<p class="lead text-white font-weight-normal">This App Service let you do most of the
-			tasks from<br>fixing an appointment,through consultation and diagnosis,
-			to treatment, post-care, and<br> rescheduling everything from a remote
-			location .</p>
-		<hr class="my-4">
-		<p class="text-white font-italic">Access Top Doctors for Online Consultations<br>
-			from Anywhere, Anytime.Save your traveling time and cost.</p>
-		<a class="btn btn-warning btn-lg" href="newpatient" role="button">Book
-			Appointment</a>
-	</div>
-
-
+	
 
 
 	<!-- Optional JavaScript; choose one of the two! -->

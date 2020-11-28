@@ -48,6 +48,9 @@
 				<form class="shadow-lg p-4 text-white" action="verifyuser"
 					method="post">
 					<div class="form-group">
+					
+				
+					
 						<label for="exampleInputEmail1" class="font-weight-bold">Email
 							Address :</label> <input type="email" placeholder="Enter Email"
 							name="email" class="form-control" id="exampleInputEmail1"
@@ -77,7 +80,7 @@
 					</div>
 					<div>
 						<button type="submit"
-							class="btn btn-outline-success btn-block shadow-lg">SignIn</button>
+							class="btn btn-success btn-block shadow-lg">SignIn</button>
 					</div>
 
 				</form>

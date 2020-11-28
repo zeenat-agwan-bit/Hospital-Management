@@ -42,22 +42,30 @@
 		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">View
 		All Patients Added By Receptionist.</h2>
 
-	<div class="table-responsive">
-		<table class="table">
-			<thead class="thead-dark">
-				<tr>
-					<th scope="col">Patient Id</th>
-					<th scope="col">Name</th>
-					<th scope="col">Phone</th>
-					<th scope="col">City</th>
-					<th scope="col">Address</th>
-					<th scope="col">State</th>
-					<th scope="col">Gender</th>
-					<th scope="col">Age</th>
-					<th scope="col">Blood Group</th>
-				</tr>
+	<div style="text-align: center; margin-bottom: 2vh;">
 
-			</thead>
+		<a class="btn btn-primary btn-sm" href="rechomep" role="button">
+			Back </a>
+
+	</div>
+
+	<div class="table-responsive text-center">
+		<table class="table table-bordered  table-sm table-striped ">
+			<tr class="bg-dark text-white">
+
+				<th scope="col">Patient Id</th>
+				<th scope="col">Name</th>
+				<th scope="col">Phone</th>
+				<th scope="col">City</th>
+				<th scope="col">Address</th>
+				<th scope="col">State</th>
+				<th scope="col">Gender</th>
+				<th scope="col">Age</th>
+				<th scope="col">Blood Group</th>
+				<th scope="col">Actions</th>
+
+			</tr>
+
 			<tbody>
 				<jstl:forEach items="${plist}" var="patients">
 
@@ -71,7 +79,13 @@
 						<td class="table-dark">${patients.gender}</td>
 						<td class="table-dark">${patients.age}</td>
 						<td class="table-dark">${patients.blood}</td>
-
+						<td class="table-dark"><a
+							href="updaterecpatient?patient_id=${patient.patient_id}"
+							class="btn badge-primary badge btn-sm active" role="button"
+							aria-pressed="true">UPDATE</a> <a
+							href="deleterecpatient?patient_id=${patient.patient_id}"
+							class="btn badge-secondary badge btn-sm active" role="button"
+							aria-pressed="true">DELETE</a></td>
 					</tr>
 				</jstl:forEach>
 

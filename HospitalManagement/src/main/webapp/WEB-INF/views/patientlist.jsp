@@ -55,17 +55,37 @@
 						href="index.jsp">Home <span class="sr-only">(current)</span></a></li>
 
 				</ul>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-				<form class="form-inline my-2 my-lg-0" action="searchbypatid"
+					<form class="form-inline my-2 my-lg-0" action="searchbypatid"
+						method="post">
+						<input class="form-control mr-sm-2" type="search" name="querybox"
+							placeholder="Search By Id" aria-label="Search">
+						<button class="btn btn-success btn-sm my-2 my-sm-0" type="submit">Search</button>
+					</form>
+				</div>
+
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+
+					<form class="form-inline my-2 my-lg-0" action="searchbypatname"
+						method="post">
+						<input class="form-control mr-sm-2" type="search" name="queryname"
+							placeholder="Search By Name" aria-label="Search">
+						<button class="btn btn-success btn-sm  my-2 my-sm-0" type="submit">Search</button>
+					</form>
+				</div>
+				<form class="form-inline my-2 my-lg-0" action="searchbypatcity"
 					method="post">
-					<input class="form-control mr-sm-2" type="search" name="querybox"
-						placeholder="Patient Id" aria-label="Search">
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+					<input class="form-control mr-sm-2" type="search" name="querycity"
+						placeholder="Search By City" aria-label="Search">
+					<button class="btn btn-success btn-sm my-2 my-sm-0" type="submit">Search</button>
 				</form>
+
 
 			</div>
 		</nav>
-</div>
+	</div>
 
 
 
@@ -73,22 +93,37 @@
 		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">View
 		All Patients</h2>
 
-	<div class="table-responsive">
-		<table class="table">
-			<thead class="thead-dark">
-				<tr>
-					<th scope="col">Patient Id</th>
-					<th scope="col">Name</th>
-					<th scope="col">Phone</th>
-					<th scope="col">City</th>
-					<th scope="col">Address</th>
-					<th scope="col">State</th>
-					<th scope="col">Gender</th>
-					<th scope="col">Age</th>
-					<th scope="col">Blood Group</th>
-				</tr>
+	<!-- <div>
+		<input class="form-control  mr-sm-2" type="text" placeholder="Search By Name" aria-label="Search">
+		
+		</div>
+		 -->
 
-			</thead>
+
+
+
+	<div style="text-align: center; margin-bottom: 2vh;">
+
+		<a class="btn btn-primary btn-sm" href="adminhomep" role="button">
+			Back </a>
+
+	</div>
+	<div class="table-responsive text-center">
+		<table class="table table-bordered  table-sm table-striped ">
+			<tr class="bg-dark text-white">
+				<th scope="col">Patient Id</th>
+				<th scope="col">Name</th>
+				<th scope="col">Phone</th>
+				<th scope="col">City</th>
+				<th scope="col">Address</th>
+				<th scope="col">State</th>
+				<th scope="col">Gender</th>
+				<th scope="col">Age</th>
+				<th scope="col">Blood Group</th>
+				<th scope="col">Actions</th>
+
+			</tr>
+
 			<tbody>
 				<jstl:forEach items="${plist}" var="patients">
 
@@ -102,7 +137,13 @@
 						<td class="table-dark">${patients.gender}</td>
 						<td class="table-dark">${patients.age}</td>
 						<td class="table-dark">${patients.blood}</td>
-
+						<td class="table-dark"><a
+							href="updatepatientform?id=${patients.patient_id}"
+							class="btn badge-primary badge btn-sm active" role="button"
+							aria-pressed="true">UPDATE</a> <a
+							href="deletepatient?id=${patients.patient_id}"
+							class="btn badge-secondary badge btn-sm active" role="button"
+							aria-pressed="true">DELETE</a></td>
 					</tr>
 				</jstl:forEach>
 
@@ -111,9 +152,10 @@
 
 	</div>
 
-	<div class="col-md-12 " style="text-align: center; margin-top: 40px;">
+	<div style="text-align: center; margin-top: 2vh;">
 
-		<a class="btn btn-primary" href="adminhomep" role="button"> Back </a>
+		<a class="btn btn-primary btn-sm" href="adminhomep" role="button">
+			Back </a>
 
 	</div>
 

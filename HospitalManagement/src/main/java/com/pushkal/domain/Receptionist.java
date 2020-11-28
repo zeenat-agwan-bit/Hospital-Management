@@ -22,7 +22,7 @@ public class Receptionist {
 	private String state;
 	private String gender;
 
-	@OneToMany(mappedBy = "receptionist", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "receptionist")
 	private List<Patient> patient;
 
 	

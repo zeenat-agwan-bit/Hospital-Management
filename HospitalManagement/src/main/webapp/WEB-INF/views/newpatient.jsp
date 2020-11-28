@@ -2,10 +2,11 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="sf"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@page import="java.util.List , com.pushkal.domain.*"%>
 
+<%@page import="java.util.List , com.pushkal.domain.*"%>
 <%@page isELIgnored="false"%>
-<!doctype html>
+
+<!Doctype html>
 <html lang="en">
 <head>
 <!-- Required meta tags -->
@@ -29,70 +30,130 @@
 <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>" />
 
 <style type="text/css">
-.form-container {
-	position: absolute;
-	top: 2vh;
-	background: #fff;
-	padding: 10px;
-	border-radius: 10px;
-	box-shadow: 0px 0px 10px 0px #000;
-	background: #fff;
-}
-
-.margin-right {
-	margin-right: 80px !important;
+.custom-margin {
+	margin-top: 5vh;
 }
 </style>
 
-<title>Appointment Form</title>
+<title>Patient Registration</title>
 </head>
 <body>
-	<div class="col-md-6 text right">
-		<br />
-		<section class="container-fluid">
-			<section class="row-justify-content-center">
-				<form:form action="saveappointment" modelAttribute="appointment"
+	<h2
+		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 4vh;">
+		Registration Form :</h2>
+
+	<div class="container-fluid">
+		<div class="row justify-content-center custom-margin">
+			<div class="col-md-4 col-sm-6">
+				<form:form action="savenewpatient" modelAttribute="patient"
 					method="post">
 
-					<form class="form-container">
-						<h2
-							style="text-align: center; font-weight: bold; font-size: 30px; color: white;">Admin's
-							Appointment Form :</h2>
+					<form class="shadow-lg p-6 text-white">
 
 						<div class="row">
-							<!-- <div class="form-group col-sm-6">
-								<label for="exampleInputEmail1" class="font-weight-bold text-white">Appointment Id :</label> <input
-									type="hidden" placeholder="Enter Appointment Id" name="ap_id"
+
+							<div class="form-group col-sm-6">
+								<label class="font-weight-bold font-white">Name :</label> <input
+									type="text" name="pName" placeholder="Enter Name"
 									class="form-control">
 							</div>
- -->
+							
+				
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold text-white">Patient Id :</label>
-								<input type="text" name="patient.patient_id"
-									placeholder="Enter Patient Id" class="form-control">
-							</div>
-
-
-							<div class="form-group col-sm-6">
-								<label class="font-weight-bold text-white">Doctor ID :</label> <input
-									type="text" name="doctor.doc_id" placeholder="Enter Doctor Id"
-									class="form-control">
-							</div>
-
-
-
-
-							<div class="form-group col-sm-6">
-								<label for="exampleInputPassword1"
-									class="font-weight-bold text-white">Date :</label> <input
-									type="text" name="date" placeholder="dd/MM/yyyy"
+								<label class="font-weight-bold font-white">Phone :</label> <input
+									type="text" name="phone" placeholder="Enter Mobile No."
 									class="form-control">
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label for="inputState" class="font-weight-bold text-white">Time
-									Slot</label> <select id="inputState" class="form-control" name="time">
+								<label class="font-weight-bold font-white">City :</label> <input
+									type="text" name="city" placeholder="Enter City"
+									class="form-control">
+							</div>
+
+							<div class="form-group col-sm-6">
+								<label class="font-weight-bold font-white">Address :</label> <input
+									type="text" name="address" placeholder="Enter Address"
+									class="form-control">
+							</div>
+
+							<div class="form-group col-sm-6">
+								<label class="font-weight-bold font-white">State :</label> <input
+									type="text" name="state" placeholder="Enter State"
+									class="form-control">
+							</div>
+
+
+							<div class="form-group col-sm-6">
+								<label class="font-weight-bold font-white">Age :</label> <input type="text"
+									name="age" placeholder="Enter Age" class="form-control">
+							</div>
+
+							<div class="form-group col-sm-6">
+								<label for="exampleFormControlSelect1" class="font-weight-bold font-white">Blood
+									Group :</label> <select name="blood" class="form-control"
+									id="exampleFormControlSelect1">
+									<option>A+</option>
+									<option>A-</option>
+									<option>B+</option>
+									<option>B-</option>
+									<option>O+</option>
+									<option>O-</option>
+									<option>AB+</option>
+									<option>AB-</option>
+
+								</select>
+							</div>
+
+	<div class="form-group col-sm-6">
+								<label class="font-weight-bold font-white" >Doctor :</label> <input type="text" name="doctor.dname"
+									placeholder="select doctor" class="form-control">
+							</div>
+
+
+
+
+
+							<div class="form-group col-sm-6">
+								<label for="exampleFormControlSelect1" class="font-weight-bold font-white">Specialization : 
+									</label> <select name="doctor.specialization"
+									placeholder="Select Specialization" class="form-control"
+									id="exampleFormControlSelect1">
+									<option>Allergy</option>
+									<option>Anesthesiology</option>
+									<option>Dermatology</option>
+									<option>Emergency Medicine</option>
+									<option>Family Medicine</option>
+									<option>Gynecology</option>
+									<option>Immunology</option>
+									<option>Internal Medicine</option>
+									<option>Medical Genetics</option>
+									<option>Neurology</option>
+									<option>Ophthalmology</option>
+									<option>Pathology</option>
+									<option>Pediatrics</option>
+									<option>Psychiatry</option>
+									<option>Surgery</option>
+									<option>Urology</option>
+
+								</select>
+							</div>
+
+
+							<div class="form-group col-sm-6">
+								<label for="exampleInputPassword1" class="font-weight-bold font-white">Date
+									:</label> <input type="text" name="appointmentbooking.date"
+									placeholder="dd/mm/yyyy" class="form-control"
+									id="exampleInputPassword1">
+							</div>
+
+
+
+							<div class="form-group col-sm-6">
+								<label for="inputState" class="font-weight-bold font-white">Time
+									Slot :</label> <select id="inputState" class="form-control"
+									name="appointmentbooking.time">
 									<option selected>Choose...</option>
 
 									<option>10:00-10:15 AM</option>
@@ -168,41 +229,50 @@
 
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold text-white">Fees :</label> <input
-									type="text" name="fees" placeholder="Enter Fees."
-									class="form-control">
+								<label for="exampleFormControlTextarea1"
+									class="font-weight-bold font-white">Diagnosis :</label>
+								<textarea class="form-control" id="exampleFormControlTextarea1"
+									rows="3" name="appointmentbooking.diagnosis"
+									placeholder="Enter Diagnosis"></textarea>
 							</div>
+
 
 
 
 							<div class="form-group col-sm-6">
-								<label for="exampleFormControlTextarea1"
-									class="font-weight-bold text-white">Diagnosis :</label>
-								<textarea class="form-control" id="exampleFormControlTextarea1"
-									rows="3" name="diagnosis" placeholder="Enter Diagnosis"></textarea>
+								<label class="font-weight-bold font-white">Gender :</label>
+								<div class="custom-control custom-radio custom-control-inline">
+									<input type="radio" id="customRadioInline1" name="gender"
+										value="male" name="customRadioInline1"
+										class="custom-control-input"> <label
+										class="custom-control-label" for="customRadioInline1">Male
+									</label>
+								</div>
+								<div class="custom-control custom-radio custom-control-inline">
+									<input type="radio" id="customRadioInline2" name="gender"
+										value="female" name="customRadioInline1"
+										class="custom-control-input"> <label
+										class="custom-control-label" for="customRadioInline2">Female
+									</label>
+								</div>
 							</div>
 
-							<!-- <div class="form-group col-sm-6">
 
-								<label for="exampleFormControlTextarea1" class="font-weight-bold text-white">Treatment :</label>
-								<textarea class="form-control" id="exampleFormControlTextarea1"
-									name="treatment" placeholder="Treatement" rows="3"></textarea>
-							</div>
- -->
 
 
 							<div class="form-group col-md-12 "
 								style="text-align: center; margin-top: 20px;">
-								<button type="submit" class="btn btn-primary">Register</button>
+								<button type="submit"
+									class="btn btn-warning shadow-sm text-italic">BOOK NOW</button>
 
-								<a class="btn btn-primary" href="adminhomeb" role="button">
+								<a class="btn btn-warning" href="index.jsp" role="button">
 									Back </a>
 							</div>
 						</div>
 					</form>
 				</form:form>
-			</section>
-		</section>
+			</div>
+		</div>
 	</div>
 
 
@@ -227,5 +297,3 @@
     -->
 </body>
 </html>
-
-

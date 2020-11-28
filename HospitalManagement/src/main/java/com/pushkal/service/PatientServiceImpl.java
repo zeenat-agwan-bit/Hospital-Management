@@ -1,6 +1,7 @@
 
 package com.pushkal.service;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,8 +31,26 @@ public class PatientServiceImpl implements PatientService {
 
 	}
 
-	public Patient searchPatientById(String patient_id) {
+	public Patient searchPatientById(BigInteger patient_id) {
 		return dao.getPatientById(patient_id);
 	}
 
+	public void changePatient(Patient patient) {
+		dao.updatePatient(patient);
+
+	}
+
+	public void removePatient(BigInteger patient_id) {
+		dao.deletePatient(patient_id);
+	}
+
+	public List<Patient> findPatientByName(String pName) {
+		return dao.getPatientByName(pName);
+	}
+
+	public List<Patient> findPatientByCity(String city) {
+		return dao.getPatientByCity(city);
+	}
+
+	
 }

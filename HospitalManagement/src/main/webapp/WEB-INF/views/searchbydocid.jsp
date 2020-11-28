@@ -63,7 +63,7 @@
 
 
 	<h2
-		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">Details Of Doctor</h2>
+		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">Details Of Doctor ${doctor.dname}</h2>
 	
 	<div class="table-responsive">
 		<table class="table">
@@ -103,7 +103,7 @@
 
 	<div class="col-md-12 " style="text-align: center; margin-top: 40px;">
 
-		<a class="btn btn-primary" href="adminhomed" role="button"> Back </a>
+		<a class="btn btn-primary" href="dlisthome" role="button"> Back </a>
 
 	</div>
 

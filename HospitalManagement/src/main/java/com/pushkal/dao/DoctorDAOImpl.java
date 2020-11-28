@@ -1,4 +1,6 @@
 package com.pushkal.dao;
+
+import java.math.BigInteger;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -20,31 +22,42 @@ public class DoctorDAOImpl implements DoctorDAO {
 	@Autowired
 	private SessionFactory sessionFactory;
 
-	//--------------------------------MAPPING FOR ADMIN PAGE :
-	
-	
-	
+	// --------------------------------MAPPING FOR ADMIN PAGE :
+
 	public Doctor verifyDoctor(Doctor doctor) {
 		Session session = sessionFactory.openSession();
-
-		Doctor doc = session.get(Doctor.class, doctor.getEmail());
-		if (doc == null) {
-			return null;
-		} else {
-			if (doctor.getPassword().equals(doc.getPassword())) {
-				return doc;
-			} else {
-				return null;
-			}
+		Transaction tr = session.beginTransaction();
+		String hql = "from Doctor as d where d.email=? and d.password=?";
+		try {
+			Query query = session.createQuery(hql);
+			query.setParameter(0, doctor.getEmail());
+			query.setParameter(1, doctor.getPassword());
+			doctor = (Doctor) query.uniqueResult();
+			tr.commit();
+			session.close();
+		} catch (Exception e) {
+			tr.rollback();
+			session.close();
+			e.printStackTrace();
 		}
+		return doctor;
+
 	}
 
 	public void saveDoctor(Doctor doctor) {
 		Session session = sessionFactory.openSession();
 		Transaction tr = session.beginTransaction();
-		session.save(doctor);
-		tr.commit();
-		session.close();
+		if (doctor != null) {
+			try {
+				session.save(doctor);
+				tr.commit();
+				session.close();
+			} catch (Exception e) {
+				tr.rollback();
+				session.close();
+				e.printStackTrace();
+			}
+		}
 	}
 
 	public List<Doctor> findAllDoctor() {
@@ -55,12 +68,8 @@ public class DoctorDAOImpl implements DoctorDAO {
 		return doctors;
 
 	}
-	
-	
-	//--------------------------------MAPPING FOR DOCTOR PAGE :
-	
-	
-	
+
+	// --------------------------------MAPPING FOR DOCTOR PAGE :
 
 	public void saveDocPatient(Patient patient) {
 		Session session = sessionFactory.openSession();
@@ -71,11 +80,11 @@ public class DoctorDAOImpl implements DoctorDAO {
 	}
 
 	public List<Patient> getAllPatientByDoctor(String email) {
-		Session session=sessionFactory.openSession();
-		Criteria cr=session.createCriteria(Patient.class);
-		Criterion crt=Restrictions.eq("doctor.email", email);
+		Session session = sessionFactory.openSession();
+		Criteria cr = session.createCriteria(Patient.class);
+		Criterion crt = Restrictions.eq("doctor.email", email);
 		cr.add(crt);
-		List<Patient> patients=cr.list();
+		List<Patient> patients = cr.list();
 		session.close();
 		return patients;
 	}
@@ -89,18 +98,18 @@ public class DoctorDAOImpl implements DoctorDAO {
 	}
 
 	public List<AppointmentBooking> getAllAppointmentByDoctor(String email) {
-		Session session=sessionFactory.openSession();
-		Criteria cr=session.createCriteria(AppointmentBooking.class);
-		Criterion crt=Restrictions.eq("doctor.email", email);
+		Session session = sessionFactory.openSession();
+		Criteria cr = session.createCriteria(AppointmentBooking.class);
+		Criterion crt = Restrictions.eq("doctor.email", email);
 		cr.add(crt);
-		List<AppointmentBooking> bookings=cr.list();
+		List<AppointmentBooking> bookings = cr.list();
 		session.close();
 		return bookings;
 	}
 
-	public Doctor getDoctorById(String email) {
+	public Doctor getDoctorById(BigInteger doc_id) {
 		Session session = sessionFactory.openSession();
-		Doctor doctor=session.get(Doctor.class, email);
+		Doctor doctor = session.get(Doctor.class, doc_id);
 		return doctor;
 	}
 

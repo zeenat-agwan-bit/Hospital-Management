@@ -1,5 +1,6 @@
 package com.pushkal.dao;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import com.pushkal.domain.AppointmentBooking;
@@ -14,7 +15,7 @@ public interface DoctorDAO {
 
 	public List<Doctor> findAllDoctor();
 	
-	public Doctor getDoctorById(String email);
+	public Doctor getDoctorById(BigInteger doc_id);
 
 	// for doctor's (Patient)
 	public void saveDocPatient(Patient patient);

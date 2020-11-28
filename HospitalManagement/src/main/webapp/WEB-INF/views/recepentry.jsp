@@ -58,60 +58,60 @@
 
 						<div class="row">
 							<div class="form-group col-sm-6">
-								<label for="exampleInputEmail1" class="font-weight-bold">Email :</label> <input
+								<label for="exampleInputEmail1" class="font-weight-bold text-white">Email :</label> <input
 									type="email" placeholder="Enter Email" name="email"
 									class="form-control" id="exampleInputEmail1"
 									aria-describedby="emailHelp"> <small id="emailHelp"
-									class="form-text text-muted">We'll never share your
+									class="form-text text-white">We'll never share your
 									email with anyone else.</small>
 							</div>
 
 
 							<div class="form-group col-sm-6">
-								<label for="exampleInputPassword1" class="font-weight-bold">Password :</label> <input
+								<label for="exampleInputPassword1" class="font-weight-bold text-white">Password :</label> <input
 									type="password" name="password" placeholder="Enter Password"
 									class="form-control" id="exampleInputPassword1">
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold">Name :</label> <input type="text" name="rname"
+								<label class="font-weight-bold text-white">Name :</label> <input type="text" name="rname"
 									placeholder="Enter Your Name" class="form-control">
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold">Phone :</label> <input type="text" name="phone"
+								<label class="font-weight-bold text-white">Phone :</label> <input type="text" name="phone"
 									placeholder="Enter Mobile No." class="form-control">
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold">City :</label> <input type="text" name="city"
+								<label class="font-weight-bold text-white">City :</label> <input type="text" name="city"
 									placeholder="Enter City" class="form-control">
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold">Address :</label> <input type="text" name="address"
+								<label class="font-weight-bold text-white">Address :</label> <input type="text" name="address"
 									placeholder="Enter Address" class="form-control">
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold">State :</label> <input type="text" name="state"
+								<label class="font-weight-bold text-white">State :</label> <input type="text" name="state"
 									placeholder="Enter State" class="form-control">
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold">Gender :</label>
+								<label class="font-weight-bold text-white">Gender :</label>
 								<div class="custom-control custom-radio custom-control-inline">
 									<input type="radio" id="customRadioInline1" name="gender"
 										value="male" name="customRadioInline1"
 										class="custom-control-input"> <label
-										class="custom-control-label" for="customRadioInline1">Male
+										class="custom-control-label text-white" for="customRadioInline1">Male
 									</label>
 								</div>
 								<div class="custom-control custom-radio custom-control-inline">
 									<input type="radio" id="customRadioInline2" name="gender"
 										value="female" name="customRadioInline1"
 										class="custom-control-input"> <label
-										class="custom-control-label" for="customRadioInline2">Female
+										class="custom-control-label text-white" for="customRadioInline2">Female
 									</label>
 								</div>
 							</div>

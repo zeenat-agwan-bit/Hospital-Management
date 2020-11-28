@@ -47,13 +47,6 @@
 					<form class="shadow-lg p-4">
 
 						<div class="row">
-							<div class="form-group col-sm-6">
-								<label class="font-weight-bold">Patient Id :</label> <input
-									placeholder="Enter Patient Id" name="patient_id"
-									class="form-control">
-							</div>
-
-
 
 							<div class="form-group col-sm-6">
 								<label class="font-weight-bold">Name :</label> <input

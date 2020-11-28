@@ -34,7 +34,7 @@
 </style>
 
 
-<title>Search Patient</title>
+<title>Search Patient By Id</title>
 </head>
 <body>
 
@@ -63,7 +63,7 @@
 
 
 <h2
-		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">Details Of Patient</h2>
+		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">Details Of Patient ${patient.pName}</h2>
 	</br>
 
 	<div class="table-responsive">
@@ -104,7 +104,7 @@
 
 	<div class="col-md-12 " style="text-align: center; margin-top: 40px;">
 
-		<a class="btn btn-primary" href="adminhomep" role="button"> Back </a>
+		<a class="btn btn-primary" href="plisthome" role="button"> Back </a>
 
 	</div>
 

@@ -57,11 +57,11 @@
 							Registration Form :</h2>
 
 						<div class="row">
-							<div class="form-group col-sm-6">
+							<!-- <div class="form-group col-sm-6">
 								<label class="font-weight-bold">Patient Id :</label> <input type="text"
 									placeholder="Enter Patient Id" name="patient_id"
 									class="form-control">
-							</div>
+							</div> -->
 
 
 

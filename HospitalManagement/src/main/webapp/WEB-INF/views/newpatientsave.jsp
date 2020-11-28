@@ -1,8 +1,9 @@
 <%@page language="java" contentType="text/html; charset=ISO-8859-1"%>
-<%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="sf"%>
 <%@page import="java.util.List , com.pushkal.domain.Patient"%>
 <%@page isELIgnored="false"%>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -24,83 +25,27 @@
 	integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
 	crossorigin="anonymous">
 
-<link rel="stylesheet"
-	href="<jstl:url value="/resources/css/style.css"/>" />
-<style type="text/css">
-.table-container {
-	margin-left: 20px;
-	margin-right: 20px;
-}
-</style>
+<link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>" />
 
 
-<title>Patients List</title>
+
+<title>Patient Add</title>
 </head>
 <body>
 
-	<h2
-		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">View
-		All Patients Added By Doctor</h2>
-
-	<div style="text-align: center; margin-bottom: 2vh;">
-
-		<a class="btn btn-primary btn-sm" href="doctorhomep" role="button">
-			Back </a>
-
-	</div>
-
-	<div class="table-responsive text-center">
-		<table class="table table-bordered  table-sm table-striped ">
-			<tr class="bg-dark text-white">
-
-				<th scope="col">Patient Id</th>
-				<th scope="col">Name</th>
-				<th scope="col">Phone</th>
-				<th scope="col">City</th>
-				<th scope="col">Address</th>
-				<th scope="col">State</th>
-				<th scope="col">Gender</th>
-				<th scope="col">Age</th>
-				<th scope="col">Blood Group</th>
-				<th scope="col">Actions</th>
-
-			</tr>
+	<h1 class="display-4 text-white font-weight-bold "
+		style="text-align: center; margin-top: 40px;">Thank You
+		${patient.pName} for visiting us.</h1>
 
 
-			<tbody>
-				<jstl:forEach items="${plist}" var="patients">
-
-					<tr>
-						<td class="table-active">${patients.patient_id}</td>
-						<td class="table-danger">${patients.pName}</td>
-						<td class="table-active">${patients.phone}</td>
-						<td class="table-danger">${patients.city}</td>
-						<td class="table-active">${patients.address}</td>
-						<td class="table-danger">${patients.state}</td>
-						<td class="table-active">${patients.gender}</td>
-						<td class="table-danger">${patients.age}</td>
-						<td class="table-active">${patients.blood}</td>
-						<td class="table-dark"><a
-							href="updatedocpatient?patient_id=${patient.patient_id}"
-							class="btn badge-primary badge btn-sm active" role="button"
-							aria-pressed="true">UPDATE</a> <a
-							href="deletedocpatient?patient_id=${patient.patient_id}"
-							class="btn badge-secondary badge btn-sm active" role="button"
-							aria-pressed="true">DELETE</a></td>
-					</tr>
-				</jstl:forEach>
-
-			</tbody>
-		</table>
-
-	</div>
 
 	<div class="col-md-12 " style="text-align: center; margin-top: 40px;">
 
-		<a class="btn btn-primary" href="doctorhomep" role="button"> Back
-		</a>
+		<a class="btn btn-success" href="index.jsp" role="button"> Back </a>
 
 	</div>
+
+
 
 	<!-- Optional JavaScript; choose one of the two! -->
 

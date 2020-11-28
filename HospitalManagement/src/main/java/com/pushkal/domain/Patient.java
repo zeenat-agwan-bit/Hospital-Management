@@ -1,19 +1,26 @@
 package com.pushkal.domain;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-
-import org.hibernate.validator.constraints.Email;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 public class Patient {
 	@Id
-	private String patient_id;
+	@SequenceGenerator(name = "pid_generator", sequenceName = "pid_gen", allocationSize = 1, initialValue = 1)
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "pid_generator")
+	@Column(name="patient_id")
+	private BigInteger patient_id;
 	private String pName;
 	private String phone;
 	private int age;
@@ -22,13 +29,13 @@ public class Patient {
 	private String address;
 	private String city;
 	private String state;
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Doctor doctor;
 
 	@ManyToOne
 	private Receptionist receptionist;
 
-	@OneToMany(cascade = { CascadeType.ALL })
+	@OneToMany(mappedBy = "patient", cascade = { CascadeType.ALL }) //for all operations
 	private List<AppointmentBooking> bookings;
 
 	public List<AppointmentBooking> getBookings() {
@@ -39,7 +46,7 @@ public class Patient {
 		this.bookings = bookings;
 	}
 
-	public Patient(String patient_id, String pName, String phone, int age, String gender, String blood,
+	public Patient(BigInteger patient_id, String pName, String phone, int age, String gender, String blood,
 			String address, String city, String state, Doctor doctor, Receptionist receptionist,
 			List<AppointmentBooking> bookings) {
 		super();
@@ -94,7 +101,7 @@ public class Patient {
 		this.city = city;
 	}
 
-	public Patient(String patient_id,  String pName, String phone, int age, String gender, String blood,
+	public Patient(BigInteger patient_id,  String pName, String phone, int age, String gender, String blood,
 			String address, String city, String state) {
 		super();
 		this.patient_id = patient_id;
@@ -109,7 +116,7 @@ public class Patient {
 
 	}
 
-	public Patient(String patient_id, String pName, String phone, int age, String gender, String blood,
+	public Patient(BigInteger patient_id, String pName, String phone, int age, String gender, String blood,
 			String address, String city, String state, Doctor doctor) {
 		super();
 		this.patient_id = patient_id;
@@ -125,7 +132,7 @@ public class Patient {
 		this.doctor = doctor;
 	}
 
-	public Patient(String patient_id, String pName, String phone, int age, String gender, String blood,
+	public Patient(BigInteger patient_id, String pName, String phone, int age, String gender, String blood,
 			String address, String city, String state, Receptionist receptionist) {
 		super();
 		this.patient_id = patient_id;
@@ -140,11 +147,11 @@ public class Patient {
 		this.receptionist = receptionist;
 	}
 
-	public String getPatient_id() {
+	public BigInteger getPatient_id() {
 		return patient_id;
 	}
 
-	public void setPatient_id(String patient_id) {
+	public void setPatient_id(BigInteger patient_id) {
 		this.patient_id = patient_id;
 	}
 

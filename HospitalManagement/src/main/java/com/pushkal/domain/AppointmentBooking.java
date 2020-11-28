@@ -1,30 +1,40 @@
 package com.pushkal.domain;
 
+import java.math.BigInteger;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 
 @Entity
 public class AppointmentBooking {
 	@Id
-
-	private String ap_id;
+	@SequenceGenerator(name = "aid_generator", sequenceName = "aid_gen", allocationSize = 1, initialValue = 1)
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "aid_generator")
+	
+	private BigInteger ap_id;
 	private Date date;
 	private String time;
 	private String fees;
 	private String diagnosis;
 	private String treatment;
-
-	@ManyToOne
+	
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Patient patient;
-	@ManyToOne
-	private Doctor doctor;
+	
+	
+	@ManyToOne(cascade = {CascadeType.ALL})
+	private Doctor leadDoctor;
 
-	public AppointmentBooking(String ap_id, Date date, String time, String fees, String diagnosis, String treatment,
-			Patient patient, Doctor doctor) {
+	public AppointmentBooking(BigInteger ap_id, Date date, String time, String fees, String diagnosis, String treatment,
+			Patient patient, Doctor leadDoctor) {
 		super();
 		this.ap_id = ap_id;
 		this.date = date;
@@ -33,7 +43,7 @@ public class AppointmentBooking {
 		this.diagnosis = diagnosis;
 		this.treatment = treatment;
 		this.patient = patient;
-		this.doctor = doctor;
+		this.leadDoctor = leadDoctor;
 	}
 
 	public AppointmentBooking() {
@@ -41,11 +51,11 @@ public class AppointmentBooking {
 		// TODO Auto-generated constructor stub
 	}
 
-	public String getAp_id() {
+	public BigInteger getAp_id() {
 		return ap_id;
 	}
 
-	public void setAp_id(String ap_id) {
+	public void setAp_id(BigInteger ap_id) {
 		this.ap_id = ap_id;
 	}
 
@@ -97,19 +107,22 @@ public class AppointmentBooking {
 		this.patient = patient;
 	}
 
-	public Doctor getDoctor() {
-		return doctor;
+	public Doctor getLeadDoctor() {
+		return leadDoctor;
 	}
 
-	public void setDoctor(Doctor doctor) {
-		this.doctor = doctor;
+	public void setLeadDoctor(Doctor leadDoctor) {
+		this.leadDoctor = leadDoctor;
 	}
 
 	@Override
 	public String toString() {
 		return "AppointmentBooking [ap_id=" + ap_id + ", date=" + date + ", time=" + time + ", fees=" + fees
-				+ ", diagnosis=" + diagnosis + ", treatment=" + treatment + ", patient=" + patient + ", doctor="
-				+ doctor + "]";
+				+ ", diagnosis=" + diagnosis + ", treatment=" + treatment + ", patient=" + patient + ", leadDoctor="
+				+ leadDoctor + "]";
 	}
+
+	
+	
 
 }

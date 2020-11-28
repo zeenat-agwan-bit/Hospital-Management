@@ -34,62 +34,68 @@
 </style>
 
 
-<title>Patients List</title>
+<title>Search Patient By Name</title>
 </head>
 <body>
 
-	<h2
-		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">View
-		All Patients Added By Doctor</h2>
+	<div class="container-fluid p-0 m-0">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
 
-	<div style="text-align: center; margin-bottom: 2vh;">
+			<a class="navbar-brand" href="#">HealthCare</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-		<a class="btn btn-primary btn-sm" href="doctorhomep" role="button">
-			Back </a>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active"><a class="nav-link"
+						href="index.jsp">Home <span class="sr-only">(current)</span></a></li>
 
+				</ul>
+
+
+			</div>
+		</nav>
 	</div>
 
-	<div class="table-responsive text-center">
-		<table class="table table-bordered  table-sm table-striped ">
-			<tr class="bg-dark text-white">
 
-				<th scope="col">Patient Id</th>
-				<th scope="col">Name</th>
-				<th scope="col">Phone</th>
-				<th scope="col">City</th>
-				<th scope="col">Address</th>
-				<th scope="col">State</th>
-				<th scope="col">Gender</th>
-				<th scope="col">Age</th>
-				<th scope="col">Blood Group</th>
-				<th scope="col">Actions</th>
+<h2
+		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">Details Of Patient ${patients.pName}</h2>
+	</br>
 
-			</tr>
+	<div class="table-responsive">
+		<table class="table">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">Patient Id</th>
+					<th scope="col">Name</th>
+					<th scope="col">Phone</th>
+					<th scope="col">City</th>
+					<th scope="col">Address</th>
+					<th scope="col">State</th>
+					<th scope="col">Gender</th>
+					<th scope="col">Age</th>
+					<th scope="col">Blood Group</th>
+				</tr>
 
-
+			</thead>
 			<tbody>
-				<jstl:forEach items="${plist}" var="patients">
-
+				
 					<tr>
-						<td class="table-active">${patients.patient_id}</td>
-						<td class="table-danger">${patients.pName}</td>
-						<td class="table-active">${patients.phone}</td>
-						<td class="table-danger">${patients.city}</td>
-						<td class="table-active">${patients.address}</td>
-						<td class="table-danger">${patients.state}</td>
-						<td class="table-active">${patients.gender}</td>
-						<td class="table-danger">${patients.age}</td>
-						<td class="table-active">${patients.blood}</td>
-						<td class="table-dark"><a
-							href="updatedocpatient?patient_id=${patient.patient_id}"
-							class="btn badge-primary badge btn-sm active" role="button"
-							aria-pressed="true">UPDATE</a> <a
-							href="deletedocpatient?patient_id=${patient.patient_id}"
-							class="btn badge-secondary badge btn-sm active" role="button"
-							aria-pressed="true">DELETE</a></td>
-					</tr>
-				</jstl:forEach>
+						<td class="table-dark">${patients.patient_id}</td>
+						<td class="table-dark">${patients.pName}</td>
+						<td class="table-dark">${patients.phone}</td>
+						<td class="table-dark">${patients.city}</td>
+						<td class="table-dark">${patients.address}</td>
+						<td class="table-dark">${patients.state}</td>
+						<td class="table-dark">${patients.gender}</td>
+						<td class="table-dark">${patients.age}</td>
+						<td class="table-dark">${patients.blood}</td>
 
+					</tr>
 			</tbody>
 		</table>
 
@@ -97,8 +103,7 @@
 
 	<div class="col-md-12 " style="text-align: center; margin-top: 40px;">
 
-		<a class="btn btn-primary" href="doctorhomep" role="button"> Back
-		</a>
+		<a class="btn btn-primary" href="plisthome" role="button"> Back </a>
 
 	</div>
 

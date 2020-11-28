@@ -1,5 +1,6 @@
 package com.pushkal.service;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import com.pushkal.domain.AppointmentBooking;
@@ -16,7 +17,7 @@ public interface DoctorService {
 
 	public List<Doctor> showAllDoctors();
 
-	public Doctor searchDoctorById(String email);
+	public Doctor searchDoctorById(BigInteger doc_id);
 
 	// For Doctor Page(Patient)
 

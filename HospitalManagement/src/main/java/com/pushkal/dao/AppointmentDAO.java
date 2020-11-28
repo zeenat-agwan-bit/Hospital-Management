@@ -9,7 +9,7 @@ public interface AppointmentDAO {
 
 	// public void updateBooking(AppointmentBooking booking);
 
-	// public List<AppointmentBooking> getAllBookings(Time time);
+	// public List<AppointmentBooking> getAllBookings(String time);
 
 	public List<AppointmentBooking> getAllBookings();
 

@@ -28,7 +28,6 @@
 	href="<jstl:url value="/resources/css/style.css"/>" />
 <style type="text/css">
 .table-container {
-	
 	margin-left: 20px;
 	margin-right: 20px;
 }
@@ -38,7 +37,7 @@
 <title>Receptionist List</title>
 </head>
 <body>
-<div class="container-fluid p-0 m-0">
+	<div class="container-fluid p-0 m-0">
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
 
 			<a class="navbar-brand" href="#">HealthCare</a>
@@ -65,26 +64,36 @@
 
 			</div>
 		</nav>
-</div>
+	</div>
 
 	<h2
 		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">View
 		All Receptionists</h2>
-	
-	<div class="table-responsive">
-		<table class="table">
-			<thead class="thead-dark">
-				<tr>
-					<th scope="col">Email</th>
-					<th scope="col">rname</th>
-					<th scope="col">Phone</th>
-					<th scope="col">City</th>
-					<th scope="col">Address</th>
-					<th scope="col">State</th>
-					<th scope="col">Gender</th>
-					</tr>
 
-			</thead>
+
+	<div style="text-align: center; margin-bottom: 2vh;">
+
+		<a class="btn btn-primary btn-sm" href="adminhomer" role="button">
+			Back </a>
+
+	</div>
+
+	<div class="table-responsive text-center">
+		<table class="table table-bordered  table-sm table-striped ">
+			<tr class="bg-dark text-white">
+
+				<th scope="col">Email</th>
+				<th scope="col">rname</th>
+				<th scope="col">Phone</th>
+				<th scope="col">City</th>
+				<th scope="col">Address</th>
+				<th scope="col">State</th>
+				<th scope="col">Gender</th>
+				<th scope="col">Actions</th>
+
+			</tr>
+
+
 			<tbody>
 				<jstl:forEach items="${rlist}" var="receptionists">
 
@@ -96,7 +105,13 @@
 						<td class="table-dark">${receptionists.address}</td>
 						<td class="table-dark">${receptionists.state}</td>
 						<td class="table-dark">${receptionists.gender}</td>
-					
+						<td class="table-dark"><a
+							href="updatereception?email=${receptionist.email}"
+							class="btn badge-primary badge btn-sm active" role="button"
+							aria-pressed="true">UPDATE</a> <a
+							href="deletepatient?patient_id=${receptionist.email}"
+							class="btn badge-secondary badge btn-sm active" role="button"
+							aria-pressed="true">DELETE</a></td>
 					</tr>
 				</jstl:forEach>
 

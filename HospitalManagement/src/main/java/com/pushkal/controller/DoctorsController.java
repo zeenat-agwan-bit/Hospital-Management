@@ -1,7 +1,9 @@
 package com.pushkal.controller;
 
+import java.math.BigInteger;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,15 +20,16 @@ import com.pushkal.domain.Doctor;
 import com.pushkal.domain.Patient;
 import com.pushkal.service.DoctorService;
 import com.pushkal.service.PatientService;
+import com.pushkal.validation.DoctorValidation;
 
 @Controller
 public class DoctorsController {
 	@Autowired
 	private DoctorService doctorService;
 
-	
-	  @Autowired private PatientService patientService;
-	 
+	@Autowired
+	private PatientService patientService;
+
 	// ----------------------------------------------------MAPPING FOR
 	// ADMINISTRATION PAGE
 
@@ -39,6 +42,7 @@ public class DoctorsController {
 		return mv;
 	}
 
+	//this method return only login page when request comes to /doctor/
 	@RequestMapping("/doctorentry")
 	public ModelAndView showDoctorForm() {
 		ModelAndView mv = new ModelAndView("doctorentry");
@@ -49,17 +53,18 @@ public class DoctorsController {
 
 	@RequestMapping("/savedoctor")
 	public String saveDoctor(@Valid @ModelAttribute("doctor") Doctor doctor, BindingResult result) {
+		DoctorValidation doctorValidation = new DoctorValidation();
+		doctorValidation.validate(doctor, result);
 		if (result.hasErrors()) {
 			return "doctorentry";
+		} else {
+			doctorService.addDoctor(doctor);
+			return "doctorsave";
 		}
-		doctorService.addDoctor(doctor);
-		return "doctorsave";
-
 	}
-	
-	
+
 	@RequestMapping("/searchbydocid")
-	public ModelAndView showSearchButtonDoctor(@RequestParam("findbox") String find) {
+	public ModelAndView showSearchButtonDoctor(@RequestParam("findbox") BigInteger find) {
 		ModelAndView mv = new ModelAndView("searchbydocid");
 		Doctor doctor = doctorService.searchDoctorById(find);
 		mv.addObject("doctor", doctor); // request-scope
@@ -69,6 +74,11 @@ public class DoctorsController {
 	@RequestMapping("/adminhomed")
 	public String adminHomeD() {
 		return "adminpage";
+	}
+
+	@RequestMapping("/dlisthome")
+	public String plistHomeP() {
+		return "redirect:doctorlist";
 	}
 
 	// -----------------------------------------MAPPING FOR DOCTOR PAGE (Patient)
@@ -92,9 +102,8 @@ public class DoctorsController {
 
 	@RequestMapping("/savedocpatient")
 	public ModelAndView saveDoctorP(@Valid @ModelAttribute("patient") Patient patient,
-			@Valid @ModelAttribute("appointbooking") AppointmentBooking appointmentBooking,
-
-			@SessionAttribute("email") String email) {
+			
+		@SessionAttribute("email") String email) {
 		Doctor doctor = new Doctor();
 		doctor.setEmail(email);
 		patient.setDoctor(doctor);
@@ -129,8 +138,6 @@ public class DoctorsController {
 		return mv;
 	}
 
-	
-
 	@RequestMapping("/savedocappoint")
 	public ModelAndView saveDoctorAPP(@Valid @ModelAttribute("patient") Patient patient,
 			@Valid @ModelAttribute("appointbooking") AppointmentBooking appointmentBooking,
@@ -138,7 +145,7 @@ public class DoctorsController {
 		Doctor doctor = new Doctor();
 		doctor.setEmail(email);
 		patient.setDoctor(doctor);
-		appointmentBooking.setDoctor(doctor);
+		appointmentBooking.getLeadDoctor();
 		appointmentBooking.setPatient(patient);
 		patientService.addPatAppointment(appointmentBooking);
 		doctorService.addDocPatient(patient);
@@ -152,6 +159,7 @@ public class DoctorsController {
 	public ModelAndView showDocAppointList(@SessionAttribute("email") String email) {
 		// System.out.println("EMAIL : "+email);
 		List<Patient> patients = doctorService.findAllPatientsByDoctor(email);
+		;
 		List<AppointmentBooking> bookings = doctorService.findAllAppointmentsByDoctor(email);
 		ModelAndView mv = new ModelAndView("docappointlist");
 		mv.addObject("alist", bookings);
@@ -162,6 +170,5 @@ public class DoctorsController {
 	public String doctorHomea() {
 		return "doctorpage";
 	}
-	
-	
+
 }

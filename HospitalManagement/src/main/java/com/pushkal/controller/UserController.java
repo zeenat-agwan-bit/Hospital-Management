@@ -1,11 +1,12 @@
 package com.pushkal.controller;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.pushkal.domain.Doctor;
 import com.pushkal.domain.Receptionist;
 import com.pushkal.service.DoctorService;
@@ -13,7 +14,7 @@ import com.pushkal.service.DoctorService;
 import com.pushkal.service.ReceptionistService;
 
 @Controller
-@SessionAttributes(names = { "username", "email" }) // shared
+@SessionAttributes(names = { "username", "email" ,"doc_id" }) // shared
 public class UserController {
 	@Autowired
 	private ReceptionistService receptionService;
@@ -59,6 +60,8 @@ public class UserController {
 				ModelAndView mv = new ModelAndView("doctorpage");
 				mv.addObject("email", email);
 				mv.addObject("username", d.getDname());
+				mv.addObject("doc_id", d.getDoc_id());
+				
 				return mv;
 			} else {
 				ModelAndView mv = new ModelAndView("invaliduser");

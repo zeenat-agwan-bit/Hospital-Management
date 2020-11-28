@@ -18,8 +18,6 @@
 
 <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>" />
 
-
-
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
 	integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
@@ -71,54 +69,8 @@ hello
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active"><a class="nav-link"
 						href="index.jsp">Home <span class="sr-only">(current)</span></a></li>
-
-					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
-						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Doctor </a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-							<a class="dropdown-item" href="doctorentry">Add Doctor</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="doctorlist">Doctor List</a>
-						</div></li>
-
-
-					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-						role="button" data-toggle="dropdown" aria-haspopup="true"
-						aria-expanded="false"> Receptionist </a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-							<a class="dropdown-item" href="recepentry">Add Receptionist</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="receplist">Receptionist List</a>
-						</div></li>
-
-					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-						role="button" data-toggle="dropdown" aria-haspopup="true"
-						aria-expanded="false">Patient</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-							<a class="dropdown-item" href="">Add Patient</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="">Patient List</a>
-						</div></li>
-
-
-					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-						role="button" data-toggle="dropdown" aria-haspopup="true"
-						aria-expanded="false">Appointment</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-							<a class="dropdown-item" href="appointentry">Add Appointment</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="appointlist">Appointment List</a>
-						</div></li>
-
-
+						
+						
 					<li class="nav-item active"><a class="nav-link"
 						href="login.jsp">Sign Out <span class="sr-only">(current)</span></a>
 					</li>

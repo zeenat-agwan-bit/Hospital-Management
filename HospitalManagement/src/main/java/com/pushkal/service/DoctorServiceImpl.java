@@ -1,5 +1,6 @@
 package com.pushkal.service;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,9 +49,9 @@ public class DoctorServiceImpl implements DoctorService {
 		return dao.getAllAppointmentByDoctor(email);
 	}
 
-	public Doctor searchDoctorById(String email) {
+	public Doctor searchDoctorById(BigInteger doc_id) {
 		
-		return dao.getDoctorById(email);
+		return dao.getDoctorById(doc_id);
 	}
 
 }

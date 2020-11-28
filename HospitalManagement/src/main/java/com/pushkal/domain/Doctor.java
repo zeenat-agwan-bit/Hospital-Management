@@ -1,19 +1,26 @@
 package com.pushkal.domain;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 
 import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 public class Doctor {
 	@Id
-	@Email(message = "Invalid Email Address")
+	@SequenceGenerator(name = "did_generator", sequenceName = "did_gen", allocationSize = 1, initialValue = 1)
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "did_generator")
+	private BigInteger doc_id;
 	private String email;
 	private String password;
 	private String dname;
@@ -25,33 +32,15 @@ public class Doctor {
 	private String gender;
 	private String specialization;
 	
-	@OneToMany(mappedBy = "doctor" ,fetch = FetchType.EAGER )   // no extra field created due to mapped by
+	@OneToMany(mappedBy = "doctor" )   // no extra field created due to mapped by
 	private List<Patient>patients;
 	
 	
-	@OneToMany(cascade = {CascadeType.ALL})
+	@OneToMany(mappedBy="leadDoctor" )
 	private List<AppointmentBooking> bookings;
 	
 	
 	
-	public Doctor(String email, String password, String dname, String phone, String city, String address, String state,
-			String qualification, String gender, String specialization, List<Patient> patients,
-			List<AppointmentBooking> bookings) {
-		super();
-		this.email = email;
-		this.password = password;
-		this.dname = dname;
-		this.phone = phone;
-		this.city = city;
-		this.address = address;
-		this.state = state;
-		this.qualification = qualification;
-		this.gender = gender;
-		this.specialization = specialization;
-		this.patients = patients;
-		this.bookings = bookings;
-	}
-
 	public List<AppointmentBooking> getBookings() {
 		return bookings;
 	}
@@ -93,10 +82,10 @@ public class Doctor {
 
 	@Override
 	public String toString() {
-		return "Doctor [email=" + email + ", password=" + password + ", dname=" + dname + ", phone=" + phone + ", city="
-				+ city + ", address=" + address + ", state=" + state + ", qualification=" + qualification + ", gender="
-				+ gender + ", specialization=" + specialization + ", patients=" + patients + ", bookings=" + bookings
-				+ "]";
+		return "Doctor [doc_id=" + doc_id + ", email=" + email + ", password=" + password + ", dname=" + dname
+				+ ", phone=" + phone + ", city=" + city + ", address=" + address + ", state=" + state
+				+ ", qualification=" + qualification + ", gender=" + gender + ", specialization=" + specialization
+				+ ", patients=" + patients + ", bookings=" + bookings + "]";
 	}
 	
 
@@ -201,5 +190,34 @@ public class Doctor {
 	public void setSpecialization(String specialization) {
 		this.specialization = specialization;
 	}
+
+	public BigInteger getDoc_id() {
+		return doc_id;
+	}
+
+	public void setDoc_id(BigInteger doc_id) {
+		this.doc_id = doc_id;
+	}
+
+	public Doctor(BigInteger doc_id, String email, String password, String dname, String phone, String city,
+			String address, String state, String qualification, String gender, String specialization,
+			List<Patient> patients, List<AppointmentBooking> bookings) {
+		super();
+		this.doc_id = doc_id;
+		this.email = email;
+		this.password = password;
+		this.dname = dname;
+		this.phone = phone;
+		this.city = city;
+		this.address = address;
+		this.state = state;
+		this.qualification = qualification;
+		this.gender = gender;
+		this.specialization = specialization;
+		this.patients = patients;
+		this.bookings = bookings;
+	}
+	
+	
 
 }

@@ -28,7 +28,6 @@
 	href="<jstl:url value="/resources/css/style.css"/>" />
 <style type="text/css">
 .table-container {
-	
 	margin-left: 20px;
 	margin-right: 20px;
 }
@@ -38,7 +37,7 @@
 <title>Doctor List</title>
 </head>
 <body>
-<div class="container-fluid p-0 m-0">
+	<div class="container-fluid p-0 m-0">
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
 
 			<a class="navbar-brand" href="#">HealthCare</a>
@@ -65,35 +64,46 @@
 
 			</div>
 		</nav>
-</div>
+	</div>
 
 
 	<h2
 		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">View
 		All Doctors</h2>
-	
-	<div class="table-responsive">
-		<table class="table">
-			<thead class="thead-dark">
-				<tr>
-					<th scope="col">Email</th>
-					<th scope="col">Name</th>
-					<th scope="col">Phone</th>
-					<th scope="col">City</th>
-					<th scope="col">Address</th>
-					<th scope="col">State</th>
-					<th scope="col">Gender</th>
-					<th scope="col">Qualification</th>
-					<th scope="col">Specialization</th>
-				</tr>
 
-			</thead>
+	<div style="text-align: center; margin-bottom: 2vh;">
+
+		<a class="btn btn-primary btn-sm" href="adminhomed" role="button">
+			Back </a>
+
+	</div>
+
+	<div class="table-responsive text-center">
+		<table class="table table-bordered  table-sm table-striped ">
+			<tr class="bg-dark text-white">
+
+				<th scope="col">Doctor Id</th>
+				<th scope="col">Email</th>
+				<th scope="col">Name</th>
+				<th scope="col">Phone</th>
+				<th scope="col">City</th>
+				<th scope="col">Address</th>
+				<th scope="col">State</th>
+				<th scope="col">Gender</th>
+				<th scope="col">Qualification</th>
+				<th scope="col">Specialization</th>
+				<th scope="col">Actions</th>
+
+			</tr>
+
+
 			<tbody>
 				<jstl:forEach items="${dlist}" var="doctors">
 
 					<tr>
+						<td class="table-dark">${doctors.doc_id}</td>
 						<td class="table-dark">${doctors.email}</td>
-						<td class="table-dark">${doctors.dname}</td>
+						<td class="table-dark">Dr ${doctors.dname}</td>
 						<td class="table-dark">${doctors.phone}</td>
 						<td class="table-dark">${doctors.city}</td>
 						<td class="table-dark">${doctors.address}</td>
@@ -101,7 +111,13 @@
 						<td class="table-dark">${doctors.gender}</td>
 						<td class="table-dark">${doctors.qualification}</td>
 						<td class="table-dark">${doctors.specialization}</td>
-
+						<td class="table-dark"><a
+							href="updatedoctor?doc_id=${doctor.doc_id}"
+							class="btn badge-primary badge btn-sm active" role="button"
+							aria-pressed="true">UPDATE</a> <a
+							href="deletedoctor?doc_id=${doctor.doc_id}"
+							class="btn badge-secondary badge btn-sm active" role="button"
+							aria-pressed="true">DELETE</a></td>
 					</tr>
 				</jstl:forEach>
 

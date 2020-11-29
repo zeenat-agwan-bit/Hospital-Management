@@ -70,14 +70,14 @@
 
 					<form class="form-inline my-2 my-lg-0" action="searchbypatname"
 						method="post">
-						<input class="form-control mr-sm-2" type="search" name="queryname"
+						<input class="form-control mr-sm-2" type="search" name="pName"
 							placeholder="Search By Name" aria-label="Search">
 						<button class="btn btn-success btn-sm  my-2 my-sm-0" type="submit">Search</button>
 					</form>
 				</div>
 				<form class="form-inline my-2 my-lg-0" action="searchbypatcity"
 					method="post">
-					<input class="form-control mr-sm-2" type="search" name="querycity"
+					<input class="form-control mr-sm-2" type="search" name="city"
 						placeholder="Search By City" aria-label="Search">
 					<button class="btn btn-success btn-sm my-2 my-sm-0" type="submit">Search</button>
 				</form>

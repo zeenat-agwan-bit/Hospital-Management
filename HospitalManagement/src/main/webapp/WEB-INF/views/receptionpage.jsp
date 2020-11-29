@@ -62,20 +62,6 @@
 
 
 
-					<li class="nav-item dropdown"><a
-						class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-						role="button" data-toggle="dropdown" aria-haspopup="true"
-						aria-expanded="false">Patient</a>
-						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-
-							<a class="dropdown-item" href="recpatientrentry">Add Patient</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="recpatientlist">Patient List</a>
-						</div></li>
-
-
-
-
 					<li class="nav-item active"><a class="nav-link"
 						href="login.jsp">Sign Out <span class="sr-only">(current)</span></a>
 					</li>

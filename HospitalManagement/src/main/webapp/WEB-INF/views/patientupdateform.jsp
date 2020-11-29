@@ -2,6 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="sf"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@page isELIgnored="false" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -41,13 +42,13 @@
 	<div class="container-fluid">
 		<div class="row justify-content-center custom-margin">
 			<div class="col-md-4 col-sm-6">
-				<form:form action="updatepatient" modelAttribute="patient"
+				<form:form action="savepatient" modelAttribute="patient"
 					method="post">
 
 					<form class="shadow-lg p-4">
 
 						<div class="row">
-						
+						${patient.patient_id}
 								<input type="hidden" name="patient_id" placeholder="Id" 
 									class="form-control" >
 							

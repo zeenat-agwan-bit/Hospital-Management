@@ -89,7 +89,7 @@ public class PatientController {
 	}
 
 	@RequestMapping("/searchbypatname")
-	public ModelAndView showSearchNamePatient(@RequestParam("queryname") String pName) {
+	public ModelAndView showSearchNamePatient(@RequestParam  String pName) {
 		ModelAndView mv = new ModelAndView("searchbypatname");
 		List<Patient> patients = patientService.findPatientByName(pName);
 		mv.addObject("patients", patients); // request-scope
@@ -97,7 +97,7 @@ public class PatientController {
 	}
 
 	@RequestMapping("/searchbypatcity")
-	public ModelAndView showSearchCityPatient(@RequestParam("querycity") String city) {
+	public ModelAndView showSearchCityPatient(@RequestParam String city) {
 		ModelAndView mv = new ModelAndView("searchbypatcity");
 		List<Patient> patients = patientService.findPatientByCity(city);
 		mv.addObject("patients", patients); // request-scope

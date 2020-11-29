@@ -62,8 +62,9 @@
 	</div>
 
 
-<h2
-		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">Details Of Patient ${patients.pName}</h2>
+	<h2
+		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">Details
+		Of Patient ${patients.pName}</h2>
 	</br>
 
 	<div class="table-responsive">
@@ -83,19 +84,20 @@
 
 			</thead>
 			<tbody>
-				
+				<jstl:forEach items="${patients}" var="patient">
 					<tr>
-						<td class="table-dark">${patients.patient_id}</td>
-						<td class="table-dark">${patients.pName}</td>
-						<td class="table-dark">${patients.phone}</td>
-						<td class="table-dark">${patients.city}</td>
-						<td class="table-dark">${patients.address}</td>
-						<td class="table-dark">${patients.state}</td>
-						<td class="table-dark">${patients.gender}</td>
-						<td class="table-dark">${patients.age}</td>
-						<td class="table-dark">${patients.blood}</td>
-
-					</tr>
+						<td class="table-dark">${patient.patient_id}</td>
+						<td class="table-dark">${patient.pName}</td>
+						<td class="table-dark">${patient.phone}</td>
+						<td class="table-dark">${patient.city}</td>
+						<td class="table-dark">${patient.address}</td>
+						<td class="table-dark">${patient.state}</td>
+						<td class="table-dark">${patient.gender}</td>
+						<td class="table-dark">${patient.age}</td>
+						<td class="table-dark">${patient.blood}</td>
+						</tr>
+				</jstl:forEach>
+				
 			</tbody>
 		</table>
 

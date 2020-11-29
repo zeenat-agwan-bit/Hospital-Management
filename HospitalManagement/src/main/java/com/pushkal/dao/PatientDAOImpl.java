@@ -25,7 +25,7 @@ public class PatientDAOImpl implements PatientDAO {
 	public void savePatient(Patient patient) {
 		Session session = sessionFactory.openSession();
 		Transaction tr = session.beginTransaction();
-		session.save(patient);
+		session.saveOrUpdate(patient);
 		tr.commit();
 		session.close();
 	}

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import com.pushkal.domain.*;
 import com.pushkal.service.AppointmentService;
+import com.pushkal.service.DoctorService;
 import com.pushkal.service.PatientService;
 
 @Controller
@@ -20,6 +21,8 @@ public class BookingController {
 	private AppointmentService appointmentService;
 	@Autowired
 	private PatientService patientService;
+	@Autowired
+	private DoctorService doctorService;
 
 	@RequestMapping("appointentry")
 	public ModelAndView showAppointEntryForm() {
@@ -41,7 +44,7 @@ public class BookingController {
 	public String alistHomeP() {
 		return "redirect:appointlist";
 	}
-	
+
 	/*
 	 * @RequestMapping("/saveappointment") public String
 	 * saveAppoint(@RequestParam("aid")BigInteger aid,@RequestParam("date")String
@@ -55,9 +58,6 @@ public class BookingController {
 	 * appointmentService.addBooking(booking); return "appointsave"; }
 	 */
 
-	
-	
-	
 	@RequestMapping("/adminhomeb")
 	public String adminHomeB() {
 		return "adminpage";

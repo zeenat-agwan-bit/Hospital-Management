@@ -1,6 +1,7 @@
 package com.pushkal.dao;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -111,6 +112,20 @@ public class DoctorDAOImpl implements DoctorDAO {
 		Session session = sessionFactory.openSession();
 		Doctor doctor = session.get(Doctor.class, did);
 		return doctor;
+	}
+
+	public List<BigInteger> getAllDoctorb(String email) {
+		Session session = sessionFactory.openSession();
+		Criteria criteria = session.createCriteria(Doctor.class);
+		Criterion crt = Restrictions.eq("doctor.email", email);
+		criteria.add(crt);
+		List<Doctor> dlist = criteria.list();
+		List<BigInteger> ids = new ArrayList<BigInteger>();
+		for (Doctor d : dlist) {
+			ids.add(d.getDid());
+		}
+		return ids;
+
 	}
 
 }

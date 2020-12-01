@@ -27,5 +27,7 @@ public interface DoctorDAO {
 	public void saveDocAppointment(AppointmentBooking appointmentBooking);
 
 	public List<AppointmentBooking> getAllAppointmentByDoctor(String email);
+	
+	public List<BigInteger> getAllDoctorb(String email);
 
 }

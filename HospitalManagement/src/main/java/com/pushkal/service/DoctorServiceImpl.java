@@ -54,4 +54,9 @@ public class DoctorServiceImpl implements DoctorService {
 		return dao.getDoctorById(did);
 	}
 
+	public List<BigInteger> findAllDoctorB(String email) {
+		// TODO Auto-generated method stub
+		return dao.getAllDoctorb(email);
+	}
+
 }

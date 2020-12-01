@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.pushkal.domain.AppointmentBooking;
 import com.pushkal.domain.Doctor;
 import com.pushkal.domain.Patient;
+import com.pushkal.service.AppointmentService;
 import com.pushkal.service.DoctorService;
 import com.pushkal.service.PatientService;
 import com.pushkal.validation.DoctorValidation;
@@ -29,6 +30,9 @@ public class DoctorsController {
 
 	@Autowired
 	private PatientService patientService;
+
+	@Autowired
+	private AppointmentService appointmentService;
 
 	// ----------------------------------------------------MAPPING FOR
 	// ADMINISTRATION PAGE
@@ -42,7 +46,7 @@ public class DoctorsController {
 		return mv;
 	}
 
-	//this method return only login page when request comes to /doctor/
+	// this method return only login page when request comes to /doctor/
 	@RequestMapping("/doctorentry")
 	public ModelAndView showDoctorForm() {
 		ModelAndView mv = new ModelAndView("doctorentry");
@@ -91,19 +95,10 @@ public class DoctorsController {
 		return mv;
 	}
 
-	/*
-	 * @RequestMapping("/savedocpatient") public String
-	 * saveDoctorP(@Valid @ModelAttribute("patient") Patient patient, BindingResult
-	 * result) { if (result.hasErrors()) { return "docpatiententry"; }
-	 * doctorService.addDocPatient(patient); return "docpatientsave";
-	 * 
-	 * }
-	 */
-
 	@RequestMapping("/savedocpatient")
-	public ModelAndView saveDoctorP(@Valid @ModelAttribute("patient") Patient patient,
-			
-		@SessionAttribute("email") String email) {
+	public ModelAndView saveDoctorP(@ModelAttribute("patient") Patient patient,
+
+			@SessionAttribute("email") String email) {
 		Doctor doctor = new Doctor();
 		doctor.setEmail(email);
 		patient.setDoctor(doctor);
@@ -115,10 +110,36 @@ public class DoctorsController {
 
 	@RequestMapping("docpatientlist")
 	public ModelAndView showDocPatientList(@SessionAttribute("email") String email) {
-		// System.out.println("EMAIL : "+email);
 		List<Patient> patients = doctorService.findAllPatientsByDoctor(email);
 		ModelAndView mv = new ModelAndView("docpatientlist");
 		mv.addObject("plist", patients);
+		return mv;
+	}
+
+	@RequestMapping("updatedocpatient")
+	public ModelAndView showPatientUpdateForm(@RequestParam("pid") BigInteger pid) {
+		ModelAndView mv = new ModelAndView("docpatientupdateform");
+		Patient patient = patientService.searchPatientById(pid);
+		mv.addObject("patient", patient);
+		return mv;
+	}
+
+	@RequestMapping("docpatupdatesave")
+
+	public ModelAndView saveDocpatientChanges(@ModelAttribute("patient") Patient patient,
+			@SessionAttribute("email") String email) {
+		Doctor doctor = new Doctor();
+		doctor.setEmail(email);
+		patient.setDoctor(doctor);
+		patientService.changePatient(patient);
+		ModelAndView mv = new ModelAndView("redirect:docpatientlist");
+		return mv;
+	}
+
+	@RequestMapping("deletedocpatient")
+	public ModelAndView removeDocPatient(@RequestParam("pid") BigInteger pid) {
+		patientService.removePatient(pid);
+		ModelAndView mv = new ModelAndView("redirect:docpatientlist");
 		return mv;
 	}
 
@@ -131,36 +152,25 @@ public class DoctorsController {
 	// (Appointment)
 
 	@RequestMapping("/docappointentry")
-	public ModelAndView showDoctorAppointForm() {
+	public ModelAndView showDoctorAppointForm(@SessionAttribute("email") String email) {
 		ModelAndView mv = new ModelAndView("docappointentry");
-		mv.addObject("patient", new Patient());
 		mv.addObject("appointbooking", new AppointmentBooking());
+		List<BigInteger> ids = patientService.findAllPatientIds(email);
+		mv.addObject("ids", ids);
 		return mv;
 	}
 
 	@RequestMapping("/savedocappoint")
-	public ModelAndView saveDoctorAPP(@Valid @ModelAttribute("patient") Patient patient,
-			@Valid @ModelAttribute("appointbooking") AppointmentBooking appointmentBooking,
-			@SessionAttribute("email") String email) {
-		Doctor doctor = new Doctor();
-		doctor.setEmail(email);
-		patient.setDoctor(doctor);
-		appointmentBooking.getLeadDoctor();
-		appointmentBooking.setPatient(patient);
-		patientService.addPatAppointment(appointmentBooking);
-		doctorService.addDocPatient(patient);
-		doctorService.addDocAppointment(appointmentBooking);
+	public ModelAndView saveDoctorAPP(@ModelAttribute("appointbooking") AppointmentBooking appointmeBooking) {
+		appointmentService.addBooking(appointmeBooking);
 		ModelAndView mv = new ModelAndView("docappointsave");
 		return mv;
 
 	}
 
 	@RequestMapping("docappointlist")
-	public ModelAndView showDocAppointList(@SessionAttribute("email") String email) {
-		// System.out.println("EMAIL : "+email);
-		List<Patient> patients = doctorService.findAllPatientsByDoctor(email);
-		;
-		List<AppointmentBooking> bookings = doctorService.findAllAppointmentsByDoctor(email);
+	public ModelAndView showDocAppointList() {
+		List<AppointmentBooking> bookings = appointmentService.findAllBookings();
 		ModelAndView mv = new ModelAndView("docappointlist");
 		mv.addObject("alist", bookings);
 		return mv;

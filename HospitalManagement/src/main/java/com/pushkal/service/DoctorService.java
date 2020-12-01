@@ -30,5 +30,7 @@ public interface DoctorService {
 	public void addDocAppointment(AppointmentBooking appointmentBooking);
 
 	public List<AppointmentBooking> findAllAppointmentsByDoctor(String email);
+	
+	public List<BigInteger> findAllDoctorB(String email);
 
 }

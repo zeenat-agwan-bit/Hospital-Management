@@ -34,7 +34,8 @@ public class Doctor {
 	@OneToMany(mappedBy = "doctor", fetch = FetchType.EAGER) // no extra field created due to mapped by
 	private List<Patient> patients;
 
-	@OneToMany(mappedBy = "leadDoctor")
+	@OneToMany(mappedBy = "doctor", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+
 	private List<AppointmentBooking> bookings;
 
 	public BigInteger getDid() {

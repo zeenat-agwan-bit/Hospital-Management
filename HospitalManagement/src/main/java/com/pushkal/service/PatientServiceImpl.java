@@ -57,5 +57,10 @@ public class PatientServiceImpl implements PatientService {
 		return dao.getAllPatientb();
 	}
 
+	public List<BigInteger> findAllPatientIds(String email) {
+		// TODO Auto-generated method stub
+		return dao.getAllPatientIds(email);
+	}
+
 	
 }

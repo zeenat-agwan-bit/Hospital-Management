@@ -1,7 +1,7 @@
 <%@page language="java" contentType="text/html; charset=ISO-8859-1"%>
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="sf"%>
-<%@page import="java.util.List , com.pushkal.domain.Patient"%>
+<%@page isELIgnored="false" %>
 <%@page isELIgnored="false"%>
 <!doctype html>
 <html lang="en">
@@ -39,8 +39,7 @@
 <body>
 
 	<h2
-		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">View
-		All Patients Added By Doctor</h2>
+		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">Patient Registered By Doctor ${username} .</h2>
 
 	<div style="text-align: center; margin-bottom: 2vh;">
 
@@ -68,23 +67,23 @@
 
 
 			<tbody>
-				<jstl:forEach items="${plist}" var="patients">
+				<jstl:forEach items="${plist}" var="patient">
 
 					<tr>
-						<td class="table-active">${patients.pid}</td>
-						<td class="table-danger">${patients.pName}</td>
-						<td class="table-active">${patients.phone}</td>
-						<td class="table-danger">${patients.city}</td>
-						<td class="table-active">${patients.address}</td>
-						<td class="table-danger">${patients.state}</td>
-						<td class="table-active">${patients.gender}</td>
-						<td class="table-danger">${patients.age}</td>
-						<td class="table-active">${patients.blood}</td>
+						<td class="table-active">${patient.pid}</td>
+						<td class="table-danger">${patient.pName}</td>
+						<td class="table-active">${patient.phone}</td>
+						<td class="table-danger">${patient.city}</td>
+						<td class="table-active">${patient.address}</td>
+						<td class="table-danger">${patient.state}</td>
+						<td class="table-active">${patient.gender}</td>
+						<td class="table-danger">${patient.age}</td>
+						<td class="table-active">${patient.blood}</td>
 						<td class="table-dark"><a
-							href="updatedocpatient?patient_id=${patient.pid}"
+							href="updatedocpatient?pid=${patient.pid}"
 							class="btn badge-primary badge btn-sm active" role="button"
 							aria-pressed="true">UPDATE</a> <a
-							href="deletedocpatient?patient_id=${patient.pid}"
+							href="deletedocpatient?pid=${patient.pid}"
 							class="btn badge-secondary badge btn-sm active" role="button"
 							aria-pressed="true">DELETE</a></td>
 					</tr>

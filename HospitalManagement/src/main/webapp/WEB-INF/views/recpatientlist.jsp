@@ -80,10 +80,10 @@
 						<td class="table-dark">${patients.age}</td>
 						<td class="table-dark">${patients.blood}</td>
 						<td class="table-dark"><a
-							href="updaterecpatient?patient_id=${patient.patient_id}"
+							href="updaterecpatient?pid=${patient.pid}"
 							class="btn badge-primary badge btn-sm active" role="button"
 							aria-pressed="true">UPDATE</a> <a
-							href="deleterecpatient?patient_id=${patient.patient_id}"
+							href="deleterecpatient?pid=${patient.pid}"
 							class="btn badge-secondary badge btn-sm active" role="button"
 							aria-pressed="true">DELETE</a></td>
 					</tr>

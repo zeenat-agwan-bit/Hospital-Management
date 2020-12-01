@@ -30,8 +30,10 @@ public class AppointmentBooking {
 			@JoinColumn(name = "patient_pid") })
 	private Patient patient;
 
-	@ManyToOne(cascade = { CascadeType.ALL })
-	private Doctor leadDoctor;
+	@ManyToOne(fetch = FetchType.EAGER, optional = false)
+	@JoinTable(name = "doctor_appointment", joinColumns = { @JoinColumn(name = "app_aid") }, inverseJoinColumns = {
+			@JoinColumn(name = "doctor_did") })
+	private Doctor doctor;
 
 	public BigInteger getAid() {
 		return aid;
@@ -89,23 +91,21 @@ public class AppointmentBooking {
 		this.patient = patient;
 	}
 
-	public Doctor getLeadDoctor() {
-		return leadDoctor;
+	public Doctor getDoctor() {
+		return doctor;
 	}
 
-	public void setLeadDoctor(Doctor leadDoctor) {
-		this.leadDoctor = leadDoctor;
+	public void setDoctor(Doctor doctor) {
+		this.doctor = doctor;
 	}
 
-	@Override
-	public String toString() {
-		return "AppointmentBooking [aid=" + aid + ", date=" + date + ", time=" + time + ", fees=" + fees
-				+ ", diagnosis=" + diagnosis + ", treatment=" + treatment + ", patient=" + patient + ", leadDoctor="
-				+ leadDoctor + "]";
+	public AppointmentBooking() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	public AppointmentBooking(BigInteger aid, String date, String time, String fees, String diagnosis, String treatment,
-			Patient patient, Doctor leadDoctor) {
+			Patient patient, Doctor doctor) {
 		super();
 		this.aid = aid;
 		this.date = date;
@@ -114,12 +114,14 @@ public class AppointmentBooking {
 		this.diagnosis = diagnosis;
 		this.treatment = treatment;
 		this.patient = patient;
-		this.leadDoctor = leadDoctor;
+		this.doctor = doctor;
 	}
 
-	public AppointmentBooking() {
-		super();
-		// TODO Auto-generated constructor stub
+	@Override
+	public String toString() {
+		return "AppointmentBooking [aid=" + aid + ", date=" + date + ", time=" + time + ", fees=" + fees
+				+ ", diagnosis=" + diagnosis + ", treatment=" + treatment + ", patient=" + patient + ", doctor="
+				+ doctor + "]";
 	}
 
 }

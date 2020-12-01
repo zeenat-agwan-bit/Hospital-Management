@@ -85,7 +85,7 @@
 
 	<div class="col-md-12 " style="text-align: center; margin-top: 40px;">
 
-		<a class="btn btn-primary" href="adminhomed" role="button"> Back </a>
+		<a class="btn btn-primary" href="alisthome" role="button"> Back </a>
 
 	</div>
 

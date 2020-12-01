@@ -1,8 +1,6 @@
 package com.pushkal.domain;
 
 import java.math.BigInteger;
-import java.util.Date;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -21,7 +19,7 @@ public class AppointmentBooking {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "acode_generator")
 
 	private BigInteger aid;
-	private Date date;
+	private String date;
 	private String time;
 	private String fees;
 	private String diagnosis;
@@ -43,11 +41,11 @@ public class AppointmentBooking {
 		this.aid = aid;
 	}
 
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
@@ -99,8 +97,15 @@ public class AppointmentBooking {
 		this.leadDoctor = leadDoctor;
 	}
 
-	public AppointmentBooking(BigInteger aid, Date date, String time, String fees, String diagnosis, String treatment,
-			com.pushkal.domain.Patient patient, Doctor leadDoctor) {
+	@Override
+	public String toString() {
+		return "AppointmentBooking [aid=" + aid + ", date=" + date + ", time=" + time + ", fees=" + fees
+				+ ", diagnosis=" + diagnosis + ", treatment=" + treatment + ", patient=" + patient + ", leadDoctor="
+				+ leadDoctor + "]";
+	}
+
+	public AppointmentBooking(BigInteger aid, String date, String time, String fees, String diagnosis, String treatment,
+			Patient patient, Doctor leadDoctor) {
 		super();
 		this.aid = aid;
 		this.date = date;
@@ -115,13 +120,6 @@ public class AppointmentBooking {
 	public AppointmentBooking() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-
-	@Override
-	public String toString() {
-		return "AppointmentBooking [aid=" + aid + ", date=" + date + ", time=" + time + ", fees=" + fees
-				+ ", diagnosis=" + diagnosis + ", treatment=" + treatment + ", patient=" + patient + ", leadDoctor="
-				+ leadDoctor + "]";
 	}
 
 }

@@ -71,7 +71,7 @@
 							<div class="form-group col-sm-6">
 								<label for="exampleInputPassword1"
 									class="font-weight-bold text-white">Date :</label> <input
-									type="text" name="date" placeholder="dd/MM/yyyy"
+									type="date" name="date" placeholder="dd/MM/yyyy"
 									class="form-control">
 							</div>
 

@@ -38,13 +38,15 @@
 <title>Appointment List</title>
 </head>
 <body>
-<form action="searchbyappid" method="post">
-		<input type="search" name="appbox" placeholder="Search By Id">
-		<button type="submit">Search</button>
-	</form>
+
 	<h2
 		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">View
 		All Appointments</h2>
+
+	<form action="searchbyappid" method="post">
+		<input type="search" name="appbox" placeholder="Search By Id">
+		<button type="submit">Search</button>
+	</form>
 
 	<div class="table-responsive">
 		<table class="table">
@@ -72,7 +74,7 @@
 						<td class="table-dark">${bookings.patient.pName}</td>
 						<td class="table-dark">${bookings.patient.phone}</td>
 						<td class="table-dark">${bookings.patient.city}</td>
-						
+
 						<td class="table-dark">${bookings.date}</td>
 						<td class="table-dark">${bookings.time}</td>
 						<td class="table-dark">${bookings.fees}</td>

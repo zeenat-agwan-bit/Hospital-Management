@@ -31,7 +31,7 @@ public class Doctor {
 	private String gender;
 	private String specialization;
 
-	@OneToMany(mappedBy = "doctor") // no extra field created due to mapped by
+	@OneToMany(mappedBy = "doctor", fetch = FetchType.EAGER) // no extra field created due to mapped by
 	private List<Patient> patients;
 
 	@OneToMany(mappedBy = "leadDoctor")
@@ -141,6 +141,11 @@ public class Doctor {
 		this.bookings = bookings;
 	}
 
+	public Doctor() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public Doctor(BigInteger did, String email, String password, String dname, String phone, String city,
 			String address, String state, String qualification, String gender, String specialization,
 			List<Patient> patients, List<AppointmentBooking> bookings) {
@@ -160,11 +165,6 @@ public class Doctor {
 		this.bookings = bookings;
 	}
 
-	public Doctor() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
 	@Override
 	public String toString() {
 		return "Doctor [did=" + did + ", email=" + email + ", password=" + password + ", dname=" + dname + ", phone="
@@ -173,5 +173,4 @@ public class Doctor {
 				+ ", bookings=" + bookings + "]";
 	}
 
-	
 }

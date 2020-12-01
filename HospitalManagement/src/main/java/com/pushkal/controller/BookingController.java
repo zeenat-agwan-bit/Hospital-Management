@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -38,6 +37,27 @@ public class BookingController {
 		return mv;
 	}
 
+	@RequestMapping("/alisthome")
+	public String alistHomeP() {
+		return "redirect:appointlist";
+	}
+	
+	/*
+	 * @RequestMapping("/saveappointment") public String
+	 * saveAppoint(@RequestParam("aid")BigInteger aid,@RequestParam("date")String
+	 * date ,@RequestParam("time")String time ,@RequestParam("fees")String fees
+	 * ,@RequestParam("diagnosis")String diagnosis ,@RequestParam("treatment")String
+	 * treatment) { SimpleDateFormat sdf=new SimpleDateFormat("dd/MM/yyyy"); Date
+	 * thedate=sdf.parse(date); AppointmentBooking booking=new AppointmentBooking();
+	 * booking.setAid(aid); booking.setDate(date); booking.setTime(time);
+	 * booking.setFees(fees); booking.setDiagnosis(diagnosis);
+	 * booking.setTreatment(treatment); booking.setPatient(patient);
+	 * appointmentService.addBooking(booking); return "appointsave"; }
+	 */
+
+	
+	
+	
 	@RequestMapping("/adminhomeb")
 	public String adminHomeB() {
 		return "adminpage";

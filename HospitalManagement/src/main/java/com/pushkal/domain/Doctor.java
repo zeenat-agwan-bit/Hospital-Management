@@ -18,9 +18,8 @@ import org.hibernate.validator.constraints.NotEmpty;
 @Entity
 public class Doctor {
 	@Id
-	@SequenceGenerator(name = "did_generator", sequenceName = "did_gen", allocationSize = 1, initialValue = 1)
-	@GeneratedValue(strategy = GenerationType.AUTO, generator = "did_generator")
-	private BigInteger doc_id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private BigInteger did;
 	private String email;
 	private String password;
 	private String dname;
@@ -31,84 +30,19 @@ public class Doctor {
 	private String qualification;
 	private String gender;
 	private String specialization;
-	
-	@OneToMany(mappedBy = "doctor" )   // no extra field created due to mapped by
-	private List<Patient>patients;
-	
-	
-	@OneToMany(mappedBy="leadDoctor" )
+
+	@OneToMany(mappedBy = "doctor") // no extra field created due to mapped by
+	private List<Patient> patients;
+
+	@OneToMany(mappedBy = "leadDoctor")
 	private List<AppointmentBooking> bookings;
-	
-	
-	
-	public List<AppointmentBooking> getBookings() {
-		return bookings;
+
+	public BigInteger getDid() {
+		return did;
 	}
 
-	public void setBookings(List<AppointmentBooking> bookings) {
-		this.bookings = bookings;
-	}
-
-	public List<Patient> getPatients() {
-		return patients;
-	}
-
-	public void setPatients(List<Patient> patients) {
-		this.patients = patients;
-	}
-
-	public Doctor() {
-		super();
-
-	}
-	
-	
-
-	public Doctor(String email, String password, String dname, String phone, String city, String address, String state,
-			String qualification, String gender, String specialization, List<Patient> patients) {
-		super();
-		this.email = email;
-		this.password = password;
-		this.dname = dname;
-		this.phone = phone;
-		this.city = city;
-		this.address = address;
-		this.state = state;
-		this.qualification = qualification;
-		this.gender = gender;
-		this.specialization = specialization;
-		this.patients = patients;
-	}
-
-	@Override
-	public String toString() {
-		return "Doctor [doc_id=" + doc_id + ", email=" + email + ", password=" + password + ", dname=" + dname
-				+ ", phone=" + phone + ", city=" + city + ", address=" + address + ", state=" + state
-				+ ", qualification=" + qualification + ", gender=" + gender + ", specialization=" + specialization
-				+ ", patients=" + patients + ", bookings=" + bookings + "]";
-	}
-	
-
-	public Doctor(String email, String password, String dname, String phone, String city, String address, String state,
-			String qualification, String gender, String specialization) {
-		super();
-		this.email = email;
-		this.password = password;
-		this.dname = dname;
-		this.phone = phone;
-		this.city = city;
-		this.address = address;
-		this.state = state;
-		this.qualification = qualification;
-		this.gender = gender;
-		this.specialization = specialization;
-		
-	}
-
-	
-
-	public void setQualification(String qualification) {
-		this.qualification = qualification;
+	public void setDid(BigInteger did) {
+		this.did = did;
 	}
 
 	public String getEmail() {
@@ -171,7 +105,7 @@ public class Doctor {
 		return qualification;
 	}
 
-	public void setQulaification(String qualification) {
+	public void setQualification(String qualification) {
 		this.qualification = qualification;
 	}
 
@@ -191,19 +125,27 @@ public class Doctor {
 		this.specialization = specialization;
 	}
 
-	public BigInteger getDoc_id() {
-		return doc_id;
+	public List<Patient> getPatients() {
+		return patients;
 	}
 
-	public void setDoc_id(BigInteger doc_id) {
-		this.doc_id = doc_id;
+	public void setPatients(List<Patient> patients) {
+		this.patients = patients;
 	}
 
-	public Doctor(BigInteger doc_id, String email, String password, String dname, String phone, String city,
+	public List<AppointmentBooking> getBookings() {
+		return bookings;
+	}
+
+	public void setBookings(List<AppointmentBooking> bookings) {
+		this.bookings = bookings;
+	}
+
+	public Doctor(BigInteger did, String email, String password, String dname, String phone, String city,
 			String address, String state, String qualification, String gender, String specialization,
 			List<Patient> patients, List<AppointmentBooking> bookings) {
 		super();
-		this.doc_id = doc_id;
+		this.did = did;
 		this.email = email;
 		this.password = password;
 		this.dname = dname;
@@ -217,7 +159,19 @@ public class Doctor {
 		this.patients = patients;
 		this.bookings = bookings;
 	}
-	
-	
 
+	public Doctor() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public String toString() {
+		return "Doctor [did=" + did + ", email=" + email + ", password=" + password + ", dname=" + dname + ", phone="
+				+ phone + ", city=" + city + ", address=" + address + ", state=" + state + ", qualification="
+				+ qualification + ", gender=" + gender + ", specialization=" + specialization + ", patients=" + patients
+				+ ", bookings=" + bookings + "]";
+	}
+
+	
 }

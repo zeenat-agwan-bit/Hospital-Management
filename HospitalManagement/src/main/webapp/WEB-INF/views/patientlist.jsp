@@ -128,7 +128,7 @@
 				<jstl:forEach items="${plist}" var="patients">
 
 					<tr>
-						<td class="table-dark">${patients.patient_id}</td>
+						<td class="table-dark">${patients.pid}</td>
 						<td class="table-dark">${patients.pName}</td>
 						<td class="table-dark">${patients.phone}</td>
 						<td class="table-dark">${patients.city}</td>
@@ -138,10 +138,10 @@
 						<td class="table-dark">${patients.age}</td>
 						<td class="table-dark">${patients.blood}</td>
 						<td class="table-dark"><a
-							href="updatepatientform?id=${patients.patient_id}"
+							href="updatepatientform?id=${patients.pid}"
 							class="btn badge-primary badge btn-sm active" role="button"
 							aria-pressed="true">UPDATE</a> <a
-							href="deletepatient?id=${patients.patient_id}"
+							href="deletepatient?id=${patients.pid}"
 							class="btn badge-secondary badge btn-sm active" role="button"
 							aria-pressed="true">DELETE</a></td>
 					</tr>

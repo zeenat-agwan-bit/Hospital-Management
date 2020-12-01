@@ -48,8 +48,8 @@
 					<form class="shadow-lg p-4">
 
 						<div class="row">
-						${patient.patient_id}
-								<input type="hidden" name="patient_id" placeholder="Id" 
+						${patient.pid}
+								<input type="hidden" name="pid" placeholder="Id" 
 									class="form-control" >
 							
 

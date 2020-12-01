@@ -13,17 +13,18 @@ public interface PatientService {
 
 	public void changePatient(Patient patient);
 
-	public void removePatient(BigInteger patient_id);
+	public void removePatient(BigInteger pid);
 
 	public List<Patient> findAllPatients();
 
-	public Patient searchPatientById(BigInteger patient_id);
+	public Patient searchPatientById(BigInteger pid);
 
 	public List<Patient> findPatientByName(String pName);
 
 	public List<Patient> findPatientByCity(String city);
 
-	
+	public List<BigInteger> getAllPatientB();
+
 	// ------------------------------
 	public void addPatAppointment(AppointmentBooking appointmentBooking);
 

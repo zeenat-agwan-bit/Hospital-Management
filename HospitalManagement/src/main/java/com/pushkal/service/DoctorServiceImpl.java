@@ -49,9 +49,9 @@ public class DoctorServiceImpl implements DoctorService {
 		return dao.getAllAppointmentByDoctor(email);
 	}
 
-	public Doctor searchDoctorById(BigInteger doc_id) {
+	public Doctor searchDoctorById(BigInteger did) {
 		
-		return dao.getDoctorById(doc_id);
+		return dao.getDoctorById(did);
 	}
 
 }

@@ -1,7 +1,8 @@
 <%@page language="java" contentType="text/html; charset=ISO-8859-1"%>
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="sf"%>
-<%@page import="java.util.List , com.pushkal.domain.Patient"%>
+<%@page
+	import="java.util.List , com.pushkal.domain.AppointmentBooking,com.pushkal.domain.Patient"%>
 <%@page isELIgnored="false"%>
 <!doctype html>
 <html lang="en">
@@ -34,71 +35,49 @@
 </style>
 
 
-<title>Search Patient By City</title>
+<title>Search By Id</title>
 </head>
 <body>
 
-	<div class="container-fluid p-0 m-0">
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
-
-			<a class="navbar-brand" href="#">HealthCare</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse"
-				data-target="#navbarSupportedContent"
-				aria-controls="navbarSupportedContent" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active"><a class="nav-link"
-						href="index.jsp">Home <span class="sr-only">(current)</span></a></li>
-
-				</ul>
-
-
-			</div>
-		</nav>
-	</div>
-
-
-<h2
-		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">Details Of Patient ${patients.pName}</h2>
-	</br>
+	<h2
+		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">Details
+		Of Appointment ${booking.aid}</h2>
 
 	<div class="table-responsive">
 		<table class="table">
 			<thead class="thead-dark">
-				
 				<tr>
+					<th scope="col">Appointment Id</th>
 					<th scope="col">Patient Id</th>
-					<th scope="col">Name</th>
-					<th scope="col">Phone</th>
-					<th scope="col">City</th>
-					<th scope="col">Address</th>
-					<th scope="col">State</th>
-					<th scope="col">Gender</th>
-					<th scope="col">Age</th>
-					<th scope="col">Blood Group</th>
+					<th scope="col">Patient Name</th>
+					<th scope="col">Patient Phone</th>
+					<th scope="col">Patient City</th>
+					<th scope="col">Date</th>
+					<th scope="col">Time</th>
+					<th scope="col">Fees</th>
+					<th scope="col">Diagnosis</th>
+					<th scope="col">Treatment</th>
 				</tr>
 
 			</thead>
 			<tbody>
-				<jstl:forEach items="${patients}" var="patient">
-			
+				
 					<tr>
-						<td class="table-dark">${patient.pid}</td>
-						<td class="table-dark">${patient.pName}</td>
-						<td class="table-dark">${patient.phone}</td>
-						<td class="table-dark">${patient.city}</td>
-						<td class="table-dark">${patient.address}</td>
-						<td class="table-dark">${patient.state}</td>
-						<td class="table-dark">${patient.gender}</td>
-						<td class="table-dark">${patient.age}</td>
-						<td class="table-dark">${patient.blood}</td>
+						<td class="table-dark">${booking.aid}</td>
+						<td class="table-dark">${booking.patient.pid}</td>
+						<td class="table-dark">${booking.patient.pName}</td>
+						<td class="table-dark">${booking.patient.phone}</td>
+						<td class="table-dark">${booking.patient.city}</td>
+						
+						<td class="table-dark">${booking.date}</td>
+						<td class="table-dark">${booking.time}</td>
+						<td class="table-dark">${booking.fees}</td>
+						<td class="table-dark">${booking.diagnosis}</td>
+						<td class="table-dark">${booking.treatment}</td>
 
 					</tr>
-			</jstl:forEach>
+				
+
 			</tbody>
 		</table>
 
@@ -106,7 +85,7 @@
 
 	<div class="col-md-12 " style="text-align: center; margin-top: 40px;">
 
-		<a class="btn btn-primary" href="plisthome" role="button"> Back </a>
+		<a class="btn btn-primary" href="adminhomed" role="button"> Back </a>
 
 	</div>
 

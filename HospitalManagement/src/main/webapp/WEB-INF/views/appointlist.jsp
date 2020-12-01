@@ -38,7 +38,10 @@
 <title>Appointment List</title>
 </head>
 <body>
-
+<form action="searchbyappid" method="post">
+		<input type="search" name="appbox" placeholder="Search By Id">
+		<button type="submit">Search</button>
+	</form>
 	<h2
 		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">View
 		All Appointments</h2>
@@ -51,6 +54,7 @@
 					<th scope="col">Patient Id</th>
 					<th scope="col">Patient Name</th>
 					<th scope="col">Patient Phone</th>
+					<th scope="col">Patient City</th>
 					<th scope="col">Date</th>
 					<th scope="col">Time</th>
 					<th scope="col">Fees</th>
@@ -63,10 +67,12 @@
 				<jstl:forEach items="${alist}" var="bookings">
 
 					<tr>
-						<td class="table-dark">${bookings.ap_id}</td>
-						<td class="table-dark">${bookings.patient.patient_id}</td>
-						<td class="table-dark">${bookings.patient.name}</td>
+						<td class="table-dark">${bookings.aid}</td>
+						<td class="table-dark">${bookings.patient.pid}</td>
+						<td class="table-dark">${bookings.patient.pName}</td>
 						<td class="table-dark">${bookings.patient.phone}</td>
+						<td class="table-dark">${bookings.patient.city}</td>
+						
 						<td class="table-dark">${bookings.date}</td>
 						<td class="table-dark">${bookings.time}</td>
 						<td class="table-dark">${bookings.fees}</td>

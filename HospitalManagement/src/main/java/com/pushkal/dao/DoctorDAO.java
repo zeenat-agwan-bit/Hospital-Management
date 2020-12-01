@@ -15,7 +15,7 @@ public interface DoctorDAO {
 
 	public List<Doctor> findAllDoctor();
 	
-	public Doctor getDoctorById(BigInteger doc_id);
+	public Doctor getDoctorById(BigInteger did);
 
 	// for doctor's (Patient)
 	public void saveDocPatient(Patient patient);

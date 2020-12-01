@@ -19,8 +19,8 @@
 		
 		</br> --%>
 		 Patient Id :
-		<spring:bind path="patient.patient_id">
-			<input type="text" name="patient_id">
+		<spring:bind path="patient.pid">
+			<input type="text" name="pid">
 		</spring:bind>
 
 
@@ -35,7 +35,7 @@
  
  		 Appointment ID :
 		<spring:bind path="appointbooking.ap_id">
-			<input type="text" name="ap_id">
+			<input type="text" name="aid">
 		</spring:bind>
 
 

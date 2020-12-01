@@ -25,9 +25,9 @@ public class PatientController {
 //--------------------------------------------MAPPING FOR ADMINISTRATION
 
 	@RequestMapping("/updatepatientform")
-	public ModelAndView showUpdateForm(@RequestParam("id") BigInteger patient_id) {
+	public ModelAndView showUpdateForm(@RequestParam("id") BigInteger pid) {
 		ModelAndView mv = new ModelAndView("patientupdateform");
-		Patient patient = patientService.searchPatientById(patient_id);
+		Patient patient = patientService.searchPatientById(pid);
 		mv.addObject("patient", patient);
 		/*
 		 * List<String> bloods = new ArrayList<String>(); bloods.add("A+");
@@ -47,14 +47,14 @@ public class PatientController {
 	}
 
 	@RequestMapping("/deletepatient")
-	public ModelAndView deletePatient(@RequestParam("id") BigInteger patient_id) {
-		patientService.removePatient(patient_id);
+	public ModelAndView deletePatient(@RequestParam("id") BigInteger pid) {
+		patientService.removePatient(pid);
 		ModelAndView mv = new ModelAndView("redirect:patientlist");
 		return mv;
 	}
 
 	@RequestMapping("/patientlist")
-	public ModelAndView showAllDoctors() {
+	public ModelAndView showAllPatients() {
 		List<Patient> patients = patientService.findAllPatients();
 		ModelAndView mv = new ModelAndView("patientlist");
 		mv.addObject("plist", patients);

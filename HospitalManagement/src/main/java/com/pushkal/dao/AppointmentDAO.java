@@ -1,8 +1,10 @@
 package com.pushkal.dao;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import com.pushkal.domain.AppointmentBooking;
+
 
 public interface AppointmentDAO {
 	public void saveBooking(AppointmentBooking booking);
@@ -16,5 +18,8 @@ public interface AppointmentDAO {
 	// public List<AppointmentBooking> getAllBookingByDoctor(String email);
 
 	// public List<AppointmentBooking> getAllBookings(String date);
+
+	
+	public AppointmentBooking getAppointById(BigInteger aid);
 
 }

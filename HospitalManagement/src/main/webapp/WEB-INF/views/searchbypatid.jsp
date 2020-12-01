@@ -85,7 +85,7 @@
 			<tbody>
 				
 					<tr>
-						<td class="table-dark">${patient.patient_id}</td>
+						<td class="table-dark">${patient.pid}</td>
 						<td class="table-dark">${patient.pName}</td>
 						<td class="table-dark">${patient.phone}</td>
 						<td class="table-dark">${patient.city}</td>

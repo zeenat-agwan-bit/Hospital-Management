@@ -57,50 +57,55 @@
 							Registration Form :</h2>
 
 						<div class="row">
-							<!-- <div class="form-group col-sm-6">
-								<label class="font-weight-bold">Patient Id :</label> <input type="text"
-									placeholder="Enter Patient Id" name="patient_id"
+							<div class="form-group col-sm-6">
+								<label class="font-weight-bold">Patient Id :</label> <input
+									type="hidden" placeholder=" Patient Id" name="pid"
 									class="form-control">
-							</div> -->
-
-
-
-							<div class="form-group col-sm-6">
-								<label class="font-weight-bold">Name :</label> <input type="text" name="pName"
-									placeholder="Enter Name" class="form-control">
-							</div>
-
-							<div class="form-group col-sm-6">
-								<label class="font-weight-bold">Phone :</label> <input type="text" name="phone"
-									placeholder="Enter Mobile No." class="form-control">
-							</div>
-
-							<div class="form-group col-sm-6">
-								<label class="font-weight-bold">City :</label> <input type="text" name="city"
-									placeholder="Enter City" class="form-control">
-							</div>
-
-							<div class="form-group col-sm-6">
-								<label class="font-weight-bold">Address :</label> <input type="text" name="address"
-									placeholder="Enter Address" class="form-control">
-							</div>
-
-							<div class="form-group col-sm-6">
-								<label class="font-weight-bold">State :</label> <input type="text" name="state"
-									placeholder="Enter State" class="form-control">
 							</div>
 
 
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold">Age :</label> <input type="text" name="age"
-									placeholder="Enter Age" class="form-control">
+								<label class="font-weight-bold">Name :</label> <input
+									type="text" name="pName" placeholder="Enter Name"
+									class="form-control">
+							</div>
+
+							<div class="form-group col-sm-6">
+								<label class="font-weight-bold">Phone :</label> <input
+									type="text" name="phone" placeholder="Enter Mobile No."
+									class="form-control">
+							</div>
+
+							<div class="form-group col-sm-6">
+								<label class="font-weight-bold">City :</label> <input
+									type="text" name="city" placeholder="Enter City"
+									class="form-control">
+							</div>
+
+							<div class="form-group col-sm-6">
+								<label class="font-weight-bold">Address :</label> <input
+									type="text" name="address" placeholder="Enter Address"
+									class="form-control">
+							</div>
+
+							<div class="form-group col-sm-6">
+								<label class="font-weight-bold">State :</label> <input
+									type="text" name="state" placeholder="Enter State"
+									class="form-control">
+							</div>
+
+
+
+							<div class="form-group col-sm-6">
+								<label class="font-weight-bold">Age :</label> <input type="text"
+									name="age" placeholder="Enter Age" class="form-control">
 							</div>
 
 							<div class="form-group col-sm-6">
 
-								<label for="exampleFormControlSelect1" class="font-weight-bold">Blood Group :</label> <select
-									name="blood" class="form-control"
+								<label for="exampleFormControlSelect1" class="font-weight-bold">Blood
+									Group :</label> <select name="blood" class="form-control"
 									id="exampleFormControlSelect1">
 									<option>A+</option>
 									<option>A-</option>

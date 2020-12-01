@@ -107,9 +107,9 @@ public class DoctorDAOImpl implements DoctorDAO {
 		return bookings;
 	}
 
-	public Doctor getDoctorById(BigInteger doc_id) {
+	public Doctor getDoctorById(BigInteger did) {
 		Session session = sessionFactory.openSession();
-		Doctor doctor = session.get(Doctor.class, doc_id);
+		Doctor doctor = session.get(Doctor.class, did);
 		return doctor;
 	}
 

@@ -1,6 +1,7 @@
 package com.pushkal.dao;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -25,7 +26,7 @@ public class PatientDAOImpl implements PatientDAO {
 	public void savePatient(Patient patient) {
 		Session session = sessionFactory.openSession();
 		Transaction tr = session.beginTransaction();
-		session.saveOrUpdate(patient);
+		session.save(patient);
 		tr.commit();
 		session.close();
 	}
@@ -46,25 +47,25 @@ public class PatientDAOImpl implements PatientDAO {
 		session.close();
 	}
 
-	public Patient getPatientById(BigInteger patient_id) {
+	public Patient getPatientById(BigInteger pid) {
 		Session session = sessionFactory.openSession();
-		Patient patient = session.get(Patient.class, patient_id);
+		Patient patient = session.get(Patient.class, pid);
 		return patient;
 	}
 
 	public void updatePatient(Patient patient) {
 		Session session = sessionFactory.openSession();
 		Transaction tr = session.beginTransaction();
-		session.saveOrUpdate(patient);
+		session.update(patient);
 		tr.commit();
 		session.close();
 
 	}
 
-	public void deletePatient(BigInteger patient_id) {
+	public void deletePatient(BigInteger pid) {
 		Session session = sessionFactory.openSession();
 		Transaction tr = session.beginTransaction();
-		Patient patient = session.get(Patient.class, patient_id);
+		Patient patient = session.get(Patient.class, pid);
 		session.delete(patient);
 		tr.commit();
 		session.close();
@@ -90,6 +91,18 @@ public class PatientDAOImpl implements PatientDAO {
 	}
 
 	
+
+	public List<BigInteger> getAllPatientb() {
+		Session session = sessionFactory.openSession();
+		Criteria criteria = session.createCriteria(Patient.class);
+		List<Patient> plist = criteria.list();
+		List<BigInteger> ids = new ArrayList<BigInteger>();
+		for (Patient p : plist) {
+			ids.add(p.getPid());
+		}
+		return ids;
+
+	}
 	// for appointment
 
 	/*

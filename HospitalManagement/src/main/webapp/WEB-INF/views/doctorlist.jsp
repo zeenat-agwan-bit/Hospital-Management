@@ -1,7 +1,7 @@
 <%@page language="java" contentType="text/html; charset=ISO-8859-1"%>
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="sf"%>
-<%@page import="java.util.List , com.pushkal.domain.Doctor"%>
+<%@page import="java.util.List , com.pushkal.domain.*"%>
 <%@page isELIgnored="false"%>
 <!doctype html>
 <html lang="en">
@@ -101,7 +101,7 @@
 				<jstl:forEach items="${dlist}" var="doctors">
 
 					<tr>
-						<td class="table-dark">${doctors.doc_id}</td>
+						<td class="table-dark">${doctors.did}</td>
 						<td class="table-dark">${doctors.email}</td>
 						<td class="table-dark">Dr ${doctors.dname}</td>
 						<td class="table-dark">${doctors.phone}</td>
@@ -112,10 +112,10 @@
 						<td class="table-dark">${doctors.qualification}</td>
 						<td class="table-dark">${doctors.specialization}</td>
 						<td class="table-dark"><a
-							href="updatedoctor?doc_id=${doctor.doc_id}"
+							href="updatedoctor?doc_id=${doctor.did}"
 							class="btn badge-primary badge btn-sm active" role="button"
 							aria-pressed="true">UPDATE</a> <a
-							href="deletedoctor?doc_id=${doctor.doc_id}"
+							href="deletedoctor?doc_id=${doctor.did}"
 							class="btn badge-secondary badge btn-sm active" role="button"
 							aria-pressed="true">DELETE</a></td>
 					</tr>

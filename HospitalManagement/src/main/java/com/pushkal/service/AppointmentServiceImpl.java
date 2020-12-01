@@ -1,5 +1,6 @@
 package com.pushkal.service;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,11 @@ public class AppointmentServiceImpl implements AppointmentService {
 	public List<AppointmentBooking> findAllBookings() {
 
 		return dao.getAllBookings();
+	}
+
+	public AppointmentBooking findAppointById(BigInteger aid) {
+		// TODO Auto-generated method stub
+		return dao.getAppointById(aid);
 	}
 
 }

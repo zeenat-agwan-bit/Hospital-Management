@@ -1,7 +1,7 @@
 <%@page language="java" contentType="text/html; charset=ISO-8859-1"%>
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="sf"%>
-<%@page import="java.util.List , com.pushkal.domain.Doctor"%>
+<%@page import="java.util.List , com.pushkal.domain.*"%>
 <%@page isELIgnored="false"%>
 <!doctype html>
 <html lang="en">

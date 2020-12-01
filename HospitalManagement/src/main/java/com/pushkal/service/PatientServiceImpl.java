@@ -31,8 +31,8 @@ public class PatientServiceImpl implements PatientService {
 
 	}
 
-	public Patient searchPatientById(BigInteger patient_id) {
-		return dao.getPatientById(patient_id);
+	public Patient searchPatientById(BigInteger pid) {
+		return dao.getPatientById(pid);
 	}
 
 	public void changePatient(Patient patient) {
@@ -40,8 +40,8 @@ public class PatientServiceImpl implements PatientService {
 
 	}
 
-	public void removePatient(BigInteger patient_id) {
-		dao.deletePatient(patient_id);
+	public void removePatient(BigInteger pid) {
+		dao.deletePatient(pid);
 	}
 
 	public List<Patient> findPatientByName(String pName) {
@@ -50,6 +50,11 @@ public class PatientServiceImpl implements PatientService {
 
 	public List<Patient> findPatientByCity(String city) {
 		return dao.getPatientByCity(city);
+	}
+
+	public List<BigInteger> getAllPatientB() {
+		
+		return dao.getAllPatientb();
 	}
 
 	

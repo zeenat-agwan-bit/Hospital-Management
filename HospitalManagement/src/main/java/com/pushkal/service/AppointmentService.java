@@ -1,5 +1,6 @@
 package com.pushkal.service;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import com.pushkal.domain.AppointmentBooking;
@@ -16,5 +17,5 @@ public interface AppointmentService {
 	// public List<AppointmentBooking> findAllBookingByDoctor(String email);
 
 	// public List<AppointmentBooking> findAllBookingsByDate(String date);
-
+	public AppointmentBooking findAppointById(BigInteger aid);
 }

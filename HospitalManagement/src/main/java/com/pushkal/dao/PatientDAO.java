@@ -13,17 +13,18 @@ public interface PatientDAO {
 
 	public void updatePatient(Patient patient);
 
-	public void deletePatient(BigInteger patient_id);
+	public void deletePatient(BigInteger pid);
 
 	public List<Patient> showAllPatients();
 
-	public Patient getPatientById(BigInteger patient_id);
+	public Patient getPatientById(BigInteger pid);
 
 	public List<Patient> getPatientByName(String pName);
 
 	public List<Patient> getPatientByCity(String city);
 
-	
+	public List<BigInteger> getAllPatientb();
+
 //---------------------------------------------------
 
 	public void savePatAppointment(AppointmentBooking appointmentBooking);

@@ -51,6 +51,14 @@
 					<form class="shadow-lg p-6 text-white">
 
 						<div class="row">
+						
+						
+						<div class="form-group col-sm-6">
+								<label class="font-weight-bold font-white">Patient ID :</label> <input
+									type="hidden" name="pid" placeholder="Patient Id"
+									class="form-control">
+							</div>
+							
 
 							<div class="form-group col-sm-6">
 								<label class="font-weight-bold font-white">Name :</label> <input

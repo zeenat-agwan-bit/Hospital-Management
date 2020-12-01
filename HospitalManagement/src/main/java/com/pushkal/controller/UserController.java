@@ -60,7 +60,7 @@ public class UserController {
 				ModelAndView mv = new ModelAndView("doctorpage");
 				mv.addObject("email", email);
 				mv.addObject("username", d.getDname());
-				mv.addObject("doc_id", d.getDoc_id());
+				mv.addObject("doc_id", d.getDid());
 				
 				return mv;
 			} else {

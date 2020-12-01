@@ -17,7 +17,7 @@ public interface DoctorService {
 
 	public List<Doctor> showAllDoctors();
 
-	public Doctor searchDoctorById(BigInteger doc_id);
+	public Doctor searchDoctorById(BigInteger did);
 
 	// For Doctor Page(Patient)
 

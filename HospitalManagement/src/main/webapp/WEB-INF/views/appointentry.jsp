@@ -2,8 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="sf"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@page import="java.util.List , com.pushkal.domain.*"%>
-
+<%@page import="com.pushkal.domain.*"%>
 <%@page isELIgnored="false"%>
 <!doctype html>
 <html lang="en">
@@ -51,7 +50,7 @@
 		<br />
 		<section class="container-fluid">
 			<section class="row-justify-content-center">
-				<form:form action="saveappointment" modelAttribute="appointment"
+				<form:form action="saveappointment" modelAttribute="booking"
 					method="post">
 
 					<form class="form-container">
@@ -60,26 +59,12 @@
 							Appointment Form :</h2>
 
 						<div class="row">
-							<!-- <div class="form-group col-sm-6">
-								<label for="exampleInputEmail1" class="font-weight-bold text-white">Appointment Id :</label> <input
-									type="hidden" placeholder="Enter Appointment Id" name="ap_id"
+							<div class="form-group col-sm-6">
+								<label for="exampleInputEmail1"
+									class="font-weight-bold text-white">Appointment Id :</label> <input
+									type="hidden" placeholder="Appointment Id" name="aid"
 									class="form-control">
 							</div>
- -->
-
-							<div class="form-group col-sm-6">
-								<label class="font-weight-bold text-white">Patient Id :</label>
-								<input type="text" name="patient.patient_id"
-									placeholder="Enter Patient Id" class="form-control">
-							</div>
-
-
-							<div class="form-group col-sm-6">
-								<label class="font-weight-bold text-white">Doctor ID :</label> <input
-									type="text" name="doctor.doc_id" placeholder="Enter Doctor Id"
-									class="form-control">
-							</div>
-
 
 
 
@@ -182,18 +167,26 @@
 									rows="3" name="diagnosis" placeholder="Enter Diagnosis"></textarea>
 							</div>
 
-							<!-- <div class="form-group col-sm-6">
+							<div class="form-group col-sm-6">
 
-								<label for="exampleFormControlTextarea1" class="font-weight-bold text-white">Treatment :</label>
+								<label for="exampleFormControlTextarea1"
+									class="font-weight-bold text-white">Treatment :</label>
 								<textarea class="form-control" id="exampleFormControlTextarea1"
 									name="treatment" placeholder="Treatement" rows="3"></textarea>
 							</div>
- -->
+
+							<div class="form-group col-sm-6">
+
+								<label for="exampleFormControlTextarea1"
+									class="font-weight-bold text-white">Patient Id</label>
+
+								<form:select path="patient.pid" items="${ids}" />
+							</div>
 
 
 							<div class="form-group col-md-12 "
 								style="text-align: center; margin-top: 20px;">
-								<button type="submit" class="btn btn-primary">Register</button>
+								<button type="submit" class="btn btn-primary">Book</button>
 
 								<a class="btn btn-primary" href="adminhomeb" role="button">
 									Back </a>

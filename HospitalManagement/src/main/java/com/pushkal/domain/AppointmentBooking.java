@@ -10,53 +10,37 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 
 @Entity
 public class AppointmentBooking {
 	@Id
-	@SequenceGenerator(name = "aid_generator", sequenceName = "aid_gen", allocationSize = 1, initialValue = 1)
-	@GeneratedValue(strategy = GenerationType.AUTO, generator = "aid_generator")
-	
-	private BigInteger ap_id;
+	@SequenceGenerator(name = "acode_generator", sequenceName = "acode_gen", allocationSize = 1, initialValue = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "acode_generator")
+
+	private BigInteger aid;
 	private Date date;
 	private String time;
 	private String fees;
 	private String diagnosis;
 	private String treatment;
-	
-	@ManyToOne(fetch = FetchType.LAZY)
+
+	@ManyToOne(fetch = FetchType.EAGER, optional = false)
+	@JoinTable(name = "patient_appointment", joinColumns = { @JoinColumn(name = "app_aid") }, inverseJoinColumns = {
+			@JoinColumn(name = "patient_pid") })
 	private Patient patient;
-	
-	
-	@ManyToOne(cascade = {CascadeType.ALL})
+
+	@ManyToOne(cascade = { CascadeType.ALL })
 	private Doctor leadDoctor;
 
-	public AppointmentBooking(BigInteger ap_id, Date date, String time, String fees, String diagnosis, String treatment,
-			Patient patient, Doctor leadDoctor) {
-		super();
-		this.ap_id = ap_id;
-		this.date = date;
-		this.time = time;
-		this.fees = fees;
-		this.diagnosis = diagnosis;
-		this.treatment = treatment;
-		this.patient = patient;
-		this.leadDoctor = leadDoctor;
+	public BigInteger getAid() {
+		return aid;
 	}
 
-	public AppointmentBooking() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public BigInteger getAp_id() {
-		return ap_id;
-	}
-
-	public void setAp_id(BigInteger ap_id) {
-		this.ap_id = ap_id;
+	public void setAid(BigInteger aid) {
+		this.aid = aid;
 	}
 
 	public Date getDate() {
@@ -115,14 +99,29 @@ public class AppointmentBooking {
 		this.leadDoctor = leadDoctor;
 	}
 
+	public AppointmentBooking(BigInteger aid, Date date, String time, String fees, String diagnosis, String treatment,
+			com.pushkal.domain.Patient patient, Doctor leadDoctor) {
+		super();
+		this.aid = aid;
+		this.date = date;
+		this.time = time;
+		this.fees = fees;
+		this.diagnosis = diagnosis;
+		this.treatment = treatment;
+		this.patient = patient;
+		this.leadDoctor = leadDoctor;
+	}
+
+	public AppointmentBooking() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	@Override
 	public String toString() {
-		return "AppointmentBooking [ap_id=" + ap_id + ", date=" + date + ", time=" + time + ", fees=" + fees
+		return "AppointmentBooking [aid=" + aid + ", date=" + date + ", time=" + time + ", fees=" + fees
 				+ ", diagnosis=" + diagnosis + ", treatment=" + treatment + ", patient=" + patient + ", leadDoctor="
 				+ leadDoctor + "]";
 	}
-
-	
-	
 
 }

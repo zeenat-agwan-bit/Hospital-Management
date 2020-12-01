@@ -1,5 +1,6 @@
 package com.pushkal.dao;
 
+import java.math.BigInteger;
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -9,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.pushkal.domain.AppointmentBooking;
-
 @Repository
 public class AppointmentDAOImpl implements AppointmentDAO {
 	@Autowired
@@ -30,5 +30,13 @@ public class AppointmentDAOImpl implements AppointmentDAO {
 		session.close();
 		return bookings;
 	}
+
+	public AppointmentBooking getAppointById(BigInteger aid) {
+		Session session = sessionFactory.openSession();
+		AppointmentBooking appointment = session.get(AppointmentBooking.class, aid);
+		session.close();
+		return appointment;
+	}
+
 
 }

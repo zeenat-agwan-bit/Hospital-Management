@@ -59,7 +59,7 @@
 						<div class="row">
 							<div class="form-group col-sm-6">
 								<label class="font-weight-bold">Patient Id :</label> <form:input
-									path="hidden" placeholder=" Patient Id" 
+									path="pid" placeholder=" Patient Id" 
 									class="form-control"/>
 							</div>
 

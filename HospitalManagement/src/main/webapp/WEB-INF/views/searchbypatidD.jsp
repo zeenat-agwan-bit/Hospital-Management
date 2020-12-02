@@ -1,7 +1,7 @@
 <%@page language="java" contentType="text/html; charset=ISO-8859-1"%>
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="sf"%>
-<%@page isELIgnored="false" %>
+<%@page import="java.util.List , com.pushkal.domain.Patient"%>
 <%@page isELIgnored="false"%>
 <!doctype html>
 <html lang="en">
@@ -34,54 +34,56 @@
 </style>
 
 
-<title>Patients List</title>
+<title>Search Patient By Id</title>
 </head>
 <body>
 
-	<h2
-		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">Patients Registered By Doctor ${username} .</h2>
+	<div class="container-fluid p-0 m-0">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
 
-	<div style="text-align: center; margin-bottom: 2vh;">
+			<a class="navbar-brand" href="#">HealthCare</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-		<a class="btn btn-primary btn-sm" href="doctorhomep" role="button">
-			Back </a>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active"><a class="nav-link"
+						href="index.jsp">Home <span class="sr-only">(current)</span></a></li>
 
+				</ul>
+
+
+			</div>
+		</nav>
 	</div>
 
-<form action="searchbypatidD" class="form-container text-white" method="post">
-		<div class="form-group col-sm-2">
-		<input type="search" name="pidbox" placeholder="Search By Id"  class="form-control">
-		</div>
-		<div class="form-group col-sm-2 "
-								style="text-align: center; margin-top: 10px;">
-		<button type="submit" class="btn btn-primary">Search</button>
-		</div>
-	</form>
 
+<h2
+		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">Details Of Patient ${patient.pName}</h2>
+	</br>
 
+	<div class="table-responsive">
+		<table class="table">
+			<thead class="thead-dark">
+				<tr>
+					<th scope="col">Patient Id</th>
+					<th scope="col">Name</th>
+					<th scope="col">Phone</th>
+					<th scope="col">City</th>
+					<th scope="col">Address</th>
+					<th scope="col">State</th>
+					<th scope="col">Gender</th>
+					<th scope="col">Age</th>
+					<th scope="col">Blood Group</th>
+				</tr>
 
-
-	<div class="table-responsive text-center">
-		<table class="table table-bordered  table-sm table-striped ">
-			<tr class="bg-dark text-white">
-
-				<th scope="col">Patient Id</th>
-				<th scope="col">Name</th>
-				<th scope="col">Phone</th>
-				<th scope="col">City</th>
-				<th scope="col">Address</th>
-				<th scope="col">State</th>
-				<th scope="col">Gender</th>
-				<th scope="col">Age</th>
-				<th scope="col">Blood Group</th>
-				<th scope="col">Actions</th>
-
-			</tr>
-
-
+			</thead>
 			<tbody>
-				<jstl:forEach items="${plist}" var="patient">
-
+				
 					<tr>
 						<td class="table-dark">${patient.pid}</td>
 						<td class="table-dark">${patient.pName}</td>
@@ -92,16 +94,9 @@
 						<td class="table-dark">${patient.gender}</td>
 						<td class="table-dark">${patient.age}</td>
 						<td class="table-dark">${patient.blood}</td>
-						<td class="table-dark"><a
-							href="updatedocpatient?pid=${patient.pid}"
-							class="btn badge-primary badge btn-sm active" role="button"
-							aria-pressed="true">UPDATE</a> <a
-							href="deletedocpatient?pid=${patient.pid}"
-							class="btn badge-secondary badge btn-sm active" role="button"
-							aria-pressed="true">DELETE</a></td>
-					</tr>
-				</jstl:forEach>
 
+					</tr>
+				
 			</tbody>
 		</table>
 
@@ -109,8 +104,7 @@
 
 	<div class="col-md-12 " style="text-align: center; margin-top: 40px;">
 
-		<a class="btn btn-primary" href="doctorhomep" role="button"> Back
-		</a>
+		<a class="btn btn-primary" href="dlisthomee" role="button"> Back </a>
 
 	</div>
 

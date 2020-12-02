@@ -18,7 +18,7 @@ public interface PatientDAO {
 	public List<Patient> showAllPatients();
 
 	public Patient getPatientById(BigInteger pid);
-
+//---------------------------------------------------------
 	public List<Patient> getPatientByName(String pName);
 
 	public List<Patient> getPatientByCity(String city);

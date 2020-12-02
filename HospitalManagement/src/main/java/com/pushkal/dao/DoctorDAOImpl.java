@@ -80,6 +80,27 @@ public class DoctorDAOImpl implements DoctorDAO {
 		return doctors;
 
 	}
+	
+	
+	public void updateDoctor(Doctor doctor) {
+		Session session = sessionFactory.openSession();
+		Transaction tr = session.beginTransaction();
+		session.update(doctor);
+		tr.commit();
+		session.close();
+	}
+
+	public void deleteDoctor(String email) {
+		Session session = sessionFactory.openSession();
+		Transaction tr = session.beginTransaction();
+		Doctor doctor = session.get(Doctor.class, email);
+		session.delete(doctor);
+		tr.commit();
+		session.close();
+	}
+	
+	
+	
 
 	// --------------------------------MAPPING FOR DOCTOR PAGE :
 
@@ -119,22 +140,7 @@ public class DoctorDAOImpl implements DoctorDAO {
 		return bookings;
 	}
 
-	public void updateDoctor(Doctor doctor) {
-		Session session = sessionFactory.openSession();
-		Transaction tr = session.beginTransaction();
-		session.update(doctor);
-		tr.commit();
-		session.close();
-	}
-
-	public void deleteDoctor(String email) {
-		Session session = sessionFactory.openSession();
-		Transaction tr = session.beginTransaction();
-		Doctor doctor = session.get(Doctor.class, email);
-		session.delete(doctor);
-		tr.commit();
-		session.close();
-	}
+	
 
 	/*
 	 * public List<BigInteger> getAllDoctorb(String email) { Session session =

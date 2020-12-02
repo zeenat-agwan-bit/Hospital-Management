@@ -31,8 +31,12 @@ public class AppointmentBooking {
 	private Patient patient;
 
 	@ManyToOne(fetch = FetchType.EAGER, optional = false)
-	@JoinTable(name = "doctor_appointment", joinColumns = { @JoinColumn(name = "app_aid") }, inverseJoinColumns = {
-			@JoinColumn(name = "doctor_did") })
+	/*
+	 * @JoinTable(name = "doctor_appointment", joinColumns = { @JoinColumn(name =
+	 * "app_aid") }, inverseJoinColumns = {
+	 * 
+	 * @JoinColumn(name = "doctor_did") })
+	 */
 	private Doctor doctor;
 
 	public BigInteger getAid() {

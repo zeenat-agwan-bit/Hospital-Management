@@ -18,6 +18,7 @@ public interface PatientService {
 	public List<Patient> findAllPatients();
 
 	public Patient searchPatientById(BigInteger pid);
+	//--------------------------------------------------
 
 	public List<Patient> findPatientByName(String pName);
 

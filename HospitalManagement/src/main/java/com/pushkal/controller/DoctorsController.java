@@ -172,6 +172,13 @@ public class DoctorsController {
 		return mv;
 	}
 
+	
+	@RequestMapping("dlisthomee")
+	public String doctorPListt() {
+		return "redirect:docpatientlist";
+	}
+	
+	
 	@RequestMapping("updatedocpatient")
 	public ModelAndView showPatientUpdateForm(@RequestParam("pid") BigInteger pid) {
 		ModelAndView mv = new ModelAndView("docpatientupdateform");
@@ -199,6 +206,18 @@ public class DoctorsController {
 		return mv;
 	}
 
+	
+	@RequestMapping("/searchbypatidD")
+	public ModelAndView showSearchButtonPatient(@RequestParam("pidbox") BigInteger query) {
+		ModelAndView mv = new ModelAndView("searchbypatidD");
+		Patient patient = patientService.searchPatientById(query);
+		mv.addObject("patient", patient); // request-scope
+		return mv;
+	}
+	
+	
+	
+	
 	@RequestMapping("/doctorhomep")
 	public String doctorHomep() {
 		return "doctorpage";

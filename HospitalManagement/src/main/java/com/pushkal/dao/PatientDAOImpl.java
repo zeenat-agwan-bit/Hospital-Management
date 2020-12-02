@@ -39,20 +39,15 @@ public class PatientDAOImpl implements PatientDAO {
 		return patients;
 	}
 
-	public void savePatAppointment(AppointmentBooking appointmentBooking) {
-		Session session = sessionFactory.openSession();
-		Transaction tr = session.beginTransaction();
-		session.save(appointmentBooking);
-		tr.commit();
-		session.close();
-	}
-
+	
 	public Patient getPatientById(BigInteger pid) {
 		Session session = sessionFactory.openSession();
 		Patient patient = session.get(Patient.class, pid);
 		return patient;
 	}
-
+	
+	
+	
 	public void updatePatient(Patient patient) {
 		Session session = sessionFactory.openSession();
 		Transaction tr = session.beginTransaction();
@@ -71,6 +66,20 @@ public class PatientDAOImpl implements PatientDAO {
 		session.close();
 
 	}
+	//--------------------------------------------------------------------
+	
+	
+	public void savePatAppointment(AppointmentBooking appointmentBooking) {
+		Session session = sessionFactory.openSession();
+		Transaction tr = session.beginTransaction();
+		session.save(appointmentBooking);
+		tr.commit();
+		session.close();
+	}
+
+	
+
+	
 
 	public List<Patient> getPatientByName(String pName) {
 		Session session = sessionFactory.openSession();

@@ -31,7 +31,7 @@ public class Patient {
 	@ManyToOne
 	private Receptionist receptionist;
 
-	@OneToMany(mappedBy = "patient", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "patient",  cascade = CascadeType.ALL, orphanRemoval = true)
 
 	private List<AppointmentBooking> appointments;
 

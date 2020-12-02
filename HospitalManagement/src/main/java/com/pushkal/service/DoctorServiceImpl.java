@@ -29,7 +29,13 @@ public class DoctorServiceImpl implements DoctorService {
 	public List<Doctor> showAllDoctors() {
 		return dao.findAllDoctor();
 	}
-
+	
+	public Doctor findDoctorById(String email) {
+		return dao.getDoctorById(email);
+	}
+	
+	//===========================================
+	
 	// For Doctor Page(Patient)
 	public void addDocPatient(Patient patient) {
 		dao.saveDocPatient(patient);
@@ -49,14 +55,8 @@ public class DoctorServiceImpl implements DoctorService {
 		return dao.getAllAppointmentByDoctor(email);
 	}
 
-	public Doctor searchDoctorById(BigInteger did) {
-		
-		return dao.getDoctorById(did);
-	}
+	
 
-	public List<BigInteger> findAllDoctorB(String email) {
-		// TODO Auto-generated method stub
-		return dao.getAllDoctorb(email);
-	}
+	
 
 }

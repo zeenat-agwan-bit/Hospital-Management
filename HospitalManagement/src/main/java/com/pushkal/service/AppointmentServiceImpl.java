@@ -26,7 +26,7 @@ public class AppointmentServiceImpl implements AppointmentService {
 	}
 
 	public AppointmentBooking findAppointById(BigInteger aid) {
-		// TODO Auto-generated method stub
+		
 		return dao.getAppointById(aid);
 	}
 

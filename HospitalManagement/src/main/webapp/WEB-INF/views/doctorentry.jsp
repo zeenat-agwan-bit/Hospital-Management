@@ -57,10 +57,10 @@
 
 						<div class="row">
 							<div class="form-group col-sm-6">
-								<label for="exampleInputEmail1" class="font-weight-bold text-white">Email :</label> <input
-									type="email" placeholder="Enter Email" name="email"
+								<label for="exampleInputEmail1" class="font-weight-bold text-white">Email :</label> <form:input
+									type="email" placeholder="Enter Email" path="email"
 									class="form-control" id="exampleInputEmail1"
-									aria-describedby="emailHelp"> <small id="emailHelp"
+									aria-describedby="emailHelp"/> <small id="emailHelp"
 									class="form-text text-white">We'll never share your
 									email with anyone else.</small>
 							</div>

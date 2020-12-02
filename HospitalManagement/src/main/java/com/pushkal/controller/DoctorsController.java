@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.pushkal.domain.AppointmentBooking;
 import com.pushkal.domain.Doctor;
 import com.pushkal.domain.Patient;
+import com.pushkal.domain.Receptionist;
 import com.pushkal.service.AppointmentService;
 import com.pushkal.service.DoctorService;
 import com.pushkal.service.PatientService;
@@ -67,13 +68,26 @@ public class DoctorsController {
 		}
 	}
 
-	@RequestMapping("/searchbydocid")
-	public ModelAndView showSearchButtonDoctor(@RequestParam("findbox") BigInteger find) {
-		ModelAndView mv = new ModelAndView("searchbydocid");
-		Doctor doctor = doctorService.searchDoctorById(find);
+	@RequestMapping("/searchbydocmail")
+	public ModelAndView showSearchButtonDoctor(@RequestParam("findbox") String find) {
+		ModelAndView mv = new ModelAndView("searchbydocmail");
+		Doctor doctor = doctorService.findDoctorById(find);
 		mv.addObject("doctor", doctor); // request-scope
 		return mv;
 	}
+	
+	/*
+	@RequestMapping("/searchbydocid")
+	public ModelAndView showSearchButtonReception(@RequestParam("srchbox") BigInteger srch) {
+		ModelAndView mv = new ModelAndView("searchbyrecid");
+		Doctor doctor = doctorService.searchDoctorById(srch);
+		mv.addObject("doctor", doctor); // request-scope
+		return mv;
+	}
+	
+	*/
+	
+	
 
 	@RequestMapping("/adminhomed")
 	public String adminHomeD() {

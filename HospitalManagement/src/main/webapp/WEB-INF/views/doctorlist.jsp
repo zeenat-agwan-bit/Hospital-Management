@@ -55,7 +55,7 @@
 
 				</ul>
 
-				<form class="form-inline my-2 my-lg-0" action="searchbydocid"
+				<form class="form-inline my-2 my-lg-0" action="searchbydocmail"
 					method="post">
 					<input class="form-control mr-sm-2" type="search" name="findbox"
 						placeholder="Doctor's Email Id" aria-label="Search">
@@ -82,7 +82,7 @@
 		<table class="table table-bordered  table-sm table-striped ">
 			<tr class="bg-dark text-white">
 
-				<th scope="col">Doctor Id</th>
+				
 				<th scope="col">Email</th>
 				<th scope="col">Name</th>
 				<th scope="col">Phone</th>
@@ -101,7 +101,6 @@
 				<jstl:forEach items="${dlist}" var="doctors">
 
 					<tr>
-						<td class="table-dark">${doctors.did}</td>
 						<td class="table-dark">${doctors.email}</td>
 						<td class="table-dark">Dr ${doctors.dname}</td>
 						<td class="table-dark">${doctors.phone}</td>
@@ -112,14 +111,14 @@
 						<td class="table-dark">${doctors.qualification}</td>
 						<td class="table-dark">${doctors.specialization}</td>
 						<td class="table-dark"><a
-							href="updatedoctor?doc_id=${doctor.did}"
+							href="updatedoctor?email=${doctor.email}"
 							class="btn badge-primary badge btn-sm active" role="button"
 							aria-pressed="true">UPDATE</a> <a
-							href="deletedoctor?doc_id=${doctor.did}"
+							href="deletedoctor?email=${doctor.email}"
 							class="btn badge-secondary badge btn-sm active" role="button"
 							aria-pressed="true">DELETE</a></td>
 					</tr>
-				</jstl:forEach>
+				</jstl:forEach> 
 
 			</tbody>
 		</table>

@@ -50,6 +50,16 @@ public class ReceptionistDAOImpl implements ReceptionistDAO {
 		session.close();
 		return receptionists;
 	}
+	
+	
+	
+	public Receptionist getReceptionistById(String email) {
+		Session session = sessionFactory.openSession();
+		Receptionist receptionist = session.get(Receptionist.class, email);
+		return receptionist;
+	}
+	
+	//_______________________________________________________________________________
 
 	public void saveRecPatient(Patient patient) {
 		Session session = sessionFactory.openSession();
@@ -69,10 +79,6 @@ public class ReceptionistDAOImpl implements ReceptionistDAO {
 		return patients;
 	}
 
-	public Receptionist getReceptionistById(String email) {
-		Session session = sessionFactory.openSession();
-		Receptionist receptionist = session.get(Receptionist.class, email);
-		return receptionist;
-	}
+	
 
 }

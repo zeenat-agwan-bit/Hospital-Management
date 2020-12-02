@@ -70,7 +70,7 @@
 				<jstl:forEach items="${plist}" var="patients">
 
 					<tr>
-						<td class="table-dark">${patients.patient_id}</td>
+						<td class="table-dark">${patients.pid}</td>
 						<td class="table-dark">${patients.pName}</td>
 						<td class="table-dark">${patients.phone}</td>
 						<td class="table-dark">${patients.city}</td>

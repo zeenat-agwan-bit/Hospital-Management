@@ -11,15 +11,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
+@Table(name = "doctor")
 public class Doctor {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private BigInteger did;
+	@NotEmpty
+	@Email(message = "Invalid Email Address")
 	private String email;
 	private String password;
 	private String dname;
@@ -31,20 +33,12 @@ public class Doctor {
 	private String gender;
 	private String specialization;
 
-	@OneToMany(mappedBy = "doctor", fetch = FetchType.EAGER) // no extra field created due to mapped by
+	@OneToMany(mappedBy = "doctor") // no extra field created due to mapped by
 	private List<Patient> patients;
 
-	@OneToMany(mappedBy = "doctor", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL, orphanRemoval = true)
 
 	private List<AppointmentBooking> bookings;
-
-	public BigInteger getDid() {
-		return did;
-	}
-
-	public void setDid(BigInteger did) {
-		this.did = did;
-	}
 
 	public String getEmail() {
 		return email;
@@ -147,11 +141,11 @@ public class Doctor {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Doctor(BigInteger did, String email, String password, String dname, String phone, String city,
-			String address, String state, String qualification, String gender, String specialization,
-			List<Patient> patients, List<AppointmentBooking> bookings) {
+	public Doctor(String email, String password, String dname, String phone, String city, String address, String state,
+			String qualification, String gender, String specialization, List<Patient> patients,
+			List<AppointmentBooking> bookings) {
 		super();
-		this.did = did;
+
 		this.email = email;
 		this.password = password;
 		this.dname = dname;
@@ -168,10 +162,10 @@ public class Doctor {
 
 	@Override
 	public String toString() {
-		return "Doctor [did=" + did + ", email=" + email + ", password=" + password + ", dname=" + dname + ", phone="
-				+ phone + ", city=" + city + ", address=" + address + ", state=" + state + ", qualification="
-				+ qualification + ", gender=" + gender + ", specialization=" + specialization + ", patients=" + patients
-				+ ", bookings=" + bookings + "]";
+		return "Doctor [ email=" + email + ", password=" + password + ", dname=" + dname + ", phone=" + phone
+				+ ", city=" + city + ", address=" + address + ", state=" + state + ", qualification=" + qualification
+				+ ", gender=" + gender + ", specialization=" + specialization + ", patients=" + patients + ", bookings="
+				+ bookings + "]";
 	}
 
 }

@@ -77,21 +77,22 @@
 				<jstl:forEach items="${alist}" var="appoint">
 
 					<tr>
-						<td class="table-active">${appoint.patient.pid}</td>
-						<td class="table-danger">${appoint.aid}</td>
-						<td class="table-active">${appoint.time}</td>
-						<td class="table-danger">${appoint.date}</td>
-						<td class="table-active">${appoint.fees}</td>
-						<td class="table-danger">${appoint.diagnosis}</td>
-						<td class="table-active">${appoint.appoint.treatment}</td>
-						<td class="table-danger">${appoint.patient.pName}</td>
-						<td class="table-active">${appoint.patient.phone}</td>
-						<td class="table-danger">${appoint.patient.city}</td>
-						<td class="table-active">${appoint.patient.address}</td>
-						<td class="table-danger">${appoint.patient.state}</td>
-						<td class="table-active">${appoint.patient.gender}</td>
-						<td class="table-danger">${appoint.patient.age}</td>
-						<td class="table-active">${appoint.patient.blood}</td>
+						<td class="table-dark">${appoint.aid}</td>
+						<td class="table-dark">${appoint.time}</td>
+						<td class="table-dark">${appoint.date}</td>
+						<td class="table-dark">${appoint.fees}</td>
+						<td class="table-dark">${appoint.diagnosis}</td>
+						<td class="table-dark">${appoint.treatment}</td>
+						<td class="table-dark">${appoint.patient.pid}</td>
+						
+						<td class="table-dark">${appoint.patient.pName}</td>
+						<td class="table-dark">${appoint.patient.phone}</td>
+						<td class="table-dark">${appoint.patient.city}</td>
+						<td class="table-dark">${appoint.patient.address}</td>
+						<td class="table-dark">${appoint.patient.state}</td>
+						<td class="table-dark">${appoint.patient.gender}</td>
+						<td class="table-dark">${appoint.patient.age}</td>
+						<td class="table-dark">${appoint.patient.blood}</td>
 
 
 						<%-- <td class="table-dark"><a

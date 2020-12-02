@@ -2,7 +2,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="sf"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@page isELIgnored="false" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -27,97 +26,94 @@
 <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>" />
 
 <style type="text/css">
-.custom-margin {
-	margin-top: 5vh;
+.form-container {
+	position: absolute;
+	top: 2vh;
+	background: #fff;
+	padding: 10px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 10px 0px #000;
+	background: #fff;
+}
+
+.margin-right {
+	margin-right: 80px !important;
 }
 </style>
 
-<title>Update Patient Details</title>
+<title>Receptionist Registration</title>
 </head>
 <body>
-	<h2
-		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 4vh;">Patient's
-		Update Form :</h2>
-
-	<div class="container-fluid">
-		<div class="row justify-content-center custom-margin">
-			<div class="col-md-4 col-sm-6">
-				<form:form action="updatepatient" modelAttribute="patient"
+	<div class="col-md-6 text right">
+		<br />
+		<section class="container-fluid">
+			<section class="row-justify-content-center">
+				<form:form action="savereceptionchanges" modelAttribute="receptionist"
 					method="post">
 
-					<form class="shadow-lg p-4">
+					<form class="form-container shadow-lg text-white">
+						<h2
+							style="text-align: center; font-weight: bold; font-size: 30px; color: white;">Update Receptionist's
+							Details :</h2>
 
 						<div class="row">
-						${patient.pid}
-								<input type="hidden" name="pid" placeholder="Id" 
-									class="form-control" >
-							
-
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold">Name :</label>
-								<form:input type="text" path="pName" placeholder="Enter Name"
-									class="form-control" />
-							</div>
-
-							<div class="form-group col-sm-6">
-								<label class="font-weight-bold">Phone :</label>
-								<form:input type="text" path="phone"
-									placeholder="Enter Mobile No." class="form-control" />
-							</div>
-
-							<div class="form-group col-sm-6">
-								<label class="font-weight-bold">City :</label>
-								<form:input type="text" path="city" placeholder="Enter City"
-									class="form-control" />
-							</div>
-
-							<div class="form-group col-sm-6">
-								<label class="font-weight-bold">Address :</label>
-								<form:input type="text" path="address"
-									placeholder="Enter Address" class="form-control" />
-							</div>
-
-							<div class="form-group col-sm-6">
-								<label class="font-weight-bold">State :</label>
-								<form:input type="text" path="state" placeholder="Enter State"
-									class="form-control" />
+								<label for="exampleInputEmail1" class="font-weight-bold text-white">Email :</label> <form:input
+									type="email" placeholder="Enter Email" path="email"
+									class="form-control" id="exampleInputEmail1"
+									aria-describedby="emailHelp"/> <small id="emailHelp"
+									class="form-text text-white">We'll never share your
+									email with anyone else.</small>
 							</div>
 
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold">Age :</label>
-								<form:input type="text" path="age" placeholder="Enter Age"
-									class="form-control" />
+								<label for="exampleInputPassword1" class="font-weight-bold text-white">Password :</label> <form:input
+									type="password" password="password" placeholder="Enter Password" path="password"
+									class="form-control" id="exampleInputPassword1"/>
 							</div>
 
-
-
-
-
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold">Gender :</label>
-								<form:radiobutton path="gender" value="Male" />
-								Male
-								<form:radiobutton path="gender" value="Female" />
-								Female
-
+								<label class="font-weight-bold text-white">Name :</label> <form:input type="text" path="rname"
+									placeholder="Enter Your Name" class="form-control"/>
 							</div>
 
+							<div class="form-group col-sm-6">
+								<label class="font-weight-bold text-white">Phone :</label> <form:input type="text" path="phone"
+									placeholder="Enter Mobile No." class="form-control"/>
+							</div>
 
 							<div class="form-group col-sm-6">
-								<label for="exampleFormControlSelect1" class="font-weight-bold">Blood
-									Group :</label> <select name="blood" class="form-control"
-									id="exampleFormControlSelect1">
-									<option>A+</option>
-									<option>A-</option>
-									<option>B+</option>
-									<option>B-</option>
-									<option>O+</option>
-									<option>O-</option>
-									<option>AB+</option>
-									<option>AB-</option>
+								<label class="font-weight-bold text-white">City :</label> <form:input type="text" path="city"
+									placeholder="Enter City" class="form-control"/>
+							</div>
 
-								</select>
+							<div class="form-group col-sm-6">
+								<label class="font-weight-bold text-white">Address :</label> <form:input type="text" path="address"
+									placeholder="Enter Address" class="form-control"/>
+							</div>
+
+							<div class="form-group col-sm-6">
+								<label class="font-weight-bold text-white">State :</label> <form:input type="text" path="state"
+									placeholder="Enter State" class="form-control"/>
+							</div>
+
+							<div class="form-group col-sm-6">
+								<label class="font-weight-bold text-white">Gender :</label>
+								<div class="custom-control custom-radio custom-control-inline">
+									<input type="radio" id="customRadioInline1" name="gender"
+										value="male" name="customRadioInline1"
+										class="custom-control-input"> <label
+										class="custom-control-label text-white" for="customRadioInline1">Male
+									</label>
+								</div>
+								<div class="custom-control custom-radio custom-control-inline">
+									<input type="radio" id="customRadioInline2" name="gender"
+										value="female" name="customRadioInline1"
+										class="custom-control-input"> <label
+										class="custom-control-label text-white" for="customRadioInline2">Female
+									</label>
+								</div>
 							</div>
 
 
@@ -125,14 +121,14 @@
 								style="text-align: center; margin-top: 20px;">
 								<button type="submit" class="btn btn-primary shadow-sm">UPDATE</button>
 
-								<a class="btn btn-primary" href="plisthome" role="button">
+								<a class="btn btn-primary" href="adminhomer" role="button">
 									Back </a>
 							</div>
 						</div>
 					</form>
 				</form:form>
-			</div>
-		</div>
+			</section>
+		</section>
 	</div>
 
 
@@ -157,4 +153,3 @@
     -->
 </body>
 </html>
-

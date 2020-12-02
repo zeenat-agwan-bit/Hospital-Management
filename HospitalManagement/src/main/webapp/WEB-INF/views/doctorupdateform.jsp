@@ -41,19 +41,19 @@
 }
 </style>
 
-<title>Doctor Registration</title>
+<title>Doctor-Update</title>
 </head>
 <body>
 	<div class="col-md-6 text right">
 		<br />
 		<section class="container-fluid">
 			<section class="row-justify-content-center">
-				<form:form action="savedoctor" modelAttribute="doctor" method="post">
+				<form:form action="savedoctorchanges" modelAttribute="doctor" method="post">
 
 					<form class="form-container shadow-lg text-white">
 						<h2
-							style="text-align: center; font-weight: bold; font-size: 30px; color: white;">Doctor's
-							Registration Form :</h2>
+							style="text-align: center; font-weight: bold; font-size: 30px; color: white;">Edit Doctor's
+							Details :</h2>
 
 						<div class="row">
 							<div class="form-group col-sm-6">
@@ -67,34 +67,34 @@
 
 
 							<div class="form-group col-sm-6">
-								<label for="exampleInputPassword1" class="font-weight-bold text-white">Password :</label> <input
-									type="password" name="password" placeholder="Enter Password"
-									class="form-control" id="exampleInputPassword1">
+								<label for="exampleInputPassword1" class="font-weight-bold text-white">Password :</label> <form:input
+									type="password" path="password" placeholder="Enter Password"
+									class="form-control" id="exampleInputPassword1"/>
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold text-white">Name :</label> <input type="text" name="dname"
-									placeholder="Enter Name" class="form-control">
+								<label class="font-weight-bold text-white">Name :</label> <form:input type="text" path="dname"
+									placeholder="Enter Name" class="form-control"/>
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold text-white">Phone :</label> <input type="text" name="phone"
-									placeholder="Enter Mobile No." class="form-control">
+								<label class="font-weight-bold text-white">Phone :</label> <form:input type="text" path="phone"
+									placeholder="Enter Mobile No." class="form-control"/>
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold text-white">City :</label> <input type="text" name="city"
-									placeholder="Enter City" class="form-control">
+								<label class="font-weight-bold text-white">City :</label> <form:input type="text" path="city"
+									placeholder="Enter City" class="form-control"/>
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold text-white">Address :</label> <input type="text" name="address"
-									placeholder="Enter Address" class="form-control">
+								<label class="font-weight-bold text-white">Address :</label> <form:input type="text" path="address"
+									placeholder="Enter Address" class="form-control"/>
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold text-white">State :</label> <input type="text" name="state"
-									placeholder="Enter State" class="form-control">
+								<label class="font-weight-bold text-white">State :</label> <form:input type="text" path="state"
+									placeholder="Enter State" class="form-control"/>
 							</div>
 
 
@@ -178,7 +178,7 @@
 
 							<div class="form-group col-md-12 "
 								style="text-align: center; margin-top: 20px;">
-								<button type="submit" class="btn btn-primary shadow-sm">Register</button>
+								<button type="submit" class="btn btn-primary shadow-sm">Update</button>
 
 								<a class="btn btn-primary" href="adminhomed" role="button">
 									Back </a>

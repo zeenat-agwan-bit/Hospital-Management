@@ -13,12 +13,14 @@ public interface ReceptionistDAO {
 	public List<Receptionist> showAllReceptionist();
 
 	public Receptionist getReceptionistById(String email);
-	
-	//-------------------------------------------
-	
+
+	public void updateReception(Receptionist receptionist);
+
+	public void deleteReception(String email);
+
+	// -------------------------------------------
+
 	public void saveRecPatient(Patient patient);
-	
-	
 
 	public List<Patient> getAllPatientByReception(String email);
 

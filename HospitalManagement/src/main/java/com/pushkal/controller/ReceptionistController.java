@@ -68,6 +68,41 @@ public class ReceptionistController {
 		return "adminpage";
 	}
 
+	
+	@RequestMapping("/receplistback")
+	public String recepList() {
+		return "redirect:receplist";
+	}
+
+	
+	@RequestMapping("updatereception")
+	public ModelAndView showDoctorUpdateForm(@RequestParam("email") String email) {
+		ModelAndView mv = new ModelAndView("receptionupdateform");
+		Receptionist receptionist = receptionService.searchReceptionById(email);
+		mv.addObject("receptionist", receptionist);
+		return mv;
+	}
+
+	@RequestMapping("savereceptionchanges")
+
+	public ModelAndView saveDoctorChanges(@ModelAttribute("receptionist") Receptionist receptionist) {
+
+		receptionService.changeReception(receptionist);
+		ModelAndView mv = new ModelAndView("redirect:receplist");
+		return mv;
+	}
+
+	@RequestMapping("deletereception")
+	public ModelAndView removeDoctor(@RequestParam("email") String email) {
+		receptionService.removeReception(email);
+		ModelAndView mv = new ModelAndView("redirect:receplist");
+		return mv;
+	}
+
+	
+	
+	
+	
 //----------------------------------------------------------------------------------------------------------------------
 	@RequestMapping("/recpatiententry")
 	public ModelAndView showRecPForm() {

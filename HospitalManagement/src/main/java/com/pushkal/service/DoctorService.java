@@ -1,6 +1,5 @@
 package com.pushkal.service;
 
-
 import java.util.List;
 
 import com.pushkal.domain.AppointmentBooking;
@@ -19,6 +18,9 @@ public interface DoctorService {
 
 	public Doctor findDoctorById(String email);
 
+	public void EditDoctor(Doctor doctor);
+
+	public void RemoveDoctor(String email);
 
 	// For Doctor Page(Patient)
 
@@ -31,7 +33,5 @@ public interface DoctorService {
 	public void addDocAppointment(AppointmentBooking appointmentBooking);
 
 	public List<AppointmentBooking> findAllAppointmentsByDoctor(String email);
-	
-	
-	
+
 }

@@ -44,4 +44,12 @@ public class ReceptionServiceImpl implements ReceptionistService {
 		return dao.getReceptionistById(email);
 	}
 
+	public void changeReception(Receptionist receptionist) {
+		dao.updateReception(receptionist);
+	}
+
+	public void removeReception(String email) {
+		dao.deleteReception(email);
+	}
+
 }

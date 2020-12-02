@@ -42,7 +42,7 @@ public class PatientController {
 	@RequestMapping("/updatepatient")
 	public ModelAndView updatePatient(@ModelAttribute("patient") Patient patient) {
 		patientService.changePatient(patient);
-		ModelAndView mv = new ModelAndView("patientupdated");
+		ModelAndView mv = new ModelAndView("redirect:patientlist");
 		return mv;
 	}
 

@@ -19,5 +19,10 @@ public interface ReceptionistService {
 	public Receptionist searchReceptionById(String email);
 
 	public List<Patient> findAllPatientsByReception(String email);
+	
+	public void changeReception(Receptionist receptionist);
+
+	public void removeReception(String email);
+
 
 }

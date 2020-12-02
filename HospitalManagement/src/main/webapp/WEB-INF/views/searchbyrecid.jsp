@@ -97,7 +97,7 @@
 
 	<div class="col-md-12 " style="text-align: center; margin-top: 40px;">
 
-		<a class="btn btn-primary" href="adminhomer" role="button"> Back </a>
+		<a class="btn btn-primary" href="receplistback" role="button"> Back </a>
 
 	</div>
 

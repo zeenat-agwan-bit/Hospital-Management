@@ -12,6 +12,7 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.pushkal.domain.Doctor;
 import com.pushkal.domain.Patient;
 import com.pushkal.domain.Receptionist;
 
@@ -50,16 +51,30 @@ public class ReceptionistDAOImpl implements ReceptionistDAO {
 		session.close();
 		return receptionists;
 	}
-	
-	
-	
+
 	public Receptionist getReceptionistById(String email) {
 		Session session = sessionFactory.openSession();
 		Receptionist receptionist = session.get(Receptionist.class, email);
 		return receptionist;
 	}
-	
-	//_______________________________________________________________________________
+
+	public void updateReception(Receptionist receptionist) {
+		Session session = sessionFactory.openSession();
+		Transaction tr = session.beginTransaction();
+		session.update(receptionist);
+		tr.commit();
+		session.close();
+	}
+
+	public void deleteReception(String email) {
+		Session session = sessionFactory.openSession();
+		Transaction tr = session.beginTransaction();
+		Receptionist receptionist = session.get(Receptionist.class, email);
+		session.delete(receptionist);
+		tr.commit();
+	}
+
+	// _______________________________________________________________________________
 
 	public void saveRecPatient(Patient patient) {
 		Session session = sessionFactory.openSession();
@@ -78,7 +93,5 @@ public class ReceptionistDAOImpl implements ReceptionistDAO {
 		session.close();
 		return patients;
 	}
-
-	
 
 }

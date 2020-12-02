@@ -65,16 +65,12 @@ public class DoctorDAOImpl implements DoctorDAO {
 			}
 		}
 	}
-	
-	
-	
+
 	public Doctor getDoctorById(String email) {
 		Session session = sessionFactory.openSession();
 		Doctor doctor = session.get(Doctor.class, email);
 		return doctor;
 	}
-
-	
 
 	public List<Doctor> findAllDoctor() {
 		Session session = sessionFactory.openSession();
@@ -123,7 +119,23 @@ public class DoctorDAOImpl implements DoctorDAO {
 		return bookings;
 	}
 
-	
+	public void updateDoctor(Doctor doctor) {
+		Session session = sessionFactory.openSession();
+		Transaction tr = session.beginTransaction();
+		session.update(doctor);
+		tr.commit();
+		session.close();
+	}
+
+	public void deleteDoctor(String email) {
+		Session session = sessionFactory.openSession();
+		Transaction tr = session.beginTransaction();
+		Doctor doctor = session.get(Doctor.class, email);
+		session.delete(doctor);
+		tr.commit();
+		session.close();
+	}
+
 	/*
 	 * public List<BigInteger> getAllDoctorb(String email) { Session session =
 	 * sessionFactory.openSession(); Criteria criteria =
@@ -134,7 +146,5 @@ public class DoctorDAOImpl implements DoctorDAO {
 	 * 
 	 * }
 	 */
-
-
 
 }

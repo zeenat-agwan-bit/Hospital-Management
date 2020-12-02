@@ -1,6 +1,8 @@
 package com.pushkal.controller;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -47,12 +49,65 @@ public class DoctorsController {
 		return mv;
 	}
 
+	@RequestMapping("updatedoctor")
+	public ModelAndView showDoctorUpdateForm(@RequestParam("email") String email) {
+		ModelAndView mv = new ModelAndView("doctorupdateform");
+		Doctor doctor = doctorService.findDoctorById(email);
+		mv.addObject("doctor", doctor);
+		return mv;
+	}
+
+	@RequestMapping("savedoctorchanges")
+
+	public ModelAndView saveDoctorChanges(@ModelAttribute("doctor") Doctor doctor) {
+
+		doctorService.EditDoctor(doctor);
+		ModelAndView mv = new ModelAndView("redirect:doctorlist");
+		return mv;
+	}
+
+	@RequestMapping("deletedoctor")
+	public ModelAndView removeDoctor(@RequestParam("email") String email) {
+		doctorService.RemoveDoctor(email);
+		ModelAndView mv = new ModelAndView("redirect:doctorlist");
+		return mv;
+	}
+
 	// this method return only login page when request comes to /doctor/
 	@RequestMapping("/doctorentry")
 	public ModelAndView showDoctorForm() {
 		ModelAndView mv = new ModelAndView("doctorentry");
 		mv.addObject("doctor", new Doctor());
+		List<String> qualifications = Arrays.asList("MBBS", "MPhil", "PhD", "DPhil", "DClinSurg", "MD(Res)", "MCM",
+				"Surg", "MD", "DO", "MSc", "DCM", "DMSc", "MMedSc", "DSurg", "DMedSc");
 
+		/*
+		 * qualifications.add("MBBS"); qualifications.add("MPhil");
+		 * qualifications.add("PhD"); qualifications.add("DPhil");
+		 * qualifications.add("DClinSurg"); qualifications.add("MD(Res)");
+		 * qualifications.add("MCM"); qualifications.add("Surg");
+		 * qualifications.add("MD"); qualifications.add("DO");
+		 * qualifications.add("MSc"); qualifications.add("DCM");
+		 * qualifications.add("DMSc"); qualifications.add("MMedSc");
+		 * qualifications.add("DSurg"); qualifications.add("DMedSc");
+		 */
+
+		mv.addObject("qualifications", qualifications);
+		List<String> specialization = Arrays.asList("Allergy", "Anesthesiology", "Dermatology", "Emergency Medicine",
+				"Family Medicine", "Gynecology", "Immunology", "Internal Medicine", "Medical Genetics", "Neurology",
+				"Ophthalmology", "Pathology", "Pediatrics", "Psychiatry", "Surgery", "Urology");
+		/*
+		 * specialization.add("Allergy"); specialization.add("Anesthesiology");
+		 * specialization.add("Dermatology"); specialization.add("Emergency Medicine");
+		 * specialization.add("Family Medicine"); specialization.add("Gynecology");
+		 * specialization.add("Immunology"); specialization.add("Internal Medicine");
+		 * specialization.add("Medical Genetics"); specialization.add("Neurology");
+		 * specialization.add("Ophthalmology"); specialization.add("Pathology");
+		 * specialization.add("Pediatrics"); specialization.add("Psychiatry");
+		 * specialization.add("Surgery"); specialization.add("Urology");
+		 */
+		mv.addObject("specialization", specialization);
+		mv.addObject("qualifications", qualifications);
 		return mv;
 	}
 
@@ -75,19 +130,6 @@ public class DoctorsController {
 		mv.addObject("doctor", doctor); // request-scope
 		return mv;
 	}
-	
-	/*
-	@RequestMapping("/searchbydocid")
-	public ModelAndView showSearchButtonReception(@RequestParam("srchbox") BigInteger srch) {
-		ModelAndView mv = new ModelAndView("searchbyrecid");
-		Doctor doctor = doctorService.searchDoctorById(srch);
-		mv.addObject("doctor", doctor); // request-scope
-		return mv;
-	}
-	
-	*/
-	
-	
 
 	@RequestMapping("/adminhomed")
 	public String adminHomeD() {

@@ -43,9 +43,14 @@
 		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">View
 		All Appointments</h2>
 
-	<form action="searchbyappid" method="post">
-		<input type="search" name="appbox" placeholder="Search By Id">
-		<button type="submit">Search</button>
+	<form action="searchbyappid" class="form-container text-white" method="post">
+		<div class="form-group col-sm-2">
+		<input type="search" name="appbox" placeholder="Search By Id"  class="form-control">
+		</div>
+		<div class="form-group col-sm-2 "
+								style="text-align: center; margin-top: 10px;">
+		<button type="submit" class="btn btn-primary">Search</button>
+		</div>
 	</form>
 
 	<div class="table-responsive">

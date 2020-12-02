@@ -55,16 +55,28 @@
 
 				</ul>
 
-				<form class="form-inline my-2 my-lg-0" action="searchbyrecid"
+				<!-- <form class="form-inline my-2 my-lg-0" action="searchbyrecid"
 					method="post">
 					<input class="form-control mr-sm-2" type="search" name="srchbox"
 						placeholder="Reception's Email Id" aria-label="Search">
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+					<button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
 				</form>
-
+ -->
 			</div>
 		</nav>
 	</div>
+
+	<form action="searchbyrecid" class="form-container text-white"
+		method="post">
+		<div class="form-group col-sm-2">
+			<input type="search" name="srchbox"
+				placeholder="Reception's Email Id" class="form-control">
+		</div>
+		<div class="form-group col-sm-2 "
+			style="text-align: center; margin-top: 10px;">
+			<button type="submit" class="btn btn-primary btn-sm">Search</button>
+		</div>
+	</form>
 
 	<h2
 		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">View
@@ -106,10 +118,10 @@
 						<td class="table-dark">${receptionists.state}</td>
 						<td class="table-dark">${receptionists.gender}</td>
 						<td class="table-dark"><a
-							href="updatereception?email=${receptionist.email}"
+							href="updatereception?email=${receptionists.email}"
 							class="btn badge-primary badge btn-sm active" role="button"
 							aria-pressed="true">UPDATE</a> <a
-							href="deletepatient?patient_id=${receptionist.email}"
+							href="deletereception?email=${receptionists.email}"
 							class="btn badge-secondary badge btn-sm active" role="button"
 							aria-pressed="true">DELETE</a></td>
 					</tr>

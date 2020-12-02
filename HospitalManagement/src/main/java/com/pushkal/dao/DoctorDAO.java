@@ -1,12 +1,12 @@
 package com.pushkal.dao;
 
-import java.math.BigInteger;
+
 import java.util.List;
 
 import com.pushkal.domain.AppointmentBooking;
 import com.pushkal.domain.Doctor;
 import com.pushkal.domain.Patient;
-import com.pushkal.domain.Receptionist;
+
 
 public interface DoctorDAO {
 	// for admin
@@ -15,11 +15,15 @@ public interface DoctorDAO {
 	public void saveDoctor(Doctor doctor);
 
 	public List<Doctor> findAllDoctor();
-	
+
 	public Doctor getDoctorById(String email);
 
+	public void updateDoctor(Doctor doctor);
+	
+	public void deleteDoctor(String email);
+	
 
-	//-------------------------------------------------------------
+	// -------------------------------------------------------------
 
 	// for doctor's (Patient)
 	public void saveDocPatient(Patient patient);
@@ -31,9 +35,7 @@ public interface DoctorDAO {
 	public void saveDocAppointment(AppointmentBooking appointmentBooking);
 
 	public List<AppointmentBooking> getAllAppointmentByDoctor(String email);
-	
-	//public List<BigInteger> getAllDoctorb(String email);
-	
-	
+
+	// public List<BigInteger> getAllDoctorb(String email);
 
 }

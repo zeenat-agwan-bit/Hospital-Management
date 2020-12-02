@@ -55,34 +55,32 @@
 
 				</ul>
 
-				<form class="form-inline my-2 my-lg-0" action="searchbydocmail"
-					method="post">
-					<input class="form-control mr-sm-2" type="search" name="findbox"
-						placeholder="Doctor's Email Id" aria-label="Search">
-					<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-				</form>
-
 			</div>
 		</nav>
 	</div>
 
+	<form action="searchbydocmail" class="form-container text-white"
+		method="post">
+		<div class="form-group col-sm-2">
+			<input type="search" name="findbox" placeholder="Search By Email-Id"
+				class="form-control">
+		</div>
+		<div class="form-group col-sm-2 "
+			style="text-align: center; margin-top: 10px;">
+			<button type="submit" class="btn btn-primary btn-sm">Search</button>
+		</div>
+	</form>
 
 	<h2
 		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">View
 		All Doctors</h2>
 
-	<div style="text-align: center; margin-bottom: 2vh;">
-
-		<a class="btn btn-primary btn-sm" href="adminhomed" role="button">
-			Back </a>
-
-	</div>
 
 	<div class="table-responsive text-center">
 		<table class="table table-bordered  table-sm table-striped ">
 			<tr class="bg-dark text-white">
 
-				
+
 				<th scope="col">Email</th>
 				<th scope="col">Name</th>
 				<th scope="col">Phone</th>
@@ -111,25 +109,32 @@
 						<td class="table-dark">${doctors.qualification}</td>
 						<td class="table-dark">${doctors.specialization}</td>
 						<td class="table-dark"><a
-							href="updatedoctor?email=${doctor.email}"
+							href="updatedoctor?email=${doctors.email}"
 							class="btn badge-primary badge btn-sm active" role="button"
 							aria-pressed="true">UPDATE</a> <a
-							href="deletedoctor?email=${doctor.email}"
+							href="deletedoctor?email=${doctors.email}"
 							class="btn badge-secondary badge btn-sm active" role="button"
 							aria-pressed="true">DELETE</a></td>
 					</tr>
-				</jstl:forEach> 
+				</jstl:forEach>
 
 			</tbody>
 		</table>
 
 	</div>
 
-	<div class="col-md-12 " style="text-align: center; margin-top: 40px;">
+	<div style="text-align: center; margin-bottom: 2vh;">
+
+		<a class="btn btn-primary btn-sm" href="adminhomed" role="button">
+			Back </a>
+
+	</div>
+
+	<!-- <div class="col-md-12 " style="text-align: center; margin-top: 40px;">
 
 		<a class="btn btn-primary" href="adminhomed" role="button"> Back </a>
 
-	</div>
+	</div> -->
 
 	<!-- Optional JavaScript; choose one of the two! -->
 

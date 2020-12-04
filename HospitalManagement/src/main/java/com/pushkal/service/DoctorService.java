@@ -21,6 +21,11 @@ public interface DoctorService {
 	public void EditDoctor(Doctor doctor);
 
 	public void RemoveDoctor(String email);
+	
+	public List<Doctor> findDoctorByName(String dname);
+
+	public List<Doctor> findDoctorByCity(String city);
+	
 
 	// For Doctor Page(Patient)
 

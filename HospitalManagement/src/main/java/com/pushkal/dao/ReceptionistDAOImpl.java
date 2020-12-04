@@ -94,4 +94,22 @@ public class ReceptionistDAOImpl implements ReceptionistDAO {
 		return patients;
 	}
 
+	public List<Receptionist> getReceptionByName(String rname) {
+		Session session = sessionFactory.openSession();
+		Criteria cr = session.createCriteria(Receptionist.class);
+		cr.add(Restrictions.eq("rname", rname));
+		List<Receptionist> receptionists = cr.list();
+		session.close();
+		return receptionists;
+	}
+
+	public List<Receptionist> getReceptionByCity(String city) {
+		Session session = sessionFactory.openSession();
+		Criteria cr = session.createCriteria(Receptionist.class);
+		cr.add(Restrictions.eq("city", city));
+		List<Receptionist> receptionists = cr.list();
+		session.close();
+		return receptionists;
+	}
+
 }

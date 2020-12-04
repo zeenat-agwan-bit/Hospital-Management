@@ -140,6 +140,24 @@ public class DoctorDAOImpl implements DoctorDAO {
 		return bookings;
 	}
 
+	public List<Doctor> getDoctorByName(String dname) {
+		Session session = sessionFactory.openSession();
+		Criteria cr = session.createCriteria(Doctor.class);
+		cr.add(Restrictions.eq("dname", dname));
+		List<Doctor> doctors = cr.list();
+		session.close();
+		return doctors;
+	}
+
+	public List<Doctor> getDoctorByCity(String city) {
+		Session session = sessionFactory.openSession();
+		Criteria cr = session.createCriteria(Doctor.class);
+		cr.add(Restrictions.eq("city", city));
+		List<Doctor> doctors = cr.list();
+		session.close();
+		return doctors;
+	}
+
 	
 
 	/*

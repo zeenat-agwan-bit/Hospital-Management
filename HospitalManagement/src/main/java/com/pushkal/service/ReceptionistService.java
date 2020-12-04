@@ -23,6 +23,11 @@ public interface ReceptionistService {
 	public void changeReception(Receptionist receptionist);
 
 	public void removeReception(String email);
+	
+	public List<Receptionist> findReceptionByName(String rname);
+
+	public List<Receptionist> findReceptionByCity(String city);
+
 
 
 }

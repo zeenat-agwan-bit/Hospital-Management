@@ -63,4 +63,14 @@ public class DoctorServiceImpl implements DoctorService {
 		return dao.getAllAppointmentByDoctor(email);
 	}
 
+	public List<Doctor> findDoctorByName(String dname) {
+		
+		return dao.getDoctorByName(dname);
+	}
+
+	public List<Doctor> findDoctorByCity(String city) {
+		
+		return dao.getDoctorByCity(city);
+	}
+
 }

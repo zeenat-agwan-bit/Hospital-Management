@@ -64,9 +64,6 @@
 							placeholder="Search By Name" aria-label="Search">
 						<button class="btn btn-success btn-sm  my-2 my-sm-0" type="submit">Search</button>
 					</form>
-					</div>
-					<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					
 					<form class="form-inline my-2 my-lg-0" action="searchbydoccity"
 						method="post">
 						<input class="form-control mr-sm-2" type="search" name="city"
@@ -82,21 +79,9 @@
 		</nav>
 	</div>
 
-	<form action="searchbydocmail" class="form-container text-white"
-		method="post">
-		<div class="form-group col-sm-2">
-			<input type="search" name="findbox" placeholder="Search By Email-Id"
-				class="form-control">
-		</div>
-		<div class="form-group col-sm-2 "
-			style="text-align: center; margin-top: 10px;">
-			<button type="submit" class="btn btn-primary btn-sm">Search</button>
-		</div>
-	</form>
-
+	
 	<h2
-		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">View
-		All Doctors</h2>
+		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">Details Of Doctor By Searching Name</h2>
 
 
 	<div class="table-responsive text-center">
@@ -113,13 +98,12 @@
 				<th scope="col">Gender</th>
 				<th scope="col">Qualification</th>
 				<th scope="col">Specialization</th>
-				<th scope="col">Actions</th>
-
+				
 			</tr>
 
 
 			<tbody>
-				<jstl:forEach items="${dlist}" var="doctors">
+				<jstl:forEach items="${doctors}" var="doctors">
 
 					<tr>
 						<td class="table-dark">${doctors.email}</td>
@@ -131,13 +115,7 @@
 						<td class="table-dark">${doctors.gender}</td>
 						<td class="table-dark">${doctors.qualification}</td>
 						<td class="table-dark">${doctors.specialization}</td>
-						<td class="table-dark"><a
-							href="updatedoctor?email=${doctors.email}"
-							class="btn badge-primary badge btn-sm active" role="button"
-							aria-pressed="true">UPDATE</a> <a
-							href="deletedoctor?email=${doctors.email}"
-							class="btn badge-secondary badge btn-sm active" role="button"
-							aria-pressed="true">DELETE</a></td>
+						
 					</tr>
 				</jstl:forEach>
 
@@ -148,16 +126,12 @@
 
 	<div style="text-align: center; margin-bottom: 2vh;">
 
-		<a class="btn btn-primary btn-sm" href="adminhomed" role="button">
+		<a class="btn btn-primary btn-sm" href="dlisthome" role="button">
 			Back </a>
 
 	</div>
 
-	<!-- <div class="col-md-12 " style="text-align: center; margin-top: 40px;">
-
-		<a class="btn btn-primary" href="adminhomed" role="button"> Back </a>
-
-	</div> -->
+	
 
 	<!-- Optional JavaScript; choose one of the two! -->
 
@@ -178,87 +152,3 @@
 </body>
 </html>
 
-
-
-
-
-<%-- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="jstl"%>
-<%@page import="java.util.List , com.pushkal.domain.Doctor"%>
-<%@page isELIgnored="false"%>
-<html>
-<body>
-	<h3>Doctors-List</h3>
-	<div class="table-responsive"></div>
-	<table class="table">
-		<thead class="thead-dark">
-			<tr>
-				<th scope="col">Email</th>
-				<th scope="col">Name</th>
-				<th scope="col">Phone</th>
-				<th scope="col">City</th>
-				<th scope="col">Address</th>
-				<th scope="col">State</th>
-				<th scope="col">Gender</th>
-				<th scope="col">Qualification</th>
-				<th scope="col">Specialization</th>
-			</tr>
-
-		</thead>
-		<tbody>
-			<jstl:forEach items="${dlist}" var="doctors">
-
-			<tr>
-				<td>${doctors.email}</td>
-				<td>${doctors.dname}</td>
-				<td>${doctors.phone}</td>
-				<td>${doctors.city}</td>
-				<td>${doctors.address}</td>
-				<td>${doctors.state}</td>
-				<td>${doctors.gender}</td>
-				<td>${doctors.qualification}</td>
-				<td>${doctors.specialization}</td>
-				
-			</tr>
-		</jstl:forEach>
-			
-		</tbody>
-	</table>
-
-
-</div>
-	<hr>
-	<table border="2">
-		<tr>
-
-			<th>Email</th>
-			<th>Name</th>
-			<th>Phone</th>
-			<th>City</th>
-			<th>Address</th>
-			<th>State</th>
-			<th>Gender</th>
-			<th>Qualification</th>
-			<th>Specialization</th>
-		</tr>
-		<jstl:forEach items="${dlist}" var="doctors">
-
-			<tr>
-				<td>${doctors.email}</td>
-				<td>${doctors.dname}</td>
-				<td>${doctors.phone}</td>
-				<td>${doctors.city}</td>
-				<td>${doctors.address}</td>
-				<td>${doctors.state}</td>
-				<td>${doctors.gender}</td>
-				<td>${doctors.qualification}</td>
-				<td>${doctors.specialization}</td>
-				
-			</tr>
-		</jstl:forEach>
-	</table>
-	
-	<hr>
-	<a href="adminhomed">Back</a>
-	<hr>
-</body>
-</html> --%>

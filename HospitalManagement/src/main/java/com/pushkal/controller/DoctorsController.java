@@ -131,14 +131,30 @@ public class DoctorsController {
 		return mv;
 	}
 
-	@RequestMapping("/adminhomed")
-	public String adminHomeD() {
-		return "adminpage";
+	@RequestMapping("/searchbydocname")
+	public ModelAndView showSearchNameDoctor(@RequestParam String dname) {
+		ModelAndView mv = new ModelAndView("searchbydocname");
+		List<Doctor> doctors = doctorService.findDoctorByName(dname);
+		mv.addObject("doctors", doctors); // request-scope
+		return mv;
+	}
+
+	@RequestMapping("/searchbydoccity")
+	public ModelAndView showSearchCityDoctor(@RequestParam String city) {
+		ModelAndView mv = new ModelAndView("searchbydoccity");
+		List<Doctor> doctors = doctorService.findDoctorByCity(city);
+		mv.addObject("doctors", doctors); // request-scope
+		return mv;
 	}
 
 	@RequestMapping("/dlisthome")
-	public String plistHomeP() {
+	public String dlistHomeD() {
 		return "redirect:doctorlist";
+	}
+
+	@RequestMapping("/adminhomed")
+	public String adminHomeD() {
+		return "adminpage";
 	}
 
 	// -----------------------------------------MAPPING FOR DOCTOR PAGE (Patient)
@@ -172,13 +188,11 @@ public class DoctorsController {
 		return mv;
 	}
 
-	
 	@RequestMapping("dlisthomee")
 	public String doctorPListt() {
 		return "redirect:docpatientlist";
 	}
-	
-	
+
 	@RequestMapping("updatedocpatient")
 	public ModelAndView showPatientUpdateForm(@RequestParam("pid") BigInteger pid) {
 		ModelAndView mv = new ModelAndView("docpatientupdateform");
@@ -206,7 +220,6 @@ public class DoctorsController {
 		return mv;
 	}
 
-	
 	@RequestMapping("/searchbypatidD")
 	public ModelAndView showSearchButtonPatient(@RequestParam("pidbox") BigInteger query) {
 		ModelAndView mv = new ModelAndView("searchbypatidD");
@@ -214,10 +227,7 @@ public class DoctorsController {
 		mv.addObject("patient", patient); // request-scope
 		return mv;
 	}
-	
-	
-	
-	
+
 	@RequestMapping("/doctorhomep")
 	public String doctorHomep() {
 		return "doctorpage";

@@ -16,7 +16,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 @Table(name = "doctor")
 public class Doctor {
 	@Id
-	@NotEmpty
+	
 	@Email(message = "Invalid Email Address")
 	private String email;
 	private String password;

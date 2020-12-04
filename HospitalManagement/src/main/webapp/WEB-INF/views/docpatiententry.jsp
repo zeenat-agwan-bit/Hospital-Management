@@ -57,40 +57,40 @@
 							Registration Form :</h2>
 
 						<div class="row">
-							<div class="form-group col-sm-6">
-								<label class="font-weight-bold">Patient Id :</label> <input
+							<!-- <div class="form-group col-sm-6">
+								<label class="font-weight-bold text-white">Patient Id :</label> <input
 									type="hidden" placeholder=" Patient Id" name="pid"
 									class="form-control">
-							</div>
+							</div> -->
 
 
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold">Name :</label> <input
+								<label class="font-weight-bold text-white">Name :</label> <input
 									type="text" name="pName" placeholder="Enter Name"
 									class="form-control">
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold">Phone :</label> <input
+								<label class="font-weight-bold text-white">Phone :</label> <input
 									type="text" name="phone" placeholder="Enter Mobile No."
 									class="form-control">
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold">City :</label> <input
+								<label class="font-weight-bold text-white">City :</label> <input
 									type="text" name="city" placeholder="Enter City"
 									class="form-control">
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold">Address :</label> <input
+								<label class="font-weight-bold text-white">Address :</label> <input
 									type="text" name="address" placeholder="Enter Address"
 									class="form-control">
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold">State :</label> <input
+								<label class="font-weight-bold text-white">State :</label> <input
 									type="text" name="state" placeholder="Enter State"
 									class="form-control">
 							</div>
@@ -98,13 +98,13 @@
 
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold">Age :</label> <input type="text"
+								<label class="font-weight-bold text-white">Age :</label> <input type="text"
 									name="age" placeholder="Enter Age" class="form-control">
 							</div>
 
 							<div class="form-group col-sm-6">
 
-								<label for="exampleFormControlSelect1" class="font-weight-bold">Blood
+								<label for="exampleFormControlSelect1" class="font-weight-bold text-white">Blood
 									Group :</label> <select name="blood" class="form-control"
 									id="exampleFormControlSelect1">
 									<option>A+</option>
@@ -119,20 +119,20 @@
 								</select>
 							</div>
 
-							<div class="form-group col-sm-6">
+							<div class="form-group col-sm-6 text-white">
 								<label>Gender :</label>
 								<div class="custom-control custom-radio custom-control-inline">
 									<input type="radio" id="customRadioInline1" name="gender"
 										value="male" name="customRadioInline1"
 										class="custom-control-input"> <label
-										class="custom-control-label" for="customRadioInline1">Male
+										class="custom-control-label text-white" for="customRadioInline1">Male
 									</label>
 								</div>
 								<div class="custom-control custom-radio custom-control-inline">
 									<input type="radio" id="customRadioInline2" name="gender"
 										value="female" name="customRadioInline1"
 										class="custom-control-input"> <label
-										class="custom-control-label" for="customRadioInline2">Female
+										class="custom-control-label text-white" for="customRadioInline2">Female
 									</label>
 								</div>
 							</div>

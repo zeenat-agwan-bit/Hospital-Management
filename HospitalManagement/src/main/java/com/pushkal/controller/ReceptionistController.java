@@ -68,15 +68,13 @@ public class ReceptionistController {
 		return "adminpage";
 	}
 
-	
 	@RequestMapping("/receplistback")
 	public String recepList() {
 		return "redirect:receplist";
 	}
 
-	
 	@RequestMapping("updatereception")
-	public ModelAndView showDoctorUpdateForm(@RequestParam("email") String email) {
+	public ModelAndView showRecepUpdateForm(@RequestParam("email") String email) {
 		ModelAndView mv = new ModelAndView("receptionupdateform");
 		Receptionist receptionist = receptionService.searchReceptionById(email);
 		mv.addObject("receptionist", receptionist);
@@ -85,7 +83,7 @@ public class ReceptionistController {
 
 	@RequestMapping("savereceptionchanges")
 
-	public ModelAndView saveDoctorChanges(@ModelAttribute("receptionist") Receptionist receptionist) {
+	public ModelAndView saveRecepChanges(@ModelAttribute("receptionist") Receptionist receptionist) {
 
 		receptionService.changeReception(receptionist);
 		ModelAndView mv = new ModelAndView("redirect:receplist");
@@ -93,16 +91,33 @@ public class ReceptionistController {
 	}
 
 	@RequestMapping("deletereception")
-	public ModelAndView removeDoctor(@RequestParam("email") String email) {
+	public ModelAndView removeReception(@RequestParam("email") String email) {
 		receptionService.removeReception(email);
 		ModelAndView mv = new ModelAndView("redirect:receplist");
 		return mv;
 	}
 
-	
-	
-	
-	
+	@RequestMapping("/searchbyrecname")
+	public ModelAndView showSearchNameReception(@RequestParam String rname) {
+		ModelAndView mv = new ModelAndView("searchbyrecname");
+		List<Receptionist> receptionists = receptionService.findReceptionByName(rname);
+		mv.addObject("receptions", receptionists); // request-scope
+		return mv;
+	}
+
+	@RequestMapping("/searchbyreccity")
+	public ModelAndView showSearchCityReception(@RequestParam String city) {
+		ModelAndView mv = new ModelAndView("searchbyreccity");
+		List<Receptionist> receptionists = receptionService.findReceptionByCity(city);
+		mv.addObject("receptions", receptionists); // request-scope
+		return mv;
+	}
+
+	@RequestMapping("/rlisthome")
+	public String rlistHomeP() {
+		return "redirect:receplist";
+	}
+
 //----------------------------------------------------------------------------------------------------------------------
 	@RequestMapping("/recpatiententry")
 	public ModelAndView showRecPForm() {

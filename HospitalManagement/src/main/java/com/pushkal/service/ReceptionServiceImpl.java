@@ -52,4 +52,13 @@ public class ReceptionServiceImpl implements ReceptionistService {
 		dao.deleteReception(email);
 	}
 
+	public List<Receptionist> findReceptionByName(String rname) {
+
+		return dao.getReceptionByName(rname);
+	}
+
+	public List<Receptionist> findReceptionByCity(String city) {
+		return dao.getReceptionByCity(city);
+	}
+
 }

@@ -56,59 +56,21 @@
 				</ul>
 
 
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-
-					<form class="form-inline my-2 my-lg-0" action="searchbyrecname"
-						method="post">
-						<input class="form-control mr-sm-2" type="search" name="rname"
-							placeholder="Search By Name" aria-label="Search">
-						<button class="btn btn-success btn-sm  my-2 my-sm-0" type="submit">Search</button>
-					</form>
-				</div>
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-					<form class="form-inline my-2 my-lg-0" action="searchbyreccity"
-						method="post">
-						<input class="form-control mr-sm-2" type="search" name="city"
-							placeholder="Search By City" aria-label="Search">
-						<button class="btn btn-success btn-sm my-2 my-sm-0" type="submit">Search</button>
-					</form>
-
-				</div>
-
-				<!-- <form class="form-inline my-2 my-lg-0" action="searchbyrecid"
-					method="post">
-					<input class="form-control mr-sm-2" type="search" name="srchbox"
-						placeholder="Reception's Email Id" aria-label="Search">
-					<button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
-				</form>
- -->
 			</div>
 		</nav>
 	</div>
 
-	<form action="searchbyrecid" class="form-container text-white"
-		method="post">
-		<div class="form-group col-sm-2">
-			<input type="search" name="srchbox"
-				placeholder="Reception's Email Id" class="form-control">
-		</div>
-		<div class="form-group col-sm-2 "
-			style="text-align: center; margin-top: 10px;">
-			<button type="submit" class="btn btn-primary btn-sm">Search</button>
-		</div>
-	</form>
+
 
 	<h2
-		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">View
-		All Receptionists</h2>
+		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">Details
+		Of Receptionist</h2>
 
 
 	<div style="text-align: center; margin-bottom: 2vh;">
 
-		<a class="btn btn-primary btn-sm" href="adminhomer" role="button">
-			Back </a>
+		<!-- <a class="btn btn-primary btn-sm" href="adminhomer" role="button">
+			Back </a> -->
 
 	</div>
 
@@ -123,13 +85,13 @@
 				<th scope="col">Address</th>
 				<th scope="col">State</th>
 				<th scope="col">Gender</th>
-				<th scope="col">Actions</th>
+
 
 			</tr>
 
 
 			<tbody>
-				<jstl:forEach items="${rlist}" var="receptionists">
+				<jstl:forEach items="${receptions}" var="receptionists">
 
 					<tr>
 						<td class="table-dark">${receptionists.email}</td>
@@ -139,13 +101,7 @@
 						<td class="table-dark">${receptionists.address}</td>
 						<td class="table-dark">${receptionists.state}</td>
 						<td class="table-dark">${receptionists.gender}</td>
-						<td class="table-dark"><a
-							href="updatereception?email=${receptionists.email}"
-							class="btn badge-primary badge btn-sm active" role="button"
-							aria-pressed="true">UPDATE</a> <a
-							href="deletereception?email=${receptionists.email}"
-							class="btn badge-secondary badge btn-sm active" role="button"
-							aria-pressed="true">DELETE</a></td>
+
 					</tr>
 				</jstl:forEach>
 
@@ -156,7 +112,7 @@
 
 	<div class="col-md-12 " style="text-align: center; margin-top: 40px;">
 
-		<a class="btn btn-primary" href="adminhomer" role="button"> Back </a>
+		<a class="btn btn-primary" href="rlisthome" role="button"> Back </a>
 
 	</div>
 

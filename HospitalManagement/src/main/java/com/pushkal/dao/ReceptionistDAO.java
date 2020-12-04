@@ -17,6 +17,10 @@ public interface ReceptionistDAO {
 	public void updateReception(Receptionist receptionist);
 
 	public void deleteReception(String email);
+	
+	public List<Receptionist> getReceptionByName(String rname);
+
+	public List<Receptionist> getReceptionByCity(String city);
 
 	// -------------------------------------------
 

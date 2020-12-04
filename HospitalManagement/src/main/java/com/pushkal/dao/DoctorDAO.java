@@ -22,6 +22,10 @@ public interface DoctorDAO {
 	
 	public void deleteDoctor(String email);
 	
+	public List<Doctor> getDoctorByName(String dname);
+
+	public List<Doctor> getDoctorByCity(String city);
+	
 
 	// -------------------------------------------------------------
 

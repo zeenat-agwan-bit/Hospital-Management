@@ -53,15 +53,15 @@
 						<div class="row">
 						
 						
-						<div class="form-group col-sm-6">
-								<label class="font-weight-bold font-white">Patient ID :</label> <input
+						<!-- <div class="form-group col-sm-6">
+								<label class="font-weight-bold text-white">Patient ID :</label> <input
 									type="hidden" name="pid" placeholder="Patient Id"
 									class="form-control">
 							</div>
-							
+							 -->
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold font-white">Name :</label> <input
+								<label class="font-weight-bold text-white">Name :</label> <input
 									type="text" name="pName" placeholder="Enter Name"
 									class="form-control">
 							</div>
@@ -69,37 +69,37 @@
 				
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold font-white">Phone :</label> <input
+								<label class="font-weight-bold text-white">Phone :</label> <input
 									type="text" name="phone" placeholder="Enter Mobile No."
 									class="form-control">
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold font-white">City :</label> <input
+								<label class="font-weight-bold text-white">City :</label> <input
 									type="text" name="city" placeholder="Enter City"
 									class="form-control">
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold font-white">Address :</label> <input
+								<label class="font-weight-bold text-white">Address :</label> <input
 									type="text" name="address" placeholder="Enter Address"
 									class="form-control">
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold font-white">State :</label> <input
+								<label class="font-weight-bold text-white">State :</label> <input
 									type="text" name="state" placeholder="Enter State"
 									class="form-control">
 							</div>
 
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold font-white">Age :</label> <input type="text"
+								<label class="font-weight-bold text-white">Age :</label> <input type="text"
 									name="age" placeholder="Enter Age" class="form-control">
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label for="exampleFormControlSelect1" class="font-weight-bold font-white">Blood
+								<label for="exampleFormControlSelect1" class="font-weight-bold text-white">Blood
 									Group :</label> <select name="blood" class="form-control"
 									id="exampleFormControlSelect1">
 									<option>A+</option>
@@ -114,8 +114,8 @@
 								</select>
 							</div>
 
-	<div class="form-group col-sm-6">
-								<label class="font-weight-bold font-white" >Doctor :</label> <input type="text" name="doctor.dname"
+	<!-- <div class="form-group col-sm-6">
+								<label class="font-weight-bold text-white" >Doctor :</label> <input type="text" name="doctor.dname"
 									placeholder="select doctor" class="form-control">
 							</div>
 
@@ -124,7 +124,7 @@
 
 
 							<div class="form-group col-sm-6">
-								<label for="exampleFormControlSelect1" class="font-weight-bold font-white">Specialization : 
+								<label for="exampleFormControlSelect1" class="font-weight-bold text-white">Specialization : 
 									</label> <select name="doctor.specialization"
 									placeholder="Select Specialization" class="form-control"
 									id="exampleFormControlSelect1">
@@ -150,7 +150,7 @@
 
 
 							<div class="form-group col-sm-6">
-								<label for="exampleInputPassword1" class="font-weight-bold font-white">Date
+								<label for="exampleInputPassword1" class="font-weight-bold textt-white">Date
 									:</label> <input type="text" name="appointmentbooking.date"
 									placeholder="dd/mm/yyyy" class="form-control"
 									id="exampleInputPassword1">
@@ -159,7 +159,7 @@
 
 
 							<div class="form-group col-sm-6">
-								<label for="inputState" class="font-weight-bold font-white">Time
+								<label for="inputState" class="font-weight-bold text-white">Time
 									Slot :</label> <select id="inputState" class="form-control"
 									name="appointmentbooking.time">
 									<option selected>Choose...</option>
@@ -233,9 +233,9 @@
 
 
 								</select>
-							</div>
+							</div> -->
 
-
+<!-- 
 							<div class="form-group col-sm-6">
 								<label for="exampleFormControlTextarea1"
 									class="font-weight-bold font-white">Diagnosis :</label>
@@ -243,24 +243,24 @@
 									rows="3" name="appointmentbooking.diagnosis"
 									placeholder="Enter Diagnosis"></textarea>
 							</div>
-
+ -->
 
 
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold font-white">Gender :</label>
+								<label class="font-weight-bold text-white">Gender :</label>
 								<div class="custom-control custom-radio custom-control-inline">
 									<input type="radio" id="customRadioInline1" name="gender"
 										value="male" name="customRadioInline1"
 										class="custom-control-input"> <label
-										class="custom-control-label" for="customRadioInline1">Male
+										class="custom-control-label text-white" for="customRadioInline1">Male
 									</label>
 								</div>
 								<div class="custom-control custom-radio custom-control-inline">
 									<input type="radio" id="customRadioInline2" name="gender"
 										value="female" name="customRadioInline1"
 										class="custom-control-input"> <label
-										class="custom-control-label" for="customRadioInline2">Female
+										class="custom-control-label text-white" for="customRadioInline2">Female
 									</label>
 								</div>
 							</div>

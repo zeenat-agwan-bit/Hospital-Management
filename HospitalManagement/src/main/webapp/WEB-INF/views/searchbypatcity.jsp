@@ -63,7 +63,7 @@
 
 
 <h2
-		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">Details Of Patient ${patients.pName}</h2>
+		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">Details Of Patient ${patient.pName}</h2>
 	</br>
 
 	<div class="table-responsive">

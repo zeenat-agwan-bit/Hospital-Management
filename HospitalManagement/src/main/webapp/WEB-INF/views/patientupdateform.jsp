@@ -48,44 +48,49 @@
 					<form class="shadow-lg p-4">
 
 						<div class="row">
-						${patient.pid}
-								<input type="hidden" name="pid" placeholder="Id" 
-									class="form-control" >
-							
+						
+							<div class="form-group col-sm-6">
+								<label class="font-weight-bold text-white">Patient ID : ${patient.pid}</label> <form:input
+									type="hidden" path="pid" 
+									class="form-control"/>
+							</div>
+						
+						
+
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold">Name :</label>
+								<label class="font-weight-bold text-white">Name :</label>
 								<form:input type="text" path="pName" placeholder="Enter Name"
 									class="form-control" />
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold">Phone :</label>
+								<label class="font-weight-bold text-white">Phone :</label>
 								<form:input type="text" path="phone"
 									placeholder="Enter Mobile No." class="form-control" />
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold">City :</label>
+								<label class="font-weight-bold text-white">City :</label>
 								<form:input type="text" path="city" placeholder="Enter City"
 									class="form-control" />
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold">Address :</label>
+								<label class="font-weight-bold text-white">Address :</label>
 								<form:input type="text" path="address"
 									placeholder="Enter Address" class="form-control" />
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold">State :</label>
+								<label class="font-weight-bold text-white">State :</label>
 								<form:input type="text" path="state" placeholder="Enter State"
 									class="form-control" />
 							</div>
 
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold">Age :</label>
+								<label class="font-weight-bold text-white">Age :</label>
 								<form:input type="text" path="age" placeholder="Enter Age"
 									class="form-control" />
 							</div>
@@ -94,8 +99,8 @@
 
 
 
-							<div class="form-group col-sm-6">
-								<label class="font-weight-bold">Gender :</label>
+							<div class="form-group col-sm-6 text-white">
+								<label class="font-weight-bold text-white">Gender :</label>
 								<form:radiobutton path="gender" value="Male" />
 								Male
 								<form:radiobutton path="gender" value="Female" />
@@ -105,7 +110,7 @@
 
 
 							<div class="form-group col-sm-6">
-								<label for="exampleFormControlSelect1" class="font-weight-bold">Blood
+								<label for="exampleFormControlSelect1" class="font-weight-bold text-white">Blood
 									Group :</label> <select name="blood" class="form-control"
 									id="exampleFormControlSelect1">
 									<option>A+</option>

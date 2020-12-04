@@ -95,7 +95,7 @@
 			<tr class="bg-dark text-white">
 
 				<th scope="col">Email</th>
-				<th scope="col">rname</th>
+				<th scope="col">Name</th>
 				<th scope="col">Phone</th>
 				<th scope="col">City</th>
 				<th scope="col">Address</th>

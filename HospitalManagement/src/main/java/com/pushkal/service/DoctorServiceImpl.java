@@ -73,4 +73,9 @@ public class DoctorServiceImpl implements DoctorService {
 		return dao.getDoctorByCity(city);
 	}
 
+	public List<String> findAllDoctorB() {
+		// TODO Auto-generated method stub
+		return dao.getAllDoctorb();
+	}
+
 }

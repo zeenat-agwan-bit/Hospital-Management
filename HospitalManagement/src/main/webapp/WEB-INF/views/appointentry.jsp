@@ -184,6 +184,16 @@
 							</div>
 
 
+							<div class="form-group col-sm-6">
+
+								<label for="exampleFormControlTextarea1"
+									class="font-weight-bold text-white">Doctor's Email</label>
+
+								<form:select path="doctor.email" items="${emails}" />
+							</div>
+
+
+
 							<div class="form-group col-md-12 "
 								style="text-align: center; margin-top: 20px;">
 								<button type="submit" class="btn btn-primary">Book</button>

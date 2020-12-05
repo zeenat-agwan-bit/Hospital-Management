@@ -29,7 +29,9 @@ public class BookingController {
 		ModelAndView mv = new ModelAndView("appointentry");
 		mv.addObject("booking", new AppointmentBooking());
 		List<BigInteger> ids = patientService.getAllPatientB();
+		List<String>emails=doctorService.findAllDoctorB();
 		mv.addObject("ids", ids);
+		mv.addObject("emails",emails);
 		return mv;
 	}
 

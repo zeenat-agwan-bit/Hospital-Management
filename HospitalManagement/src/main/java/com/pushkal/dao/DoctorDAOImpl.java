@@ -1,5 +1,7 @@
 package com.pushkal.dao;
 
+import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Criteria;
@@ -80,8 +82,7 @@ public class DoctorDAOImpl implements DoctorDAO {
 		return doctors;
 
 	}
-	
-	
+
 	public void updateDoctor(Doctor doctor) {
 		Session session = sessionFactory.openSession();
 		Transaction tr = session.beginTransaction();
@@ -98,9 +99,6 @@ public class DoctorDAOImpl implements DoctorDAO {
 		tr.commit();
 		session.close();
 	}
-	
-	
-	
 
 	// --------------------------------MAPPING FOR DOCTOR PAGE :
 
@@ -158,7 +156,17 @@ public class DoctorDAOImpl implements DoctorDAO {
 		return doctors;
 	}
 
-	
+	public List<String> getAllDoctorb() {
+		Session session = sessionFactory.openSession();
+		Criteria criteria = session.createCriteria(Doctor.class);
+		List<Doctor> dlist = criteria.list();
+		List<String> emails = new ArrayList<String>();
+		for (Doctor d : dlist) {
+			emails.add(d.getEmail());
+		}
+		return emails;
+
+	}
 
 	/*
 	 * public List<BigInteger> getAllDoctorb(String email) { Session session =

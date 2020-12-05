@@ -43,13 +43,15 @@
 		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">View
 		All Appointments</h2>
 
-	<form action="searchbyappid" class="form-container text-white" method="post">
+	<form action="searchbyappid" class="form-container text-white"
+		method="post">
 		<div class="form-group col-sm-2">
-		<input type="search" name="appbox" placeholder="Search By Id"  class="form-control">
+			<input type="search" name="appbox" placeholder="Search By Id"
+				class="form-control">
 		</div>
 		<div class="form-group col-sm-2 "
-								style="text-align: center; margin-top: 10px;">
-		<button type="submit" class="btn btn-primary">Search</button>
+			style="text-align: center; margin-top: 10px;">
+			<button type="submit" class="btn btn-primary">Search</button>
 		</div>
 	</form>
 
@@ -59,9 +61,12 @@
 				<tr>
 					<th scope="col">Appointment Id</th>
 					<th scope="col">Patient Id</th>
+
 					<th scope="col">Patient Name</th>
 					<th scope="col">Patient Phone</th>
 					<th scope="col">Patient City</th>
+
+					<th scope="col">Doctor's Mail</th>
 					<th scope="col">Date</th>
 					<th scope="col">Time</th>
 					<th scope="col">Fees</th>
@@ -79,7 +84,7 @@
 						<td class="table-dark">${bookings.patient.pName}</td>
 						<td class="table-dark">${bookings.patient.phone}</td>
 						<td class="table-dark">${bookings.patient.city}</td>
-
+						<td class="table-dark">${bookings.doctor.email}</td>
 						<td class="table-dark">${bookings.date}</td>
 						<td class="table-dark">${bookings.time}</td>
 						<td class="table-dark">${bookings.fees}</td>

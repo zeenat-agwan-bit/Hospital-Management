@@ -11,11 +11,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "patient")
 public class Patient {
 	@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private BigInteger pid;
 	private String pName;
 	private String phone;
@@ -25,13 +27,13 @@ public class Patient {
 	private String address;
 	private String city;
 	private String state;
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne
 	private Doctor doctor;
 
 	@ManyToOne
 	private Receptionist receptionist;
 
-	@OneToMany(mappedBy = "patient",  cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(mappedBy = "patient", cascade = CascadeType.ALL, orphanRemoval = true)
 
 	private List<AppointmentBooking> appointments;
 
@@ -161,5 +163,4 @@ public class Patient {
 				+ doctor + ", receptionist=" + receptionist + ", appointments=" + appointments + "]";
 	}
 
-	
 }

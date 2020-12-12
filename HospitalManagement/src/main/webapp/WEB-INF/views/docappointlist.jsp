@@ -59,6 +59,7 @@
 				<th scope="col">Fees</th>
 				<th scope="col">Diagnosis</th>
 				<th scope="col">Treatment</th>
+				<th scope="col">Doctor Mail</th>
 				<th scope="col">Patient Id</th>
 				<th scope="col">Name</th>
 				<th scope="col">Phone</th>
@@ -83,6 +84,7 @@
 						<td class="table-dark">${appoint.fees}</td>
 						<td class="table-dark">${appoint.diagnosis}</td>
 						<td class="table-dark">${appoint.treatment}</td>
+						<td class="table-dark">${appoint.doctor.email}</td>
 						<td class="table-dark">${appoint.patient.pid}</td>
 						
 						<td class="table-dark">${appoint.patient.pName}</td>

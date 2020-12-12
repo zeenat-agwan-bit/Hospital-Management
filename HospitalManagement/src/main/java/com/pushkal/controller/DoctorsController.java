@@ -240,6 +240,8 @@ public class DoctorsController {
 	public ModelAndView showDoctorAppointForm(@SessionAttribute("email") String email) {
 		ModelAndView mv = new ModelAndView("docappointentry");
 		mv.addObject("appointbooking", new AppointmentBooking());
+		Doctor doctor = new Doctor();
+		doctor.setEmail(email);
 		List<BigInteger> ids = patientService.findAllPatientIds(email);
 		mv.addObject("ids", ids);
 		return mv;

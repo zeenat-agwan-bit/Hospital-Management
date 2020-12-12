@@ -1,8 +1,7 @@
 <%@page language="java" contentType="text/html; charset=ISO-8859-1"%>
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="sf"%>
-<%@page
-	import="java.util.List , com.pushkal.domain.AppointmentBooking,com.pushkal.domain.Patient"%>
+<%@page import="java.util.List , com.pushkal.domain.*"%>
 <%@page isELIgnored="false"%>
 <!doctype html>
 <html lang="en">
@@ -18,8 +17,6 @@
 	integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
 	crossorigin="anonymous">
 
-
-
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
 	integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
@@ -33,7 +30,6 @@
 	margin-right: 20px;
 }
 </style>
-
 
 <title>Appointment List</title>
 </head>
@@ -61,11 +57,9 @@
 				<tr>
 					<th scope="col">Appointment Id</th>
 					<th scope="col">Patient Id</th>
-
 					<th scope="col">Patient Name</th>
 					<th scope="col">Patient Phone</th>
 					<th scope="col">Patient City</th>
-
 					<th scope="col">Doctor's Mail</th>
 					<th scope="col">Date</th>
 					<th scope="col">Time</th>

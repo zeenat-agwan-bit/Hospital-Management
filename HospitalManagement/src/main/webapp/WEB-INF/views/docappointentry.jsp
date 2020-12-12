@@ -86,13 +86,13 @@
 							For Doctor ${email}</h2>
 
 						<div class="row">
-							<!-- <div class="form-group col-sm-6">
+							<div class="form-group col-sm-6">
 								<label for="exampleInputEmail1"
-									class="font-weight-bold text-white">Appointment Id :</label> <input
-									type="hidden" placeholder="Appointment Id" name="aid"
+									class="font-weight-bold text-white">Doctor's Email :</label> <input
+									type="text"  name="doctor.email" placeholder="Enter Your Email"
 									class="form-control">
 							</div>
- -->
+
 
 
 							<div class="form-group col-sm-6">

@@ -25,18 +25,17 @@ public class AppointmentBooking {
 	private String diagnosis;
 	private String treatment;
 
-	@ManyToOne(fetch = FetchType.EAGER, optional = false)
+	@ManyToOne  (fetch = FetchType.EAGER, optional = false) 
 	@JoinTable(name = "patient_appointment", joinColumns = { @JoinColumn(name = "app_aid") }, inverseJoinColumns = {
 			@JoinColumn(name = "patient_pid") })
 	private Patient patient;
 
 	@ManyToOne(fetch = FetchType.EAGER, optional = false)
-	/*
-	 * @JoinTable(name = "doctor_appointment", joinColumns = { @JoinColumn(name =
-	 * "app_aid") }, inverseJoinColumns = {
-	 * 
-	 * @JoinColumn(name = "doctor_did") })
-	 */
+
+	@JoinTable(name = "doctor_appointment", joinColumns = { @JoinColumn(name = "app_aid") }, inverseJoinColumns = {
+
+			@JoinColumn(name = "doctor_did") })
+
 	private Doctor doctor;
 
 	public BigInteger getAid() {

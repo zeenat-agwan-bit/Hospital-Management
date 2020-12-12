@@ -55,23 +55,7 @@
 
 				</ul>
 
-<div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-
-					<form class="form-inline my-2 my-lg-0" action="searchbydocname"
-						method="post">
-						<input class="form-control mr-sm-2" type="search" name="dname"
-							placeholder="Search By Name" aria-label="Search">
-						<button class="btn btn-success btn-sm  my-2 my-sm-0" type="submit">Search</button>
-					</form>
-					<form class="form-inline my-2 my-lg-0" action="searchbydoccity"
-						method="post">
-						<input class="form-control mr-sm-2" type="search" name="city"
-							placeholder="Search By City" aria-label="Search">
-						<button class="btn btn-success btn-sm my-2 my-sm-0" type="submit">Search</button>
-					</form>
-
-				</div>
 
 
 
@@ -81,7 +65,7 @@
 
 	
 	<h2
-		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">Details Of Doctor By Searching City</h2>
+		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">Details Of Doctor.</h2>
 
 
 	<div class="table-responsive text-center">

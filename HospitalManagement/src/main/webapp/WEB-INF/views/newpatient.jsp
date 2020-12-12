@@ -271,7 +271,7 @@
 							<div class="form-group col-md-12 "
 								style="text-align: center; margin-top: 20px;">
 								<button type="submit"
-									class="btn btn-warning shadow-sm text-italic">BOOK NOW</button>
+									class="btn btn-warning shadow-sm text-italic">REGISTER NOW</button>
 
 								<a class="btn btn-warning" href="index.jsp" role="button">
 									Back </a>

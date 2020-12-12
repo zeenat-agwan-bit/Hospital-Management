@@ -42,18 +42,22 @@
 	</div>
 
 	<div class="jumbotron">
-		<h1 class="display-4 text-white font-italic ">Talk to a Doctor Within
-			Minutes!</h1>
-			</br>
-		<p class="lead text-white font-weight-normal">This App Service let you do most of the
-			tasks from<br>fixing an appointment,through consultation and diagnosis,
-			to treatment, post-care, and<br> rescheduling everything from a remote
-			location .</p>
+		<h1 class="display-4 text-white font-italic ">Talk to a Doctor
+			Within Minutes!</h1>
+		</br>
+		<p class="lead text-white font-weight-normal">
+			This App Service let you do most of the tasks from<br>fixing an
+			appointment,through consultation and diagnosis, to treatment,
+			post-care, and<br> rescheduling everything from a remote
+			location .
+		</p>
 		<hr class="my-4">
-		<p class="text-white font-italic">Access Top Doctors for Online Consultations<br>
-			from Anywhere, Anytime.Save your traveling time and cost.</p>
-		<a class="btn btn-warning btn-lg" href="newpatient" role="button">Book
-			Appointment</a>
+		<p class="text-white font-italic">
+			Access Top Doctors for Online Consultations<br> from Anywhere,
+			Anytime.Save your traveling time and cost.
+		</p>
+		<a class="btn btn-warning btn-lg" href="newpatient" role="button">Register
+		</a>
 	</div>
 
 

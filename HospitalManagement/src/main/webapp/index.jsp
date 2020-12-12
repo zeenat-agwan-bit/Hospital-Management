@@ -56,7 +56,9 @@
 			Access Top Doctors for Online Consultations<br> from Anywhere,
 			Anytime.Save your traveling time and cost.
 		</p>
-		<a class="btn btn-warning btn-lg" href="newpatient" role="button">Register
+		<a class="btn btn-warning btn-lg" href="newpatient" role="button">Register Now
+		</a>
+		<a class="btn btn-warning btn-lg" href="" role="button">Book Appointment
 		</a>
 	</div>
 

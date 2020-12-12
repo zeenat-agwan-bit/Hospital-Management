@@ -15,12 +15,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.pushkal.domain.Patient;
+import com.pushkal.service.DoctorService;
 import com.pushkal.service.PatientService;
 
 @Controller
 public class PatientController {
 	@Autowired
 	private PatientService patientService;
+
+	@Autowired
+	private DoctorService doctorService;
 
 //--------------------------------------------MAPPING FOR ADMINISTRATION
 
@@ -89,7 +93,7 @@ public class PatientController {
 	}
 
 	@RequestMapping("/searchbypatname")
-	public ModelAndView showSearchNamePatient(@RequestParam  String pName) {
+	public ModelAndView showSearchNamePatient(@RequestParam String pName) {
 		ModelAndView mv = new ModelAndView("searchbypatname");
 		List<Patient> patients = patientService.findPatientByName(pName);
 		mv.addObject("patients", patients); // request-scope
@@ -103,7 +107,6 @@ public class PatientController {
 		mv.addObject("patients", patients); // request-scope
 		return mv;
 	}
-	
 
 	@RequestMapping("/plisthome")
 	public String plistHomeP() {
@@ -120,7 +123,8 @@ public class PatientController {
 	public ModelAndView newPatientForm() {
 		ModelAndView mv = new ModelAndView("newpatient");
 		mv.addObject("patient", new Patient());
-
+		List<String> spcls = doctorService.findAllDoctorByspclztn();
+		mv.addObject("spcls", spcls);
 		return mv;
 	}
 

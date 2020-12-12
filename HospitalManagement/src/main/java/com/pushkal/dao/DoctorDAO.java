@@ -28,6 +28,8 @@ public interface DoctorDAO {
 	public List<Doctor> getDoctorByCity(String city);
 	
 	public List<String> getAllDoctorb();
+	
+	public List<String> getAllDoctorByspclztn();
 	// -------------------------------------------------------------
 
 	// for doctor's (Patient)

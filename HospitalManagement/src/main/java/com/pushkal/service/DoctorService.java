@@ -28,7 +28,7 @@ public interface DoctorService {
 	
 	public List<String> findAllDoctorB();
 
-	
+	public List<String> findAllDoctorByspclztn();
 
 	// For Doctor Page(Patient)
 

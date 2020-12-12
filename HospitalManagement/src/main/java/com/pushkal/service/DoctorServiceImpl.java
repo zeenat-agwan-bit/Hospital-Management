@@ -1,6 +1,5 @@
 package com.pushkal.service;
 
-import java.math.BigInteger;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -76,6 +75,11 @@ public class DoctorServiceImpl implements DoctorService {
 	public List<String> findAllDoctorB() {
 		// TODO Auto-generated method stub
 		return dao.getAllDoctorb();
+	}
+
+	public List<String> findAllDoctorByspclztn() {
+		// TODO Auto-generated method stub
+		return dao.getAllDoctorByspclztn();
 	}
 
 }

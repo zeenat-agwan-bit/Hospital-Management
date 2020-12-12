@@ -1,6 +1,5 @@
 package com.pushkal.dao;
 
-import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -168,15 +167,18 @@ public class DoctorDAOImpl implements DoctorDAO {
 
 	}
 
-	/*
-	 * public List<BigInteger> getAllDoctorb(String email) { Session session =
-	 * sessionFactory.openSession(); Criteria criteria =
-	 * session.createCriteria(Doctor.class); Criterion crt =
-	 * Restrictions.eq("doctor.email", email); criteria.add(crt); List<Doctor> dlist
-	 * = criteria.list(); List<BigInteger> ids = new ArrayList<BigInteger>(); for
-	 * (Doctor d : dlist) { ids.add(d.getDid()); } return ids;
-	 * 
-	 * }
-	 */
+	public List<String> getAllDoctorByspclztn() {
+		Session session = sessionFactory.openSession();
+		Criteria criteria = session.createCriteria(Doctor.class);
+		List<Doctor> dlist = criteria.list();
+		List<String> spcls = new ArrayList<String>();
+		for (Doctor d : dlist) {
+			spcls.add(d.getSpecialization());
+		}
+		return spcls;
+
+	}
+
+	
 
 }

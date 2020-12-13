@@ -48,7 +48,7 @@
 
 						<div class="row">
 
-						<!-- 	<div class="form-group col-sm-6">
+							<!-- 	<div class="form-group col-sm-6">
 								<label class="font-weight-bold text-white">Patient Id :</label> <input
 									type="hidden" name="pid" placeholder="Patient ID"
 									class="form-control">
@@ -79,20 +79,56 @@
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold text-white">State :</label> <input
-									type="text" name="state" placeholder="Enter State"
+								<label for="exampleFormControlSelect1"
+									class="font-weight-bold text-white">State :</label> <select
+									name="state" class="form-control"
+									id="exampleFormControlSelect1">
+									<option>AP</option>
+									<option>AR</option>
+									<option>AS</option>
+									<option>BR</option>
+									<option>CG</option>
+									<option>CH</option>
+									<option>DL</option>
+									<option>GA</option>
+									<option>GJ</option>
+									<option>HR</option>
+									<option>HP</option>
+									<option>JK</option>
+									<option>JH</option>
+									<option>KA</option>
+									<option>KL</option>
+									<option>MP</option>
+									<option>MH</option>
+									<option>MN</option>
+									<option>ML</option>
+									<option>MZ</option>
+									<option>NL</option>
+									<option>OR</option>
+									<option>PB</option>
+									<option>RJ</option>
+									<option>SK</option>
+									<option>TN</option>
+									<option>TR</option>
+									<option>UK</option>
+									<option>UP</option>
+									<option>WB</option>
+
+
+
+								</select>
+							</div>
+
+							<div class="form-group col-sm-6">
+								<label class="font-weight-bold text-white">Age :</label> <input
+									type="text" name="age" placeholder="Enter Age"
 									class="form-control">
 							</div>
 
-
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold text-white">Age :</label> <input type="text"
-									name="age" placeholder="Enter Age" class="form-control">
-							</div>
-
-							<div class="form-group col-sm-6">
-								<label for="exampleFormControlSelect1" class="font-weight-bold text-white">Blood
-									Group :</label> <select name="blood" class="form-control"
+								<label for="exampleFormControlSelect1"
+									class="font-weight-bold text-white">Blood Group :</label> <select
+									name="blood" class="form-control"
 									id="exampleFormControlSelect1">
 									<option>A+</option>
 									<option>A-</option>
@@ -106,21 +142,35 @@
 								</select>
 							</div>
 
+
+							<div class="form-group col-sm-6">
+
+								<label for="exampleFormControlTextarea1"
+									class="font-weight-bold text-white">Select Doctor's
+									Email</label>
+
+								<form:select path="doctor.email">
+
+									<form:options items="${emails}"></form:options>
+								</form:select>
+							</div>
+
+
 							<div class="form-group col-sm-6">
 								<label class="font-weight-bold text-white">Gender :</label>
 								<div class="custom-control custom-radio custom-control-inline">
 									<input type="radio" id="customRadioInline1" name="gender"
 										value="male" name="customRadioInline1"
 										class="custom-control-input"> <label
-										class="custom-control-label text-white" for="customRadioInline1">Male
-									</label>
+										class="custom-control-label text-white"
+										for="customRadioInline1">Male </label>
 								</div>
 								<div class="custom-control custom-radio custom-control-inline">
 									<input type="radio" id="customRadioInline2" name="gender"
 										value="female" name="customRadioInline1"
 										class="custom-control-input"> <label
-										class="custom-control-label text-white" for="customRadioInline2">Female
-									</label>
+										class="custom-control-label text-white"
+										for="customRadioInline2">Female </label>
 								</div>
 							</div>
 

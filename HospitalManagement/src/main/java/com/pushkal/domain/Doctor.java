@@ -29,7 +29,7 @@ public class Doctor {
 	private String gender;
 	private String specialization;
 
-	@OneToMany(mappedBy = "doctor") // no extra field created due to mapped by
+	@OneToMany(mappedBy = "doctor",  cascade = CascadeType.ALL) // no extra field created due to mapped by
 	private List<Patient> patients;
 
 	@OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL, orphanRemoval = true)

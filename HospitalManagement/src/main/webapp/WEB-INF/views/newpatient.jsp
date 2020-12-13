@@ -87,11 +87,54 @@
 									class="form-control">
 							</div>
 
+
+
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold text-white">State :</label> <input
-									type="text" name="state" placeholder="Enter State"
-									class="form-control">
+								<label for="exampleFormControlSelect1"
+									class="font-weight-bold text-white">State :</label> <select
+									name="state" class="form-control"
+									id="exampleFormControlSelect1">
+									<option>AP</option>
+									<option>AR</option>
+									<option>AS</option>
+									<option>BR</option>
+									<option>CG</option>
+									<option>CH</option>
+									<option>DL</option>
+									<option>GA</option>
+									<option>GJ</option>
+									<option>HR</option>
+									<option>HP</option>
+									<option>JK</option>
+									<option>JH</option>
+									<option>KA</option>
+									<option>KL</option>
+									<option>MP</option>
+									<option>MH</option>
+									<option>MN</option>
+									<option>ML</option>
+									<option>MZ</option>
+									<option>NL</option>
+									<option>OR</option>
+									<option>PB</option>
+									<option>RJ</option>
+									<option>SK</option>
+									<option>TN</option>
+									<option>TR</option>
+									<option>UK</option>
+									<option>UP</option>
+									<option>WB</option>
+
+
+
+								</select>
 							</div>
+
+
+
+
+
+
 
 
 							<div class="form-group col-sm-6">
@@ -121,62 +164,53 @@
 							<div class="form-group col-sm-6">
 
 								<label for="exampleFormControlTextarea1"
-									class="font-weight-bold text-white">Doctor Specialization</label>
+									class="font-weight-bold text-white">Select Doctor's
+									Email :</label>
 
-								<form:select path="doctor.specialization" items="${spcls}" />
-							</div>
-
-
-
-
-							<!-- <div class="form-group col-sm-6">
-								<label class="font-weight-bold text-white" >Doctor :</label> <input type="text" name="doctor.dname"
-									placeholder="select doctor" class="form-control">
-							</div>
-
-
-
-
-
-							<div class="form-group col-sm-6">
-								<label for="exampleFormControlSelect1" class="font-weight-bold text-white">Specialization : 
-									</label> <select name="doctor.specialization"
-									placeholder="Select Specialization" class="form-control"
-									id="exampleFormControlSelect1">
-									<option>Allergy</option>
-									<option>Anesthesiology</option>
-									<option>Dermatology</option>
-									<option>Emergency Medicine</option>
-									<option>Family Medicine</option>
-									<option>Gynecology</option>
-									<option>Immunology</option>
-									<option>Internal Medicine</option>
-									<option>Medical Genetics</option>
-									<option>Neurology</option>
-									<option>Ophthalmology</option>
-									<option>Pathology</option>
-									<option>Pediatrics</option>
-									<option>Psychiatry</option>
-									<option>Surgery</option>
-									<option>Urology</option>
-
-								</select>
+								<form:select path="doctor.email" items="${emails}" />
 							</div>
 
 
 							<div class="form-group col-sm-6">
-								<label for="exampleInputPassword1" class="font-weight-bold textt-white">Date
-									:</label> <input type="text" name="appointmentbooking.date"
-									placeholder="dd/mm/yyyy" class="form-control"
-									id="exampleInputPassword1">
+								<label class="font-weight-bold text-white">Gender :</label>
+								<div class="custom-control custom-radio custom-control-inline">
+									<input type="radio" id="customRadioInline1" name="gender"
+										value="male" name="customRadioInline1"
+										class="custom-control-input"> <label
+										class="custom-control-label text-white"
+										for="customRadioInline1">Male </label>
+								</div>
+								<div class="custom-control custom-radio custom-control-inline">
+									<input type="radio" id="customRadioInline2" name="gender"
+										value="female" name="customRadioInline1"
+										class="custom-control-input"> <label
+										class="custom-control-label text-white"
+										for="customRadioInline2">Female </label>
+								</div>
 							</div>
 
 
+
+							<div class="form-group col-sm-6">
+								<label for="exampleInputEmail1"
+									class="font-weight-bold text-white">Appointment Id :</label> <input
+									type="hidden" placeholder="Appointment Id"
+									name="appointments.aid" class="form-control">
+							</div>
+
+
+
+							<div class="form-group col-sm-6">
+								<label for="exampleInputPassword1"
+									class="font-weight-bold text-white">Date :</label> <input
+									type="date" name="appointments.date" placeholder="dd/MM/yyyy"
+									class="form-control">
+							</div>
 
 							<div class="form-group col-sm-6">
 								<label for="inputState" class="font-weight-bold text-white">Time
-									Slot :</label> <select id="inputState" class="form-control"
-									name="appointmentbooking.time">
+									Slot</label> <select id="inputState" class="form-control"
+									name="appointments.time">
 									<option selected>Choose...</option>
 
 									<option>10:00-10:15 AM</option>
@@ -248,48 +282,30 @@
 
 
 								</select>
-							</div> -->
+							</div>
 
-							<!-- 
+
+
 							<div class="form-group col-sm-6">
 								<label for="exampleFormControlTextarea1"
-									class="font-weight-bold font-white">Diagnosis :</label>
+									class="font-weight-bold text-white">Diagnosis :</label>
 								<textarea class="form-control" id="exampleFormControlTextarea1"
-									rows="3" name="appointmentbooking.diagnosis"
+									rows="3" name="appointments.diagnosis"
 									placeholder="Enter Diagnosis"></textarea>
 							</div>
- -->
-
-
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold text-white">Gender :</label>
-								<div class="custom-control custom-radio custom-control-inline">
-									<input type="radio" id="customRadioInline1" name="gender"
-										value="male" name="customRadioInline1"
-										class="custom-control-input"> <label
-										class="custom-control-label text-white"
-										for="customRadioInline1">Male </label>
+
+
+
+								<div class="form-group col-md-12 "
+									style="text-align: center; margin-top: 20px;">
+									<button type="submit"
+										class="btn btn-warning shadow-sm text-italic">REGISTER</button>
+
+									<a class="btn btn-warning" href="index.jsp" role="button">
+										Back </a>
 								</div>
-								<div class="custom-control custom-radio custom-control-inline">
-									<input type="radio" id="customRadioInline2" name="gender"
-										value="female" name="customRadioInline1"
-										class="custom-control-input"> <label
-										class="custom-control-label text-white"
-										for="customRadioInline2">Female </label>
-								</div>
-							</div>
-
-
-
-
-							<div class="form-group col-md-12 "
-								style="text-align: center; margin-top: 20px;">
-								<button type="submit"
-									class="btn btn-warning shadow-sm text-italic">REGISTER</button>
-
-								<a class="btn btn-warning" href="index.jsp" role="button">
-									Back </a>
 							</div>
 						</div>
 					</form>

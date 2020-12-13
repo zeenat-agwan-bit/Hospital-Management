@@ -93,8 +93,44 @@
 							</div>
 
 							<div class="form-group col-sm-6">
-								<label class="font-weight-bold text-white">State :</label> <input type="text" name="state"
-									placeholder="Enter State" class="form-control">
+								<label for="exampleFormControlSelect1"
+									class="font-weight-bold text-white">State :</label> <select
+									name="state" class="form-control"
+									id="exampleFormControlSelect1">
+									<option>AP</option>
+									<option>AR</option>
+									<option>AS</option>
+									<option>BR</option>
+									<option>CG</option>
+									<option>CH</option>
+									<option>DL</option>
+									<option>GA</option>
+									<option>GJ</option>
+									<option>HR</option>
+									<option>HP</option>
+									<option>JK</option>
+									<option>JH</option>
+									<option>KA</option>
+									<option>KL</option>
+									<option>MP</option>
+									<option>MH</option>
+									<option>MN</option>
+									<option>ML</option>
+									<option>MZ</option>
+									<option>NL</option>
+									<option>OR</option>
+									<option>PB</option>
+									<option>RJ</option>
+									<option>SK</option>
+									<option>TN</option>
+									<option>TR</option>
+									<option>UK</option>
+									<option>UP</option>
+									<option>WB</option>
+
+
+
+								</select>
 							</div>
 
 

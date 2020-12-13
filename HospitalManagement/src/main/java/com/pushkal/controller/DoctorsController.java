@@ -48,6 +48,15 @@ public class DoctorsController {
 
 		return mv;
 	}
+	
+	@RequestMapping("/doclist")
+	public ModelAndView ViewAllDoctors() {
+		List<Doctor> doctors = doctorService.showAllDoctors();
+		ModelAndView mv = new ModelAndView("doclist");
+		mv.addObject("dlist", doctors);
+
+		return mv;
+	}
 
 	@RequestMapping("updatedoctor")
 	public ModelAndView showDoctorUpdateForm(@RequestParam("email") String email) {
@@ -131,6 +140,15 @@ public class DoctorsController {
 		return mv;
 	}
 
+	@RequestMapping("/searchbydocspcl")
+	public ModelAndView showSearchNSpclDoctor(@RequestParam String specialization) {
+		ModelAndView mv = new ModelAndView("searchbydocspecialization");
+		List<Doctor> doctors = doctorService.findDoctorBySpcl(specialization);
+		mv.addObject("doctors", doctors); // request-scope
+		return mv;
+	}
+	
+	
 	@RequestMapping("/searchbydocname")
 	public ModelAndView showSearchNameDoctor(@RequestParam String dname) {
 		ModelAndView mv = new ModelAndView("searchbydocname");
@@ -138,6 +156,8 @@ public class DoctorsController {
 		mv.addObject("doctors", doctors); // request-scope
 		return mv;
 	}
+	
+	
 
 	@RequestMapping("/searchbydoccity")
 	public ModelAndView showSearchCityDoctor(@RequestParam String city) {

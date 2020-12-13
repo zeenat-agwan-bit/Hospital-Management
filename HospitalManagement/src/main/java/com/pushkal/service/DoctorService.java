@@ -26,9 +26,10 @@ public interface DoctorService {
 
 	public List<Doctor> findDoctorByCity(String city);
 	
+	public List<Doctor> findDoctorBySpcl(String specialization);
+	
 	public List<String> findAllDoctorB();
 
-	public List<String> findAllDoctorByspclztn();
 
 	// For Doctor Page(Patient)
 

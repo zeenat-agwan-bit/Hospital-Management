@@ -120,9 +120,9 @@
 				<th scope="col">Gender</th>
 				<th scope="col">Age</th>
 				<th scope="col">Blood Group</th>
-				<!-- <th scope="col">Doctor</th>
+				<th scope="col">Doctor</th>
 				<th scope="col">Reception</th>				
-				 -->
+				
 				<th scope="col">Actions</th>
 
 			</tr>
@@ -140,9 +140,9 @@
 						<td class="table-dark">${patients.gender}</td>
 						<td class="table-dark">${patients.age}</td>
 						<td class="table-dark">${patients.blood}</td>
-						<%-- <td class="table-dark">${patients.doctor.email}</td>
+						<td class="table-dark">${patients.doctor.email}</td>
 						<td class="table-dark">${patients.receptionist.email}</td>
-						 --%>
+						
 						<td class="table-dark"><a
 							href="updatepatientform?id=${patients.pid}"
 							class="btn badge-primary badge btn-sm active" role="button"

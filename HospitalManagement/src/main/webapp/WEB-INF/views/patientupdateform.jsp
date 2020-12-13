@@ -66,11 +66,11 @@
 							</div>
 
 
-							<%-- <div class="form-group col-sm-6">
+							<div class="form-group col-sm-6">
 								<label class="font-weight-bold text-white">Doctor Email :</label>
-								<form:input path="doctor.email" type="hidden" class="form-control" />
+								<form:input path="doctor.email" type="text" class="form-control" />
 							</div>
-							 --%>
+							
 						
 							<div class="form-group col-sm-6">
 								<label class="font-weight-bold text-white">Phone :</label>

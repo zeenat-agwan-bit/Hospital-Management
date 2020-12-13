@@ -45,6 +45,7 @@
 		<h1 class="display-4 text-white font-italic ">Talk to a Doctor
 			Within Minutes!</h1>
 		</br>
+		
 		<p class="lead text-white font-weight-normal">
 			This App Service let you do most of the tasks from<br>fixing an
 			appointment,through consultation and diagnosis, to treatment,
@@ -58,7 +59,7 @@
 		</p>
 		<a class="btn btn-warning btn-lg" href="newpatient" role="button">Register Now
 		</a>
-		<a class="btn btn-warning btn-lg" href="" role="button">Book Appointment
+		<a class="btn btn-warning btn-lg" href="doclist" role="button">View Doctors
 		</a>
 	</div>
 

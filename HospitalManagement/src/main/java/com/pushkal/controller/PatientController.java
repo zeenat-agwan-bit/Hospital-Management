@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.pushkal.domain.Doctor;
 import com.pushkal.domain.Patient;
 import com.pushkal.service.DoctorService;
 import com.pushkal.service.PatientService;
@@ -70,7 +71,8 @@ public class PatientController {
 	public ModelAndView showPatientForm() {
 		ModelAndView mv = new ModelAndView("patiententry");
 		mv.addObject("patient", new Patient());
-
+		List<String> emails = doctorService.findAllDoctorB();
+		mv.addObject("emails", emails);
 		return mv;
 	}
 
@@ -123,8 +125,8 @@ public class PatientController {
 	public ModelAndView newPatientForm() {
 		ModelAndView mv = new ModelAndView("newpatient");
 		mv.addObject("patient", new Patient());
-		List<String> spcls = doctorService.findAllDoctorByspclztn();
-		mv.addObject("spcls", spcls);
+		List<String> emails = doctorService.findAllDoctorB();
+		mv.addObject("emails", emails);
 		return mv;
 	}
 

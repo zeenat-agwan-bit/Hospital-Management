@@ -40,11 +40,11 @@
 
 	<h2
 		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">Appointment
-		Booked By Doctor ${username} .</h2>
+		Booked By Reception ${username} .</h2>
 
 	<div style="text-align: center; margin-bottom: 2vh;">
 
-		<a class="btn btn-primary btn-sm" href="doctorhomep" role="button">
+		<a class="btn btn-primary btn-sm" href="recephomep" role="button">
 			Back </a>
 
 	</div>
@@ -59,7 +59,7 @@
 				<th scope="col">Fees</th>
 				<th scope="col">Diagnosis</th>
 				<th scope="col">Treatment</th>
-				<!-- <th scope="col">Doctor Mail</th> -->
+				<th scope="col">Reception Mail</th>
 				<th scope="col">Patient Id</th>
 				<th scope="col">Name</th>
 				<th scope="col">Phone</th>
@@ -84,10 +84,9 @@
 						<td class="table-dark">${appoint.fees}</td>
 						<td class="table-dark">${appoint.diagnosis}</td>
 						<td class="table-dark">${appoint.treatment}</td>
-						<%-- <td class="table-dark">${appoint.doctor.email}</td>
-						 --%>
+						<td class="table-dark">${appoint.receptionist.email}</td>
 						<td class="table-dark">${appoint.patient.pid}</td>
-						
+
 						<td class="table-dark">${appoint.patient.pName}</td>
 						<td class="table-dark">${appoint.patient.phone}</td>
 						<td class="table-dark">${appoint.patient.city}</td>
@@ -115,8 +114,7 @@
 
 	<div class="col-md-12 " style="text-align: center; margin-top: 40px;">
 
-		<a class="btn btn-primary" href="doctorhomep" role="button"> Back
-		</a>
+		<a class="btn btn-primary" href="rechomea" role="button"> Back </a>
 
 	</div>
 

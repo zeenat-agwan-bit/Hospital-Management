@@ -25,7 +25,7 @@ public class AppointmentBooking {
 	private String diagnosis;
 	private String treatment;
 
-	@ManyToOne  (fetch = FetchType.EAGER, optional = false) 
+	@ManyToOne(fetch = FetchType.EAGER, optional = false)
 	@JoinTable(name = "patient_appointment", joinColumns = { @JoinColumn(name = "app_aid") }, inverseJoinColumns = {
 			@JoinColumn(name = "patient_pid") })
 	private Patient patient;
@@ -37,6 +37,35 @@ public class AppointmentBooking {
 			@JoinColumn(name = "doctor_did") })
 
 	private Doctor doctor;
+
+	@ManyToOne(fetch = FetchType.EAGER, optional = false)
+
+	@JoinTable(name = "recep_appointment", joinColumns = { @JoinColumn(name = "app_aid") }, inverseJoinColumns = {
+
+			@JoinColumn(name = "recep_rid") })
+	private Receptionist receptionist;
+
+	public AppointmentBooking(BigInteger aid, String date, String time, String fees, String diagnosis, String treatment,
+			Patient patient, Doctor doctor, Receptionist receptionist) {
+		super();
+		this.aid = aid;
+		this.date = date;
+		this.time = time;
+		this.fees = fees;
+		this.diagnosis = diagnosis;
+		this.treatment = treatment;
+		this.patient = patient;
+		this.doctor = doctor;
+		this.receptionist = receptionist;
+	}
+
+	public Receptionist getReceptionist() {
+		return receptionist;
+	}
+
+	public void setReceptionist(Receptionist receptionist) {
+		this.receptionist = receptionist;
+	}
 
 	public BigInteger getAid() {
 		return aid;
@@ -124,7 +153,7 @@ public class AppointmentBooking {
 	public String toString() {
 		return "AppointmentBooking [aid=" + aid + ", date=" + date + ", time=" + time + ", fees=" + fees
 				+ ", diagnosis=" + diagnosis + ", treatment=" + treatment + ", patient=" + patient + ", doctor="
-				+ doctor + "]";
+				+ doctor + ", receptionist=" + receptionist + "]";
 	}
 
 }

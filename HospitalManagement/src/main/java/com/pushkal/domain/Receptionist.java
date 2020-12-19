@@ -2,6 +2,7 @@ package com.pushkal.domain;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
@@ -22,11 +23,36 @@ public class Receptionist {
 	private String state;
 	private String gender;
 
-	@OneToMany(mappedBy = "receptionist")
+	@OneToMany(mappedBy = "receptionist" ,  cascade = CascadeType.ALL)
 	private List<Patient> patient;
 
-	
-	
+	@OneToMany(mappedBy = "receptionist", cascade = CascadeType.ALL)
+
+	private List<AppointmentBooking> bookings;
+
+	public Receptionist(String email, String password, String rname, String phone, String city, String address,
+			String state, String gender, List<Patient> patient, List<AppointmentBooking> bookings) {
+		super();
+		this.email = email;
+		this.password = password;
+		this.rname = rname;
+		this.phone = phone;
+		this.city = city;
+		this.address = address;
+		this.state = state;
+		this.gender = gender;
+		this.patient = patient;
+		this.bookings = bookings;
+	}
+
+	public List<AppointmentBooking> getBookings() {
+		return bookings;
+	}
+
+	public void setBookings(List<AppointmentBooking> bookings) {
+		this.bookings = bookings;
+	}
+
 	public List<Patient> getPatient() {
 		return patient;
 	}
@@ -118,8 +144,6 @@ public class Receptionist {
 
 	}
 
-	
-	
 	public Receptionist(String email, String password, String rname, String phone, String city, String address,
 			String state, String gender, List<Patient> patient) {
 		super();
@@ -138,7 +162,7 @@ public class Receptionist {
 	public String toString() {
 		return "Receptionist [email=" + email + ", password=" + password + ", rname=" + rname + ", phone=" + phone
 				+ ", city=" + city + ", address=" + address + ", state=" + state + ", gender=" + gender + ", patient="
-				+ patient + "]";
+				+ patient + ", bookings=" + bookings + "]";
 	}
 
 }

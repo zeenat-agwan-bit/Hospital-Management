@@ -75,20 +75,27 @@
 	</div>
 
 	<h2
-		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">HELLO Receptionist
-		${username} !</h2>
+		style="text-align: center; font-weight: bold; font-size: 30px; color: white; margin-top: 20px;">HELLO
+		Receptionist ${username} !</h2>
 	</br>
 
 
 	<div class="list-group list-container col-md-4 text right">
 
 
-	
+
 		<a href="recpatiententry"
 			class="list-group-item list-group-item-action active">Add Patient</a>
-		<a href="recpatientlist" class="list-group-item list-group-item-action ">Patient
-			List</a> <a href="index.jsp"
-			class="list-group-item list-group-item-danger">Sign Out</a>
+		<a href="recpatientlist"
+			class="list-group-item list-group-item-action ">Patient List</a> <a
+			href="recappointentry"
+			class="list-group-item list-group-item-action active">Add
+			Appointment</a> <a href="recappointlist"
+			class="list-group-item list-group-item-action  ">Appointment List</a>
+
+
+		<a href="index.jsp" class="list-group-item list-group-item-danger">Sign
+			Out</a>
 
 	</div>
 

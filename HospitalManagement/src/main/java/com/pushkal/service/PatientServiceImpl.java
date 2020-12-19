@@ -53,7 +53,7 @@ public class PatientServiceImpl implements PatientService {
 	}
 
 	public List<BigInteger> getAllPatientB() {
-		
+
 		return dao.getAllPatientb();
 	}
 
@@ -62,5 +62,9 @@ public class PatientServiceImpl implements PatientService {
 		return dao.getAllPatientIds(email);
 	}
 
-	
+	public List<BigInteger> findAllRPatientIds(String email) {
+		// TODO Auto-generated method stub
+		return dao.getAllRPatientIds(email);
+	}
+
 }

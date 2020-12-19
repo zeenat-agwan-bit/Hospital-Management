@@ -74,11 +74,11 @@
 
 					<tr>
 						<td class="table-dark">${bookings.aid}</td>
-						<%-- <td class="table-dark">${bookings.patient.pid}</td>
+						<td class="table-dark">${bookings.patient.pid}</td>
 						<td class="table-dark">${bookings.patient.pName}</td>
 						<td class="table-dark">${bookings.patient.phone}</td>
 						<td class="table-dark">${bookings.patient.city}</td>
-						 --%><td class="table-dark">${bookings.doctor.email}</td>
+						<td class="table-dark">${bookings.doctor.email}</td>
 						<td class="table-dark">${bookings.date}</td>
 						<td class="table-dark">${bookings.time}</td>
 						<td class="table-dark">${bookings.fees}</td>

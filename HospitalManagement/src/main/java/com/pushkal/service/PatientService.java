@@ -27,6 +27,10 @@ public interface PatientService {
 	public List<BigInteger> getAllPatientB();
 
 	public List<BigInteger> findAllPatientIds(String email);
+	
+	public List<BigInteger> findAllRPatientIds(String email);
+	
+	
 	// ------------------------------
 	public void addPatAppointment(AppointmentBooking appointmentBooking);
 

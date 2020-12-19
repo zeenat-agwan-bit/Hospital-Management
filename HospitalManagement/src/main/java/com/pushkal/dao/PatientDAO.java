@@ -26,6 +26,9 @@ public interface PatientDAO {
 	public List<BigInteger> getAllPatientb();
 
 	public List<BigInteger> getAllPatientIds(String email);
+	
+	public List<BigInteger> getAllRPatientIds(String email);
+
 
 //---------------------------------------------------
 

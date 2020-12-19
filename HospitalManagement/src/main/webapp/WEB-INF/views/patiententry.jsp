@@ -142,18 +142,28 @@
 								</select>
 							</div>
 
+							<%-- <div class="form-group col-sm-6">
+								<label for="exampleFormControlSelect1"
+									class="font-weight-bold text-white">Blood Group :</label>
+								<form:select path="blood" items="${blood}" />
+							</div>
+ --%>
 
-							<div class="form-group col-sm-6">
+
+
+
+
+
+							<%-- <div class="form-group col-sm-6">
 
 								<label for="exampleFormControlTextarea1"
 									class="font-weight-bold text-white">Select Doctor's
 									Email</label>
 
-								<form:select path="doctor.email">
+								<form:select path="doctor.email" items="${emails}"/>
 
-									<form:options items="${emails}"></form:options>
-								</form:select>
-							</div>
+															
+							</div> --%>
 
 
 							<div class="form-group col-sm-6">

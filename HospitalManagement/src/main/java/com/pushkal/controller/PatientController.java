@@ -73,6 +73,12 @@ public class PatientController {
 		mv.addObject("patient", new Patient());
 		List<String> emails = doctorService.findAllDoctorB();
 		mv.addObject("emails", emails);
+		/*
+		 * List<String> blood = new ArrayList<String>(); blood.add("A+");
+		 * blood.add("A-"); blood.add("B+"); blood.add("B-"); blood.add("O+");
+		 * blood.add("O-"); blood.add("AB+"); blood.add("AB-"); mv.addObject("blood",
+		 * blood);
+		 */
 		return mv;
 	}
 

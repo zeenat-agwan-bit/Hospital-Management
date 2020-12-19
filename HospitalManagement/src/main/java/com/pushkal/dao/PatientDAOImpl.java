@@ -128,6 +128,19 @@ public class PatientDAOImpl implements PatientDAO {
 
 	}
 
+	public List<BigInteger> getAllRPatientIds(String email) {
+		Session session = sessionFactory.openSession();
+		Criteria criteria = session.createCriteria(Patient.class);
+		Criterion crt=Restrictions.eq("receptionist.email", email);
+		criteria.add(crt);
+		List<Patient> plist = criteria.list();
+		List<BigInteger> ids = new ArrayList<BigInteger>();
+		for (Patient p : plist) {
+			ids.add(p.getPid());
+		}
+		return ids;
+	}
+
 	/*
 	 * public List<String> getAllEmails(String email) { Session session =
 	 * sessionFactory.openSession(); Criteria criteria =

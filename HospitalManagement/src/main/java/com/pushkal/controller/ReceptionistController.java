@@ -14,9 +14,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.pushkal.domain.AppointmentBooking;
 import com.pushkal.domain.Doctor;
 import com.pushkal.domain.Patient;
 import com.pushkal.domain.Receptionist;
+import com.pushkal.service.AppointmentService;
+import com.pushkal.service.DoctorService;
 import com.pushkal.service.PatientService;
 import com.pushkal.service.ReceptionistService;
 
@@ -26,6 +29,10 @@ public class ReceptionistController {
 	private ReceptionistService receptionService;
 	@Autowired
 	private PatientService patientService;
+	@Autowired
+	private DoctorService doctorService;
+	@Autowired
+	private AppointmentService appointmentService;
 
 	@RequestMapping("/receplist")
 	public ModelAndView showAllReceptionists() {
@@ -123,7 +130,10 @@ public class ReceptionistController {
 	public ModelAndView showRecPForm() {
 		ModelAndView mv = new ModelAndView("recpatiententry");
 		mv.addObject("patient", new Patient());
-
+		/*
+		 * List<String> emails = doctorService.findAllDoctorB(); mv.addObject("emails",
+		 * emails);
+		 */
 		return mv;
 	}
 
@@ -140,7 +150,7 @@ public class ReceptionistController {
 	}
 
 	@RequestMapping("recpatientlist")
-	public ModelAndView showDocPatientList(@SessionAttribute("email") String email) {
+	public ModelAndView showRecPatientList(@SessionAttribute("email") String email) {
 		List<Patient> patients = receptionService.findAllPatientsByReception(email);
 		ModelAndView mv = new ModelAndView("recpatientlist");
 		mv.addObject("plist", patients);
@@ -148,7 +158,7 @@ public class ReceptionistController {
 	}
 
 	@RequestMapping("updaterecpatient")
-	public ModelAndView showPatientUpdateForm(@RequestParam("pid") BigInteger pid) {
+	public ModelAndView showPatientUpdateeForm(@RequestParam("pid") BigInteger pid) {
 		ModelAndView mv = new ModelAndView("recpatientupdateform");
 		Patient patient = patientService.searchPatientById(pid);
 		mv.addObject("patient", patient);
@@ -157,18 +167,18 @@ public class ReceptionistController {
 
 	@RequestMapping("recpatupdatesave")
 
-	public ModelAndView saveDocpatientChanges(@ModelAttribute("patient") Patient patient,
+	public ModelAndView saveRecPatientChanges(@ModelAttribute("patient") Patient patient,
 			@SessionAttribute("email") String email) {
 		Receptionist receptionist = new Receptionist();
 		receptionist.setEmail(email);
-		patient.getReceptionist();
+		patient.setReceptionist(receptionist);
 		patientService.changePatient(patient);
 		ModelAndView mv = new ModelAndView("redirect:recpatientlist");
 		return mv;
 	}
 
 	@RequestMapping("deleterecpatient")
-	public ModelAndView removeDocPatient(@RequestParam("pid") BigInteger pid) {
+	public ModelAndView removeRecPatient(@RequestParam("pid") BigInteger pid) {
 		patientService.removePatient(pid);
 		ModelAndView mv = new ModelAndView("redirect:recpatientlist");
 		return mv;
@@ -179,4 +189,40 @@ public class ReceptionistController {
 		return "receptionpage";
 	}
 
+	// -----------------------------------------MAPPING FOR Reception PAGE
+	// (Appointment)
+
+	@RequestMapping("/recappointentry")
+	public ModelAndView showRecAppointForm(@SessionAttribute("email") String email) {
+		ModelAndView mv = new ModelAndView("recappointentry");
+		mv.addObject("appointbooking", new AppointmentBooking());
+		Receptionist receptionist = new Receptionist();
+		receptionist.setEmail(email);
+		List<BigInteger> ids = patientService.findAllRPatientIds(email);
+		mv.addObject("ids", ids);
+		List<String> emails = doctorService.findAllDoctorB();
+		mv.addObject("emails", emails);
+		return mv;
+	}
+
+	@RequestMapping("/saverecappoint")
+	public ModelAndView saveRecepAPP(@ModelAttribute("appointbooking") AppointmentBooking appointmeBooking) {
+		appointmentService.addBooking(appointmeBooking);
+		ModelAndView mv = new ModelAndView("recappointsave");
+		return mv;
+
+	}
+
+	@RequestMapping("recappointlist")
+	public ModelAndView showRecAppointList() {
+		List<AppointmentBooking> bookings = appointmentService.findAllBookings();
+		ModelAndView mv = new ModelAndView("recappointlist");
+		mv.addObject("alist", bookings);
+		return mv;
+	}
+
+	@RequestMapping("/recephomea")
+	public String recepHomea() {
+		return "receptionpage";
+	}
 }

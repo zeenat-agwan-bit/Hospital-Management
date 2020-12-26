@@ -127,12 +127,19 @@ public class PatientController {
 	}
 
 	// --------------------NEW PATIENT --------------------------
+	/*
+	 * @RequestMapping("/newpatient") public ModelAndView newPatientForm() {
+	 * ModelAndView mv = new ModelAndView("newpatient"); mv.addObject("patient", new
+	 * Patient()); List<String> emails = doctorService.findAllDoctorB();
+	 * mv.addObject("emails", emails); return mv; }
+	 */
+
 	@RequestMapping("/newpatient")
 	public ModelAndView newPatientForm() {
 		ModelAndView mv = new ModelAndView("newpatient");
 		mv.addObject("patient", new Patient());
-		List<String> emails = doctorService.findAllDoctorB();
-		mv.addObject("emails", emails);
+		List<String> specls = doctorService.findAllDoctorSpcl();
+		mv.addObject("emails", specls);
 		return mv;
 	}
 

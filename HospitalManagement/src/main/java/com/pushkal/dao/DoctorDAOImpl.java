@@ -145,13 +145,6 @@ public class DoctorDAOImpl implements DoctorDAO {
 		session.close();
 		return doctors;
 	}
-	
-	
-	
-	
-	
-	
-	
 
 	public List<Doctor> getDoctorByCity(String city) {
 		Session session = sessionFactory.openSession();
@@ -174,17 +167,24 @@ public class DoctorDAOImpl implements DoctorDAO {
 
 	}
 
-	public List<Doctor> getDoctorBySpcl(String specialization) {
+	public List<String> getAllDoctorSpcl() {
 		Session session = sessionFactory.openSession();
-		Criteria cr = session.createCriteria(Doctor.class);
-		cr.add(Restrictions.eq("specialization", specialization));
-		List<Doctor> doctors = cr.list();
-		session.close();
-		return doctors;
+		Criteria criteria = session.createCriteria(Doctor.class);
+		List<Doctor> dlist = criteria.list();
+		List<String> specls = new ArrayList<String>();
+		for (Doctor d : dlist) {
+			specls.add(d.getSpecialization());
+		}
+		return specls;
+
 	}
 
 	
-
-	
+	  public List<Doctor> getDoctorBySpcl(String specialization) { Session session
+	  = sessionFactory.openSession(); Criteria cr =
+	  session.createCriteria(Doctor.class);
+	  cr.add(Restrictions.eq("specialization", specialization)); List<Doctor>
+	  doctors = cr.list(); session.close(); return doctors; }
+	 
 
 }

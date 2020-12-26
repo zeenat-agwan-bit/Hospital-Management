@@ -28,6 +28,8 @@ public interface DoctorService {
 	
 	public List<Doctor> findDoctorBySpcl(String specialization);
 	
+	public List<String> findAllDoctorSpcl();
+	
 	public List<String> findAllDoctorB();
 
 

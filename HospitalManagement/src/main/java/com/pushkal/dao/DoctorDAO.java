@@ -31,6 +31,8 @@ public interface DoctorDAO {
 	
 	public List<String> getAllDoctorb();
 	
+	public List<String> getAllDoctorSpcl();
+	
 	
 	// -------------------------------------------------------------
 

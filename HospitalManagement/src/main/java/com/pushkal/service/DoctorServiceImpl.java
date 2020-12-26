@@ -77,6 +77,13 @@ public class DoctorServiceImpl implements DoctorService {
 		return dao.getAllDoctorb();
 	}
 
+	
+
+	public List<String> findAllDoctorSpcl() {
+		// TODO Auto-generated method stub
+		return dao.getAllDoctorSpcl();
+	}
+
 	public List<Doctor> findDoctorBySpcl(String specialization) {
 		// TODO Auto-generated method stub
 		return dao.getDoctorBySpcl(specialization);
